@@ -4,7 +4,6 @@ import { route } from 'ziggy-js';
 import Dashboard from '@/Components/dashboard/Dashboard';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import customParseFormat from 'dayjs/plugin/customparseformat';
 import { useCallback } from 'react';
 import { Button } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
@@ -19,7 +18,6 @@ import {
 } from '@mui/x-data-grid';
 
 dayjs.extend(relativeTime);
-dayjs.extend(customParseFormat);
 
 interface Props {
    services?: ServiceProps[]
