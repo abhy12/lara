@@ -10,6 +10,7 @@ import OptionsMenu from './OptionsMenu';
 import ApplicationLogo from '@/Components/ApplicationLogo';
 import { Link } from '@inertiajs/react';
 import { usePage } from '@inertiajs/react';
+import { route } from 'ziggy-js';
 
 const drawerWidth = 240;
 
@@ -46,7 +47,7 @@ export default function SideMenu() {
                p: 1.5,
             }}
          >
-            <Link className='block w-full' href='/'>
+            <Link className='block w-full' href={route('home')}>
                <ApplicationLogo className="w-full max-w-16 text-white" />
             </Link>
          </Box>
