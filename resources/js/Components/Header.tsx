@@ -19,8 +19,19 @@ export default function Header() {
          </Link>
          <nav className="font-semibold md:text-lg hidden md:flex flex-col md:flex-row gap-x-5 md:gap-x-12 ml-auto">
             {/* @ts-ignore */}
+            {(props?.auth?.user === null ) &&
+               <>
+                  <Link href={route('login')}>Login</Link>
+                  <Link href={route('register')}>Register</Link>
+               </>
+            }
+            {/* @ts-ignore */}
             {(props?.auth !== undefined && props?.auth?.user !== undefined && props?.auth.user?.is_admin === true ) &&
-            <Link href={route('dashboard')}>Dashboard</Link>}
+               <>
+                  <Link href={route('dashboard')}>Dashboard</Link>
+                  <Link href={route('logout')} method='post' as="button">Logout</Link>
+               </>
+            }
             <Link href={route('tools.index')}>Tools</Link>
             <Link href={route('services.index')}>Service Provider</Link>
             <Link href="#">FAQs</Link>

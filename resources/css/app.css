@@ -25,3 +25,7 @@
    background-image: url(/assets/img/shape.svg);
 }
 
+input:not([class*="Mui"]) {
+   padding: 10px;
+   @apply border;
+}
