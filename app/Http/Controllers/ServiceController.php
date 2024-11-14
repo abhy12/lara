@@ -30,12 +30,25 @@ class ServiceController extends Controller
         ]);
     }
 
+    public function adminIndex() {
+        $services = Service::with('tools', 'categories')
+        ->select( 'id', 'name', 'created_at' )
+        ->get()
+        ->sortDesc()
+        ->values()
+        ->all();
+
+        return Inertia::render('Admin/Services/IndexServices', [
+            'services' => $services,
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        return Inertia::render('Services/CreateService', [
+        return Inertia::render('Admin/Services/CreateService', [
             'tools' => Tool::all(),
             'categories' => Category::where('parent_id', null)->with('subcategory')->get(),
         ]);
@@ -73,7 +86,7 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
-        return Inertia::render('Services/EditService', [
+        return Inertia::render('Admin/Services/EditService', [
             'service' => $service,
             'tools' => Tool::all(),
             'selectedToolIds' => $service->tools->pluck('id'),
@@ -106,6 +119,6 @@ class ServiceController extends Controller
     {
         $service->delete();
 
-        return Redirect::route( 'services.index' );
+        return Redirect::route( 'admin.services.index' );
     }
 }

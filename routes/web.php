@@ -12,17 +12,13 @@ use Inertia\Inertia;
 use App\Http\Middleware\UserIsAdmin;
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
+    return Inertia::render('Home', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
-});
-
-/* Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard'); */
+})->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -38,10 +34,6 @@ Route::resource( 'posts', PostController::class )
 // ->only(['index', 'store', 'update'])
 ->middleware(['auth']);
 
-Route::resource( 'tools', ToolController::class )
-// ->only(['index', 'store', 'update'])
-->middleware(['auth']);
-
 Route::resource( 'category', CategoryController::class )
 ->only(['store', 'update'])
 ->middleware(['auth']);
@@ -50,12 +42,22 @@ Route::resource( 'services', ServiceController::class )
 ->only(['index', 'show'])
 ->middleware(['auth']);
 
+Route::resource( 'tools', ToolController::class )
+->only(['index', 'show'])
+->middleware(['auth']);
+
 Route::prefix('admin')->group(function() {
     Route::middleware(['auth', UserIsAdmin::class])->group(function() {
         Route::resource( 'services', ServiceController::class )
         ->except(['index', 'show']);
+        Route::get('services', [ServiceController::class, 'adminIndex'])->name('admin.services.index');
+
+        Route::resource( 'tools', ToolController::class )
+        ->except(['index', 'show']);
+        Route::get('tools', [ToolController::class, 'adminIndex'])->name('admin.tools.index');
+
         Route::get('/dashboard', function () {
-            return Inertia::render('Admin');
+            return Inertia::render('Admin/Admin');
         })->name('dashboard');
     });
 });

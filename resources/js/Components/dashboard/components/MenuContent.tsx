@@ -2,11 +2,8 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import Stack from '@mui/material/Stack';
-import AnalyticsRoundedIcon from '@mui/icons-material/AnalyticsRounded';
-import PeopleRoundedIcon from '@mui/icons-material/PeopleRounded';
-import AssignmentRoundedIcon from '@mui/icons-material/AssignmentRounded';
+import { Handyman, HomeRepairService } from '@mui/icons-material';
 import { Link } from '@inertiajs/react';
 import { route } from 'ziggy-js';
 import type { ReactElement } from 'react';
@@ -17,22 +14,20 @@ interface List {
    link: string
 }
 const mainListItems: List[] = [
-   { name: 'Services', icon: <AnalyticsRoundedIcon />, link: 'services.index' },
-   { name: 'Posts', icon: <AssignmentRoundedIcon />, link: 'posts.index' },
-   { name: 'Chirps', icon: <AssignmentRoundedIcon />, link: 'chirps.index' },
-   // { name: 'Tools', icon: <PeopleRoundedIcon /> },
+   { name: 'Services', icon: <HomeRepairService />, link: 'admin.services.index' },
+   { name: 'Tools', icon: <Handyman/>, link: 'admin.tools.index' },
 ];
 
 export default function MenuContent() {
    return (
       <Stack sx={{ flexGrow: 1, p: 1, justifyContent: 'space-between' }}>
-         <List dense>
+         <List className='text-lg !gap-2' dense>
             {mainListItems.map((item, index) => (
                <ListItem key={index} disablePadding sx={{ display: 'block' }}>
                   <Link href={route(item.link)}>
-                     <ListItemButton selected={index === 0}>
+                     <ListItemButton selected={route().current() === item.link}>
                         <ListItemIcon>{item.icon}</ListItemIcon>
-                        <ListItemText primary={item.name} />
+                        <span>{item.name}</span>
                      </ListItemButton>
                   </Link>
                </ListItem>

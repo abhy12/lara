@@ -1,14 +1,11 @@
 import type { } from '@mui/x-data-grid/themeAugmentation';
-import { alpha } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
 import AppNavbar from './components/AppNavbar';
 import SideMenu from './components/SideMenu';
 import AppTheme from '../shared-theme/AppTheme';
 
-export default function Dashboard(props: { disableCustomTheme?: boolean, children: any }) {
-
+export default function Dashboard(props: { disableCustomTheme?: boolean, children?: any }) {
    return (
       <AppTheme {...props}>
          <CssBaseline enableColorScheme />
@@ -18,26 +15,14 @@ export default function Dashboard(props: { disableCustomTheme?: boolean, childre
             {/* Main content */}
             <Box
                component="main"
-               sx={(theme) => ({
+               sx={() => ({
                   flexGrow: 1,
-                  backgroundColor: theme.vars
-                     ? `rgba(${theme.vars.palette.background.defaultChannel} / 1)`
-                     : alpha(theme.palette.background.default, 1),
                   overflow: 'auto',
                })}
             >
-               <Stack
-                  spacing={2}
-                  sx={{
-                     alignItems: 'center',
-                     mx: 3,
-                     pb: 5,
-                     mt: { xs: 8, md: 0 },
-                  }}
-               >
-                  {/* <Header /> */}
+               <div className='p-4 md:p-6'>
                   {props.children}
-               </Stack>
+               </div>
             </Box>
          </Box>
       </AppTheme>

@@ -26,7 +26,8 @@ const Drawer = styled(MuiDrawer)({
 
 export default function SideMenu() {
    const page = usePage();
-   const user = page.props.auth.user;
+   // @ts-ignore
+   const user = page?.props?.auth?.user;
 
    return (
       <Drawer
@@ -46,7 +47,7 @@ export default function SideMenu() {
             }}
          >
             <Link className='block w-full' href='/'>
-               <ApplicationLogo className="w-full max-w-16" />
+               <ApplicationLogo className="w-full max-w-16 text-white" />
             </Link>
          </Box>
          <Divider />

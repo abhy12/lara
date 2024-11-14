@@ -1,4 +1,4 @@
-import type { ToolsProps } from "../Tools/Tool"
+import type { ToolsProps } from "@/util/props"
 import type { Category } from "@/util/props"
 
 export interface ServiceProps {
@@ -18,4 +18,6 @@ export interface ServiceProps {
    contact_number?: string
    tools?: ToolsProps[]
    categories?: Category[]
+   created_at?: string
+   updated_at?: string
 }

@@ -1,12 +1,12 @@
-import { useForm } from '@inertiajs/react';
-import PrimaryButton from '@/Components/PrimaryButton';
+import { useForm, usePage } from '@inertiajs/react';
 import type { ServiceProps } from './Service';
-import { FormEvent, useState, useCallback, useEffect } from 'react';
+import { useState, useCallback } from 'react';
 import type { SyntheticEvent } from 'react';
 import ToolSelector from '../Tools/ToolSelector';
-import type { ToolsProps } from '../Tools/Tool';
+import type { ToolsProps } from '@/util/props';
 import type { Category } from '@/util/props';
 import CategorySelector from '@/Components/Category/CategorySelector';
+import { Button, TextField } from '@mui/material';
 
 interface Props {
    children?: any
@@ -45,6 +45,7 @@ export default function ServiceForm({
       email: service?.email || '',
       contact_number: service?.contact_number || '',
    });
+   const { props: { errors } } = usePage();
 
    const toolChangeHandler = useCallback((e: SyntheticEvent<HTMLInputElement>) => {
       const isChecked = e.currentTarget.checked;
@@ -69,9 +70,8 @@ export default function ServiceForm({
       }))
    }
 
-   function formSubmitHandler(e: FormEvent<HTMLFormElement>) {
+   function formSubmitHandler(e: SyntheticEvent) {
       e.preventDefault();
-      console.log(categoriesValues);
       if (typeof onSubmit === 'function') onSubmit({ ...values, tools: toolValues, categories: categoriesValues });
    }
 
@@ -88,12 +88,190 @@ export default function ServiceForm({
       });
    }, []);
 
-   useEffect(() => {
-      console.log(selectedCategories);
-   }, [selectedCategories]);
-
    return (
-      <div>
+      <div className='flex flex-col gap-4 md:gap-6'>
+         <form onSubmit={formSubmitHandler} className='flex flex-col gap-4 md:gap-6 pt-2 md:pt-4'>
+            <div>
+               <TextField
+                  className='w-full'
+                  id="name"
+                  label="Name"
+                  variant="outlined"
+                  onChange={handleChange}
+                  value={values.name}
+                  error={errors.name !== undefined || false}
+                  helperText={errors.name}
+                  required
+               />
+            </div>
+            <div>
+               <TextField
+                  className='w-full'
+                  id="description"
+                  label="Description"
+                  variant="outlined"
+                  onChange={handleChange}
+                  value={values.description}
+                  error={errors.description !== undefined || false}
+                  helperText={errors.description}
+               />
+            </div>
+            <div>
+               <TextField
+                  className='w-full'
+                  id="services_provided"
+                  label="Service Provided"
+                  variant="outlined"
+                  onChange={handleChange}
+                  value={values.services_provided}
+                  error={errors.services_provided !== undefined || false}
+                  helperText={errors.services_provided}
+                  multiline
+                  rows={4}
+               />
+            </div>
+            <div>
+               <TextField
+                  className='w-full'
+                  id="services_cost"
+                  label="Service Cost"
+                  variant="outlined"
+                  onChange={handleChange}
+                  value={values.services_cost}
+                  error={errors.services_cost !== undefined || false}
+                  helperText={errors.services_cost}
+                  multiline
+                  rows={4}
+               />
+            </div>
+            <div>
+               <TextField
+                  className='w-full'
+                  id="product_offered"
+                  label="Product Offered"
+                  variant="outlined"
+                  onChange={handleChange}
+                  value={values.product_offered}
+                  error={errors.product_offered !== undefined || false}
+                  helperText={errors.product_offered}
+                  multiline
+                  rows={4}
+               />
+            </div>
+            <div>
+               <TextField
+                  className='w-full'
+                  id="product_cost"
+                  label="Product Cost"
+                  variant="outlined"
+                  onChange={handleChange}
+                  value={values.product_cost}
+                  error={errors.product_cost !== undefined || false}
+                  helperText={errors.product_cost}
+                  multiline
+                  rows={4}
+               />
+            </div>
+            <div>
+               <TextField
+                  className='w-full'
+                  id="functional_expertise"
+                  label="Functional Expertise"
+                  variant="outlined"
+                  onChange={handleChange}
+                  value={values.functional_expertise}
+                  error={errors.functional_expertise !== undefined || false}
+                  helperText={errors.functional_expertise}
+                  multiline
+                  rows={4}
+               />
+            </div>
+            <div>
+               <TextField
+                  className='w-full'
+                  id="sgb_domain"
+                  label="SGD Domain"
+                  variant="outlined"
+                  onChange={handleChange}
+                  value={values.sgb_domain}
+                  error={errors.sgb_domain !== undefined || false}
+                  helperText={errors.sgb_domain}
+                  multiline
+                  rows={4}
+               />
+            </div>
+            <div>
+               <TextField
+                  className='w-full'
+                  id="website"
+                  label="Website"
+                  variant="outlined"
+                  onChange={handleChange}
+                  value={values.website}
+                  error={errors.website !== undefined || false}
+                  helperText={errors.website}
+                  multiline
+                  rows={4}
+               />
+            </div>
+            <div>
+               <TextField
+                  className='w-full'
+                  id="point_contact"
+                  label="Point Contact"
+                  variant="outlined"
+                  onChange={handleChange}
+                  value={values.point_contact}
+                  error={errors.point_contact !== undefined || false}
+                  helperText={errors.point_contact}
+                  multiline
+                  rows={4}
+               />
+            </div>
+            <div>
+               <TextField
+                  className='w-full'
+                  id="designation"
+                  label="Designation"
+                  variant="outlined"
+                  onChange={handleChange}
+                  value={values.designation}
+                  error={errors.designation !== undefined || false}
+                  helperText={errors.designation}
+                  multiline
+                  rows={4}
+               />
+            </div>
+            <div>
+               <TextField
+                  className='w-full'
+                  id="email"
+                  label="Email"
+                  variant="outlined"
+                  onChange={handleChange}
+                  value={values.email}
+                  error={errors.email !== undefined || false}
+                  helperText={errors.email}
+                  multiline
+                  rows={4}
+               />
+            </div>
+            <div>
+               <TextField
+                  className='w-full'
+                  id="contact_number"
+                  label="Contact Number"
+                  variant="outlined"
+                  onChange={handleChange}
+                  value={values.contact_number}
+                  error={errors.contact_number !== undefined || false}
+                  helperText={errors.contact_number}
+                  multiline
+                  rows={4}
+               />
+            </div>
+            {tools && <ToolSelector tools={tools} onChange={toolChangeHandler} selectedTools={selectedTools} />}
+         </form>
          {Array.isArray(categories) &&
             <CategorySelector
                categories={categories}
@@ -101,62 +279,10 @@ export default function ServiceForm({
                selectedCategories={categoriesValues}
             />
          }
-         <form onSubmit={formSubmitHandler} className='pt-4'>
-            <div className='mb-4'>
-               <label className='block' htmlFor="name">Name</label>
-               <input className='w-full' type='text' id='name' onChange={handleChange} value={values.name} />
-            </div>
-            <div>
-               <label className='block' htmlFor="description">Description</label>
-               <textarea className='w-full' id='description' onChange={handleChange} value={values.description} />
-            </div>
-            <div>
-               <label className='block' htmlFor="services_provided">Service Provided</label>
-               <textarea className='w-full' id='services_provided' onChange={handleChange} value={values.services_provided} />
-            </div>
-            <div>
-               <label className='block' htmlFor="services_cost">Service Cost</label>
-               <textarea className='w-full' id='services_cost' onChange={handleChange} value={values.services_cost} />
-            </div>
-            <div>
-               <label className='block' htmlFor="product_offered">Product Offered</label>
-               <textarea className='w-full' id='product_offered' onChange={handleChange} value={values.product_offered} />
-            </div>
-            <div>
-               <label className='block' htmlFor="product_cost">Product Cost</label>
-               <textarea className='w-full' id='product_cost' onChange={handleChange} value={values.product_cost} />
-            </div>
-            <div>
-               <label className='block' htmlFor="functional_expertise">Functional Expertise</label>
-               <textarea className='w-full' id='functional_expertise' onChange={handleChange} value={values.functional_expertise} />
-            </div>
-            <div>
-               <label className='block' htmlFor="sgb_domain">SGD Domain</label>
-               <textarea className='w-full' id='sgb_domain' onChange={handleChange} value={values.sgb_domain} />
-            </div>
-            <div>
-               <label className='block' htmlFor="website">Website</label>
-               <input className='w-full' id='website' onChange={handleChange} value={values.website} />
-            </div>
-            <div>
-               <label className='block' htmlFor="point_contact">Point Contact</label>
-               <textarea className='w-full' id='point_contact' onChange={handleChange} value={values.point_contact} />
-            </div>
-            <div>
-               <label className='block' htmlFor="designation">Designation</label>
-               <input className='w-full' id='designation' onChange={handleChange} value={values.designation} />
-            </div>
-            <div>
-               <label className='block' htmlFor="email">Email</label>
-               <input type='email' className='w-full' id='email' onChange={handleChange} value={values.email} />
-            </div>
-            <div>
-               <label className='block' htmlFor="contact_number">Contact Number</label>
-               <input className='w-full' id='contact_number' onChange={handleChange} value={values.contact_number} />
-            </div>
-            {tools && <ToolSelector tools={tools} onChange={toolChangeHandler} selectedTools={selectedTools} />}
-            <PrimaryButton className='mt-4' type="submit">{submitButtonText}</PrimaryButton>
-         </form>
+         <Button
+            onClick={formSubmitHandler}
+            variant='outlined'
+         >{submitButtonText}</Button>
       </div>
    );
 }

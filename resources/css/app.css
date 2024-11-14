@@ -5,3 +5,23 @@
 .MuiInputBase-input:focus{
    box-shadow: none;
 }
+.MuiOutlinedInput-root{
+   height: unset!important;
+}
+
+.bg-bodyBg{
+   background-image: url(/assets/img/bg.jpg);
+}
+
+.bg-dropdown{
+   background-image: url(/assets/img/dropdown.svg);
+}
+
+.bg-foot{
+   background-image: url(/assets/img/foot.svg);
+}
+
+.bg-homeBg{
+   background-image: url(/assets/img/shape.svg);
+}
+

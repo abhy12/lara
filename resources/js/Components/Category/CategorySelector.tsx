@@ -11,9 +11,11 @@ import {
    MenuItem,
    TextField,
    Button,
-   FormHelperText
+   FormHelperText,
+   Divider,
+   FormGroup
 }
-from '@mui/material';
+   from '@mui/material';
 
 interface Props {
    categories: Category[]
@@ -28,61 +30,61 @@ export default function CategorySelector({ categories, selectedCategories, onCha
    });
 
    const newCategorySubmitHandler = useCallback(() => {
-      post( '/category', {
+      post('/category', {
          onSuccess: () => reset()
       });
    }, [data]);
 
    useEffect(() => {
-      console.error( errors );
+      // console.error(errors);
    }, [errors]);
 
-   if( !Array.isArray( categories ) ) return <></>;
+   if (!Array.isArray(categories)) return <></>;
 
    return (
-   <>
       <div>
-         <label>Category</label>
-         <div
-            className='py-1 px-3 rounded border bg-white'
-         >
-            <div className='max-h-52 overflow-y-auto w-full'>
-               {categories.map(cat => {
-                  const subcat = cat.subcategory?.map(sub =>
-                     <FormControlLabel
-                        className='!block !ml-2 !mr-0'
-                        key={sub.id}
-                        label={sub.name}
-                        title={sub.name}
-                        onChange={onChange}
-                        control={
-                           <Checkbox
-                              value={sub.id}
-                              checked={selectedCategories?.includes(sub.id)}
-                           />
-                        }
-                     />
-                  );
-                  return (
-                     <div
-                        key={cat.id}
-                     >
+         <div className='py-1 px-3 rounded bg-white/5'>
+            <label className='text-xl my-2 inline-block'>Category</label>
+            <Divider />
+            <div className='max-h-52 overflow-y-auto w-full mt-2'>
+               <FormGroup>
+                  {categories.map(cat => {
+                     const subcat = cat.subcategory?.map(sub =>
                         <FormControlLabel
-                           className='!block !mr-0'
-                           label={cat.name}
-                           title={cat.name}
+                           className='!block !ml-2 !mr-0'
+                           key={sub.id}
+                           label={sub.name}
+                           title={sub.name}
                            onChange={onChange}
                            control={
                               <Checkbox
-                                 value={cat.id}
-                                 checked={selectedCategories?.includes(cat.id)}
+                                 value={sub.id}
+                                 checked={selectedCategories?.includes(sub.id)}
                               />
                            }
                         />
-                        {subcat}
-                     </div>
-                  );
-               })}
+                     );
+                     return (
+                        <div
+                           key={cat.id}
+                        >
+                           <FormControlLabel
+                              className='!block !mr-0'
+                              label={cat.name}
+                              title={cat.name}
+                              onChange={onChange}
+                              control={
+                                 <Checkbox
+                                    value={cat.id}
+                                    checked={selectedCategories?.includes(cat.id)}
+                                 />
+                              }
+                           />
+                           {subcat}
+                        </div>
+                     );
+                  })}
+               </FormGroup>
             </div>
             <div className='py-4 flex flex-col gap-3'>
                <TextField
@@ -91,7 +93,7 @@ export default function CategorySelector({ categories, selectedCategories, onCha
                   variant="outlined"
                   required={true}
                   value={data.name}
-                  onChange={e => setData('name',e.target.value)}
+                  onChange={e => setData('name', e.target.value)}
                   error={errors.name !== undefined || false}
                   helperText={errors.name}
                />
@@ -109,7 +111,7 @@ export default function CategorySelector({ categories, selectedCategories, onCha
                      <MenuItem value="">
                         <em className='uppercase'>--Parent Category--</em>
                      </MenuItem>
-                     {categories.map( cat =>
+                     {categories.map(cat =>
                         <MenuItem
                            key={cat.id}
                            value={cat.id}
@@ -127,6 +129,5 @@ export default function CategorySelector({ categories, selectedCategories, onCha
             </div>
          </div>
       </div>
-   </>
    );
 }
