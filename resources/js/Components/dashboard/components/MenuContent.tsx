@@ -3,7 +3,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import Stack from '@mui/material/Stack';
-import { Handyman, HomeRepairService } from '@mui/icons-material';
+import { Handyman, HomeRepairService, TextSnippet } from '@mui/icons-material';
 import { Link } from '@inertiajs/react';
 import { route } from 'ziggy-js';
 import type { ReactElement } from 'react';
@@ -16,6 +16,7 @@ interface List {
 const mainListItems: List[] = [
    { name: 'Services', icon: <HomeRepairService />, link: 'admin.services.index' },
    { name: 'Tools', icon: <Handyman/>, link: 'admin.tools.index' },
+   { name: 'Form Data', icon: <TextSnippet />, link: 'forms.index' },
 ];
 
 export default function MenuContent() {

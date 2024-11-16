@@ -20,3 +20,13 @@ export interface ToolsProps {
    created_at?: string
    updated_at?: string
 }
+
+export interface FormProps {
+   id: number
+   name: string
+   organization: string
+   email: string
+   message?: string
+   created_at?: string
+   updated_at?: string
+}

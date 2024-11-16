@@ -8,6 +8,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ToolController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\FormController;
 use Inertia\Inertia;
 use App\Http\Middleware\UserIsAdmin;
 
@@ -44,6 +45,9 @@ Route::resource( 'services', ServiceController::class )
 Route::resource( 'tools', ToolController::class )
 ->only(['index', 'show']);
 
+Route::resource('forms', FormController::class )
+->only('store');
+
 Route::prefix('admin')->group(function() {
     Route::middleware(['auth', UserIsAdmin::class])->group(function() {
         Route::get('/', function () {
@@ -57,6 +61,9 @@ Route::prefix('admin')->group(function() {
         Route::resource( 'tools', ToolController::class )
         ->except(['index', 'show']);
         Route::get('tools', [ToolController::class, 'adminIndex'])->name('admin.tools.index');
+
+        Route::resource('forms', FormController::class )
+        ->only(['show', 'index', 'destroy']);
     });
 });
 
