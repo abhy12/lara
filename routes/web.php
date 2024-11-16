@@ -36,15 +36,13 @@ Route::resource( 'posts', PostController::class )
 
 Route::resource( 'category', CategoryController::class )
 ->only(['store', 'update'])
-->middleware(['auth']);
+->middleware(['auth', UserIsAdmin::class]);
 
 Route::resource( 'services', ServiceController::class )
-->only(['index', 'show'])
-->middleware(['auth']);
+->only(['index', 'show']);
 
 Route::resource( 'tools', ToolController::class )
-->only(['index', 'show'])
-->middleware(['auth']);
+->only(['index', 'show']);
 
 Route::prefix('admin')->group(function() {
     Route::middleware(['auth', UserIsAdmin::class])->group(function() {
