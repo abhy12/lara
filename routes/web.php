@@ -46,6 +46,10 @@ Route::resource( 'tools', ToolController::class )
 
 Route::prefix('admin')->group(function() {
     Route::middleware(['auth', UserIsAdmin::class])->group(function() {
+        Route::get('/', function () {
+            return Inertia::render('Admin/Admin');
+        })->name('dashboard');
+
         Route::resource( 'services', ServiceController::class )
         ->except(['index', 'show']);
         Route::get('services', [ServiceController::class, 'adminIndex'])->name('admin.services.index');
@@ -53,10 +57,6 @@ Route::prefix('admin')->group(function() {
         Route::resource( 'tools', ToolController::class )
         ->except(['index', 'show']);
         Route::get('tools', [ToolController::class, 'adminIndex'])->name('admin.tools.index');
-
-        Route::get('/dashboard', function () {
-            return Inertia::render('Admin/Admin');
-        })->name('dashboard');
     });
 });
 

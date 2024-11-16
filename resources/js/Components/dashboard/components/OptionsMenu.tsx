@@ -67,10 +67,12 @@ export default function OptionsMenu() {
                   },
                }}
             >
-               <ListItemText><Link className='inline-block mr-1' href={route('logout')} method='post' as='button'>Logout</Link></ListItemText>
-               <ListItemIcon>
-                  <LogoutRoundedIcon fontSize="small" />
-               </ListItemIcon>
+               <Link className='flex' href={route('logout')} method='post' as='button'>
+                  <ListItemText className='mr-1'>Logout</ListItemText>
+                  <ListItemIcon>
+                     <LogoutRoundedIcon fontSize="small" />
+                  </ListItemIcon>
+               </Link>
             </MenuItem>
          </Menu>
       </React.Fragment>
