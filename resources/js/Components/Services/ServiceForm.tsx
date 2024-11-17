@@ -1,12 +1,10 @@
 import { useForm, usePage } from '@inertiajs/react';
-import type { ServiceProps } from './Service';
 import { useState, useCallback } from 'react';
 import type { SyntheticEvent } from 'react';
 import ToolSelector from '../Tools/ToolSelector';
-import type { ToolsProps } from '@/util/props';
-import type { Category } from '@/util/props';
 import CategorySelector from '@/Components/Category/CategorySelector';
 import { Button, TextField } from '@mui/material';
+import type { ToolsProps, ServiceProps, Category } from '@/util/props';
 
 interface Props {
    children?: any

@@ -1,113 +1,143 @@
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Head, Link, router } from '@inertiajs/react';
-import PrimaryButton from '@/Components/PrimaryButton';
-import Dropdown from '@/Components/Dropdown';
-import type { ServiceProps } from '@/Components/Services/Service';
+import { Head, Link } from '@inertiajs/react';
+import type { ServiceProps } from '@/util/props';
 import { route } from 'ziggy-js';
+import Layout from '@/Components/Layout';
 
 interface Props {
    service?: ServiceProps
 }
 
 export default function Single({ service }: Props) {
-   if( !service ) return<></>;
+   if (!service) return <></>;
 
    return (
-      <AuthenticatedLayout
-         header={
-            <h2 className="text-xl font-semibold leading-tight text-gray-800">
-               {service?.name}
-            </h2>
-         }
-      >
-      <Head title='Services' />
-      <div className="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
-         <Link
-            href={route('services.edit', { id: service.id })}
-            className='mb-4 inline-block'
-         >
-            <PrimaryButton>Edit</PrimaryButton>
-         </Link>
-            <div
-               className='relative p-3 mb-2 rounded bg-white border'
-            >
-               <div className='absolute z-50 right-4 top-2'>
-                  <Dropdown>
-                     <Dropdown.Trigger>
-                        <button>
-                           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
-                              <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
-                           </svg>
-                        </button>
-                     </Dropdown.Trigger>
-                     <Dropdown.Content>
-                        <Link
-                           className="block w-full px-4 py-2 text-left text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 transition duration-150 ease-in-out"
-                           href={route('services.edit', {id: service.id})}
-                        >
-                           Edit
-                        </Link>
-                        <button
-                           onClick={() => router.delete(route('services.destroy', {id: service.id}))}
-                           className="block w-full px-4 py-2 text-left text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 transition duration-150 ease-in-out"
-                        >
-                           Delete
-                        </button>
-                     </Dropdown.Content>
-                  </Dropdown>
+      <Layout>
+         <Head title={service.name} />
+         <main className="grow">
+            <section className="px-8 pt-10 lg:pt-16 pb-10 lg:pb-28 bg-[url('/assets/img/service-01.svg')] bg-cover bg-bottom">
+               <div className="container mx-auto">
+                  <p className="text-[#909090] font-semibold text-lg mb-10">
+                     <Link href="/">Home</Link>
+                     &nbsp;/&nbsp;
+                     <Link
+                        href={route('services.index')}>Service Providers</Link>
+                     &nbsp;/&nbsp;
+                     <Link href={route('services.show', { id: service.id })}
+                        className="text-[#762E5E]">{service.name}</Link>
+                  </p>
+                  <div className="flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-24">
+                     <div className="basis-1/4">
+                        <div className="bg-white w-36 lg:w-64 aspect-square rounded-full p-3 lg:p-7 flex justify-center items-center">
+                           <img src="/assets/img/service-02.png" alt="Image" />
+                        </div>
+                     </div>
+                     <div className="basis-2/4">
+                        <h1 className="font-semibold text-2xl lg:text-3xl 2xl:text-[2.313rem] mb-2">{service.name}</h1>
+                        <p className="text-[#363636] text-sm 2xl:text-[1.063rem] mb-5">{service.description}</p>
+                     </div>
+                     <div className="basis-1/4 hidden lg:flex lg:justify-end">
+                        <div>
+                           <p className="text-[#363636] flex gap-7 mb-7">
+                              <img
+                                 className="w-6 text-lg"
+                                 src="/assets/img/service-03.svg"
+                                 alt="Image"
+                              />
+                              {service.point_contact} {service.point_contact ? `(${service.designation})` : ''}
+                           </p>
+                           <p className="text-[#363636] flex gap-7 mb-7">
+                              <img src="/assets/img/service-04.svg" alt="Image"
+                                 className="w-6 text-lg" />
+                              <a
+                                 className="underline"
+                                 href={`mailto:${service.email}`}
+                                 target='_blank'
+                              >{service.email}</a>
+                           </p>
+                           <p className="text-[#363636] flex gap-7 mb-7">
+                              <img
+                                 src="/assets/img/service-05.svg"
+                                 alt="Image"
+                                 className="w-6 text-lg"
+                              />
+                              <a
+                                 target='_blank'
+                                 href={`tel:${service.contact_number}`}
+                              >{service.contact_number}</a></p>
+                           <a
+                              className="bg-white text-lg text-center block max-w-64 p-2 rounded-lg shadow-md"
+                              href={service.website}
+                              target='_blank'
+                           >Visit Website</a>
+                        </div>
+                     </div>
+                  </div>
                </div>
-               {Array.isArray( service?.categories ) &&
-                  <div className='mt-3'>
-                     <h2 className='font-bold mb-2 text-lg'>Category</h2>
-                     <div className='flex flex-wrap gap-2'>
-                     {service.categories.map( cat =>
-                        <PrimaryButton
-                           key={cat.id}
-                        >{cat.name}</PrimaryButton>
-                     )}
-                     </div>
+            </section>
+
+            <section className="px-8 pt-16 lg:pt-24 pb-10 lg:pb-40">
+               <div className="container mx-auto grid grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-20 2xl:gap-24 gap-y-16">
+                  <div className="basis-1/5">
+                     <img src="/assets/img/service-06.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
+                     <hr className="border-primary mt-5 mb-3" />
+                     <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">Services Provided</h2>
+                     <p className="text-[#4A4A4A] text-sm lg:text-base 2xl:text-[1.154rem]">{service.services_provided}</p>
                   </div>
-               }
-               <h3><span className='block font-bold'>Service Name:</span> {service?.name}</h3>
-               <hr />
-               <p><span className='block font-bold'>Description:</span> {service?.description}</p>
-               <hr />
-               <p><span className='block font-bold'>Service Provided:</span> {service?.services_provided}</p>
-               <hr />
-               <p><span className='block font-bold'>Service Cost:</span> {service?.services_cost}</p>
-               <hr />
-               <p><span className='block font-bold'>Product Offered:</span> {service?.product_offered}</p>
-               <hr />
-               <p><span className='block font-bold'>Product Cost:</span> {service?.product_cost}</p>
-               <hr />
-               <p><span className='block font-bold'>Functional Expertise:</span> {service?.functional_expertise}</p>
-               <hr />
-               <p><span className='block font-bold'>SGD Domain:</span> {service?.sgb_domain}</p>
-               <hr />
-               <p><span className='block font-bold'>Website:</span> {service?.website}</p>
-               <hr />
-               <p><span className='block font-bold'>Point Contact:</span> {service?.point_contact}</p>
-               <hr />
-               <p><span className='block font-bold'>Designation:</span> {service?.designation}</p>
-               <hr />
-               <p><span className='block font-bold'>Email:</span> {service?.email}</p>
-               <hr />
-               <p><span className='block font-bold'>Contact:</span> {service?.contact_number}</p>
-               {Array.isArray( service?.tools ) &&
-                  <div className='mt-3'>
-                     <h2 className='font-bold mb-2 text-lg'>Tools</h2>
-                     <div className='flex flex-wrap gap-2'>
-                     {service.tools.map( tool =>
-                        <PrimaryButton
-                           key={tool.id}
-                        >{tool.name}
-                        </PrimaryButton>
-                     )}
-                     </div>
+                  <div className="basis-1/5">
+                     <img src="/assets/img/service-07.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
+                     <hr className="border-primary mt-5 mb-3" />
+                     <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-xl 2xl:text-[1.309rem]">Cost of services</h2>
+                     <p className="text-[#4A4A4A] text-sm lg:text-base 2xl:text-[1.154rem]">{service.services_cost}</p>
                   </div>
-               }
-            </div>
-         </div>
-      </AuthenticatedLayout>
+                  <div className="basis-1/5">
+                     <img src="/assets/img/service-08.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
+                     <hr className="border-primary mt-5 mb-3" />
+                     <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-xl 2xl:text-[1.309rem]">Products Offered</h2>
+                     <p className="text-[#4A4A4A] text-sm lg:text-base 2xl:text-[1.154rem]">{service.product_offered}</p>
+                  </div>
+                  <div className="basis-1/5">
+                     <img src="/assets/img/service-09.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
+                     <hr className="border-primary mt-5 mb-3" />
+                     <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-xl 2xl:text-[1.309rem]">Cost of products</h2>
+                     <p className="text-[#4A4A4A] text-sm lg:text-base 2xl:text-[1.154rem]">{service.product_cost || 'N.A'}</p>
+                  </div>
+                  <div className="basis-1/5">
+                     <img src="/assets/img/service-10.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
+                     <hr className="border-primary mt-5 mb-3" />
+                     <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-xl 2xl:text-[1.309rem]">Functional Expertise
+                     </h2>
+                     <p className="text-[#4A4A4A] text-sm lg:text-base 2xl:text-[1.154rem]">{service.functional_expertise}</p>
+                  </div>
+               </div>
+            </section>
+
+            <section className="px-8 py-14 -mb-3 bg-[url(/assets/img/service-11.svg)] bg-cover lg:hidden">
+               <div className="container mx-auto">
+                  <p className="text-[#363636] flex gap-7 mb-7">
+                     <img src="/assets/img/service-12.svg" alt="Image" className="w-6 text-lg" />
+                     {service.point_contact} {service.point_contact ? `(${service.designation})` : ''}
+                  </p>
+                  <p className="text-[#363636] flex gap-7 mb-7">
+                     <img src="/assets/img/service-13.svg" alt="Image" className="w-6 text-lg" />
+                     <a
+                        className="underline"
+                        href={`mailto:${service.email}`}
+                        target='_blank'
+                     >{service.email}</a></p>
+                  <p className="text-[#363636] flex gap-7 mb-7">
+                     <img src="/assets/img/service-14.svg" alt="Image" className="w-6 text-lg" />
+                     <a
+                        href={`tel:${service.contact_number}`}
+                        target='_blank'
+                     >{service.contact_number}</a></p>
+                  <a
+                     className="bg-primary text-lg text-center block max-w-64 p-2 rounded-lg shadow-md"
+                     href={service.website}
+                     target='_blank'
+                  >Visit Website</a>
+               </div>
+            </section>
+         </main>
+      </Layout>
    )
 }

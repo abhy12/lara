@@ -1,9 +1,7 @@
 import { Head, router, Link } from '@inertiajs/react';
-import type { ServiceProps } from '@/Components/Services/Service';
 import ServiceForm from '@/Components/Services/ServiceForm';
 import { useCallback } from 'react';
-import type { ToolsProps } from '@/util/props';
-import type { Category } from '@/util/props';
+import type { ToolsProps, ServiceProps, Category } from '@/util/props';
 import { route } from 'ziggy-js';
 import Dashboard from '@/Components/dashboard/Dashboard';
 import { Button } from '@mui/material';

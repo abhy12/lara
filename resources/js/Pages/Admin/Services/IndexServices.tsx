@@ -1,5 +1,5 @@
 import { Head, Link, router } from '@inertiajs/react';
-import type { ServiceProps } from '@/Components/Services/Service';
+import type { ServiceProps } from '@/util/props';
 import { route } from 'ziggy-js';
 import Dashboard from '@/Components/dashboard/Dashboard';
 import dayjs from 'dayjs';

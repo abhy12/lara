@@ -1,6 +1,6 @@
-import { Head, usePage, router } from '@inertiajs/react';
+import { Head, router } from '@inertiajs/react';
 import ServiceForm from '@/Components/Services/ServiceForm';
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 import type { ToolsProps } from '@/util/props';
 import type { Category } from '@/util/props';
 import { route } from 'ziggy-js';
@@ -12,14 +12,9 @@ interface Props {
 }
 
 export default function Create({ tools, categories }: Props) {
-   const { errors } = usePage().props;
    const onFormSubmitHandler = useCallback((values: any) => {
       router.post(route('services.store'), values);
    }, []);
-
-   useEffect(() => {
-      // console.log( errors );
-   }, [errors]);
 
    return (
       <Dashboard>

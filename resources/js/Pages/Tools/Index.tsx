@@ -8,7 +8,6 @@ interface Props {
 }
 
 export default function Index({ tools }: Props) {
-   console.log(tools);
    return (
       <Layout>
          <Head title='Tools' />
@@ -50,7 +49,7 @@ export default function Index({ tools }: Props) {
                                  />
                               </div>
                               <Link
-                                 href={route('tools.show', { id: tool.id})}
+                                 href={route('tools.show', { id: tool.id })}
                                  className="bg-tertiary w-11 md:w-20 aspect-square p-2 rounded-full flex justify-center items-center absolute right-0 bottom-0"
                               >
                                  <img

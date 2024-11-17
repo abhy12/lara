@@ -58,7 +58,7 @@ class ToolController extends Controller
     public function show(Tool $tool)
     {
         return Inertia::render('Tools/SingleTool', [
-            'tool' => $tool,
+            'tool' => $tool->load('services'),
         ]);
     }
 
