@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+   background: url('/assets/img/body-background.jpg');
+   background-size: contain;
+}
+
 .MuiInputBase-input:focus{
    box-shadow: none;
 }

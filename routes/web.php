@@ -48,6 +48,16 @@ Route::resource( 'tools', ToolController::class )
 Route::resource('forms', FormController::class )
 ->only('store');
 
+Route::get('faqs', function() {
+    return Inertia::render( 'Faqs' );
+})
+->name('faqs');
+
+Route::get('about', function() {
+    return Inertia::render( 'About' );
+})
+->name('about');
+
 Route::prefix('admin')->group(function() {
     Route::middleware(['auth', UserIsAdmin::class])->group(function() {
         Route::get('/', function () {
