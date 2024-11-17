@@ -68,7 +68,10 @@ class ServiceController extends Controller
 
         if( isset( $data ) ) $service->tools()->sync($data);
 
-        return Redirect::route('services.index');
+        $category = $request->input('categories');
+        if( isset( $category ) ) $service->categories()->sync($category);
+
+        return Redirect::route('services.edit', ['service' => $service->id]);
     }
 
     /**
@@ -107,9 +110,8 @@ class ServiceController extends Controller
         $tools = $request->input('tools');
         if( isset( $tools ) ) $service->tools()->sync($tools);
 
-        $tools = $request->input('categories');
-        if( isset( $tools ) ) $service->categories()->sync($tools);
-        // dd( $request->input('categories') );
+        $category = $request->input('categories');
+        if( isset( $category ) ) $service->categories()->sync($category);
     }
 
     /**

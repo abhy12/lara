@@ -16,6 +16,10 @@ class Category extends Model
         return $this->belongsToMany(Service::class);
     }
 
+    public function tools() {
+        return $this->belongsToMany(Tool::class);
+    }
+
     public function subcategory() {
         return $this->hasMany(Category::class, 'parent_id');
     }

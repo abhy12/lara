@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Http\Requests\StoreToolRequest;
 use Illuminate\Support\Facades\Redirect;
+use App\Models\Category;
 
 class ToolController extends Controller
 {
@@ -32,7 +33,9 @@ class ToolController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Admin/Tools/CreateTool');
+        return Inertia::render('Admin/Tools/CreateTool', [
+            'categories' => Category::where('parent_id', null)->with('subcategory')->get(),
+        ]);
     }
 
     /**
@@ -43,6 +46,9 @@ class ToolController extends Controller
         $validated = $request->validated();
 
         $tool = Tool::create( $validated );
+
+        $category = $request->input('categories');
+        if( isset( $category ) ) $tool->categories()->sync($category);
 
         return Redirect::route( 'tools.edit', ['tool' => $tool->id]);
     }
@@ -64,6 +70,8 @@ class ToolController extends Controller
     {
         return Inertia::render('Admin/Tools/EditTool', [
             'tool' => $tool,
+            'categories' => Category::where('parent_id', null)->with('subcategory')->get(),
+            'selectedCategories' => $tool->categories->pluck('id'),
         ]);
     }
 
@@ -75,6 +83,9 @@ class ToolController extends Controller
         $validated = $request->validated();
 
         $tool->update( $validated );
+
+        $category = $request->input('categories');
+        if( isset( $category ) ) $tool->categories()->sync($category);
 
         return Redirect::route( 'tools.edit', ['tool' => $tool->id]);
     }

@@ -1,23 +1,29 @@
 import { useForm, usePage } from '@inertiajs/react';
 import type { SyntheticEvent } from 'react';
+import { useState } from 'react';
 import type { ToolsProps } from '@/util/props';
 import { Button, TextField, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel } from '@mui/material';
 import { useCallback } from 'react';
+import type { Category } from '@/util/props';
+import CategorySelector from '@/Components/Category/CategorySelector';
 
 interface Props {
    children?: any
    submitButtonText?: string
    onSubmit?: CallableFunction
    tool?: ToolsProps
-   selectedTools?: number[]
+   categories?: Category[]
    selectedCategories?: number[]
 }
 
 export default function ToolForm({
    submitButtonText = 'submit',
    onSubmit,
-   tool
+   tool,
+   categories,
+   selectedCategories,
 }: Props) {
+   const [categoriesValues, setCategoriesValues] = useState<number[]>(selectedCategories || []);
    const { data: values, setData } = useForm({
       name: tool?.name || '',
       is_opensource: tool?.is_opensource || '',
@@ -44,8 +50,8 @@ export default function ToolForm({
 
    const formSubmitHandler = useCallback((e: SyntheticEvent) => {
       e.preventDefault();
-      if (typeof onSubmit === 'function') onSubmit(values);
-   }, [onSubmit, values]);
+      if (typeof onSubmit === 'function') onSubmit({ ...values, categories: categoriesValues });
+   }, [onSubmit, values, categoriesValues]);
 
    const radioButtonHandler = useCallback((e: SyntheticEvent) => {
       // @ts-ignore
@@ -56,6 +62,19 @@ export default function ToolForm({
          ...values,
          is_opensource: value,
       }))
+   }, []);
+
+   const handleCategoriesChange = useCallback((e: SyntheticEvent<Element>, checked: boolean) => {
+      // @ts-ignore
+      const inputValue = +(e.currentTarget?.value);
+      if (!inputValue) return
+      setCategoriesValues(state => {
+         if (!checked) {
+            return state.filter(value => value !== inputValue);
+         } else {
+            return [...state, inputValue];
+         }
+      });
    }, []);
 
    return (
@@ -213,6 +232,13 @@ export default function ToolForm({
                />
             </div>
          </form>
+         {Array.isArray(categories) &&
+            <CategorySelector
+               categories={categories}
+               onChange={handleCategoriesChange}
+               selectedCategories={categoriesValues}
+            />
+         }
          <Button
             onClick={formSubmitHandler}
             variant='outlined'

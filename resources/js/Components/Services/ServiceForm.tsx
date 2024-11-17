@@ -29,6 +29,7 @@ export default function ServiceForm({
    selectedCategories,
 }: Props) {
    const [toolValues, setToolValues] = useState<number[]>(selectedTools || []);
+   const { props: { errors } } = usePage();
    const [categoriesValues, setCategoriesValues] = useState<number[]>(selectedCategories || []);
    const { data: values, setData } = useForm({
       name: service?.name || '',
@@ -45,7 +46,6 @@ export default function ServiceForm({
       email: service?.email || '',
       contact_number: service?.contact_number || '',
    });
-   const { props: { errors } } = usePage();
 
    const toolChangeHandler = useCallback((e: SyntheticEvent<HTMLInputElement>) => {
       const isChecked = e.currentTarget.checked;

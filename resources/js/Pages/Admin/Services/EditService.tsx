@@ -1,7 +1,7 @@
-import { Head, usePage, router, Link } from '@inertiajs/react';
+import { Head, router, Link } from '@inertiajs/react';
 import type { ServiceProps } from '@/Components/Services/Service';
 import ServiceForm from '@/Components/Services/ServiceForm';
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 import type { ToolsProps } from '@/util/props';
 import type { Category } from '@/util/props';
 import { route } from 'ziggy-js';
@@ -17,14 +17,9 @@ interface Props {
 }
 
 export default function Edit({ service, tools, selectedToolIds, categories, selectedCategories }: Props) {
-   const { errors } = usePage().props;
    const onFormSubmitHandler = useCallback((values: any) => {
       router.put(route('services.update', { id: service.id }), values);
    }, []);
-
-   useEffect(() => {
-      // console.log( errors );
-   }, [errors]);
 
    if (!service) return <></>
 

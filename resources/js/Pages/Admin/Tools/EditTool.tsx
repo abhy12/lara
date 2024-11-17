@@ -5,14 +5,18 @@ import Dashboard from '@/Components/dashboard/Dashboard';
 import ToolForm from '@/Components/Tools/ToolForm';
 import { ToolsProps } from '@/util/props';
 import { Button } from '@mui/material';
+import type { Category } from '@/util/props';
 
 interface Props {
    tool?: ToolsProps
+   categories?: Category[]
+   selectedCategories?: number[]
 }
 
-export default function Edit({ tool }: Props) {
+export default function Edit({ tool, categories, selectedCategories }: Props) {
    const onFormSubmitHandler = useCallback((values: any) => {
       if (!tool) return
+      console.log( values );
       router.put(route('tools.update', { id: tool.id }), values);
    }, []);
 
@@ -33,6 +37,8 @@ export default function Edit({ tool }: Props) {
             <ToolForm
                onSubmit={onFormSubmitHandler}
                tool={tool}
+               categories={categories}
+               selectedCategories={selectedCategories}
                submitButtonText='Update'
             />
          </div>

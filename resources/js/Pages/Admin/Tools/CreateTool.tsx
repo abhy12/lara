@@ -3,12 +3,13 @@ import { useCallback } from 'react';
 import { route } from 'ziggy-js';
 import Dashboard from '@/Components/dashboard/Dashboard';
 import ToolForm from '@/Components/Tools/ToolForm';
+import type { Category } from '@/util/props';
 
 interface Props {
-
+   categories?: Category[]
 }
 
-export default function Create({ }: Props) {
+export default function Create({ categories }: Props) {
    const onFormSubmitHandler = useCallback((values: any) => {
       router.post(route('tools.store'), values);
    }, []);
@@ -21,6 +22,7 @@ export default function Create({ }: Props) {
             <ToolForm
                onSubmit={onFormSubmitHandler}
                submitButtonText='Add Tool'
+               categories={categories}
             />
          </div>
       </Dashboard>
