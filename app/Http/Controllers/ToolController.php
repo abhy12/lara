@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tool;
-use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Http\Requests\StoreToolRequest;
 use Illuminate\Support\Facades\Redirect;

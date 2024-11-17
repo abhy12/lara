@@ -19,6 +19,7 @@ export interface ToolsProps {
    additional_comments?: string
    created_at?: string
    updated_at?: string
+   logo?: string
 }
 
 export interface FormProps {

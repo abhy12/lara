@@ -25,7 +25,8 @@ class StoreToolRequest extends FormRequest
         return [
             'name' => 'required|string|max:255',
             'website' => 'nullable|url',
-            'is_opensource' => 'nullable|integer|between:0,1'
+            'is_opensource' => 'nullable|integer|between:0,1',
+            'logo' => 'image|max:2048',
         ];
     }
 }

@@ -25,6 +25,7 @@ return new class extends Migration
             $table->text('sgb_domain')->nullable();
             $table->text('ngo_ref')->nullable();
             $table->text('additional_comments')->nullable();
+            $table->string('logo')->nullable();
             $table->timestamps();
         });
 

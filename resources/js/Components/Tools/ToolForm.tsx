@@ -17,13 +17,14 @@ interface Props {
 }
 
 export default function ToolForm({
-   submitButtonText = 'submit',
+   submitButtonText = 'Submit',
    onSubmit,
    tool,
    categories,
    selectedCategories,
 }: Props) {
    const [categoriesValues, setCategoriesValues] = useState<number[]>(selectedCategories || []);
+   const { props: { errors } } = usePage();
    const { data: values, setData } = useForm({
       name: tool?.name || '',
       is_opensource: tool?.is_opensource || '',
@@ -36,7 +37,6 @@ export default function ToolForm({
       ngo_ref: tool?.ngo_ref || '',
       additional_comments: tool?.additional_comments || '',
    });
-   const { props: { errors } } = usePage();
 
    const handleChange = useCallback((e: SyntheticEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       const target = e.currentTarget;
