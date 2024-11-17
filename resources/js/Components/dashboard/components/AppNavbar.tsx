@@ -68,7 +68,6 @@ export default function AppNavbar() {
                      Dashboard
                   </Typography>
                </Stack>
-               <ColorModeIconDropdown data-screenshot="" />
                <MenuButton aria-label="menu" onClick={toggleDrawer(true)}>
                   <MenuRoundedIcon />
                </MenuButton>

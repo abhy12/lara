@@ -9,7 +9,7 @@ export default function Dashboard(props: { disableCustomTheme?: boolean, childre
    return (
       <AppTheme {...props}>
          <CssBaseline enableColorScheme />
-         <Box sx={{ display: 'flex' }}>
+         <Box sx={{ display: 'flex', background: '#000', minHeight: '100vh' }}>
             <SideMenu />
             <AppNavbar />
             {/* Main content */}
@@ -20,7 +20,7 @@ export default function Dashboard(props: { disableCustomTheme?: boolean, childre
                   overflow: 'auto',
                })}
             >
-               <div className='p-4 md:p-6'>
+               <div className='p-4 md:p-6 pt-20 md:pt-4'>
                   {props.children}
                </div>
             </Box>
