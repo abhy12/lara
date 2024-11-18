@@ -36,7 +36,8 @@ class StoreServiceRequest extends FormRequest
             'designation' => 'nullable|string',
             'email' => 'nullable|email',
             'contact_number' => 'nullable|string',
-            'tools' => 'exists:App\Models\Tool,id'
+            'tools' => 'exists:App\Models\Tool,id',
+            'logo' => 'nullable|image|max:4048',
         ];
     }
 }

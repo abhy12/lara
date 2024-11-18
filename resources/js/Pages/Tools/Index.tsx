@@ -76,7 +76,7 @@ export default function Index({ tools, categories }: Props) {
                                  flex justify-center items-center border border-tertiary rounded-full p-4 md:p-7"
                               >
                                  <img
-                                    src="/assets/img/mform.png"
+                                    src={tool?.logo || "/assets/img/placeholder-image.webp"}
                                     alt="Image"
                                  />
                               </div>

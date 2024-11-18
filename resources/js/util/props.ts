@@ -53,4 +53,5 @@ export interface ServiceProps {
    categories?: Category[]
    created_at?: string
    updated_at?: string
+   logo?: string
 }

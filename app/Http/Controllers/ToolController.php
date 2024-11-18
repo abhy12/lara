@@ -10,6 +10,18 @@ use App\Models\Category;
 
 class ToolController extends Controller
 {
+    public $upload_path = 'uploads';
+
+    protected function handleLogoUpload($logo, Tool $tool)
+    {
+        $logoName = time() . '_' . $logo->getClientOriginalName(); // Generate unique name
+        $logo->move(public_path($this->upload_path), $logoName);
+
+        // Optionally store the logo path in the database
+        $tool->logo = '/' . $this->upload_path . '/' . $logoName;
+        $tool->save();
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -45,12 +57,15 @@ class ToolController extends Controller
     {
         $validated = $request->validated();
 
-        $tool = Tool::create( $validated );
+        $tool = Tool::create($validated);
 
         $category = $request->input('categories');
-        if( isset( $category ) ) $tool->categories()->sync($category);
+        if (isset($category)) $tool->categories()->sync($category);
 
-        return Redirect::route( 'tools.edit', ['tool' => $tool->id]);
+        // upload logo
+        if ($request->hasFile('logo')) $this->handleLogoUpload($request->file('logo'), $tool);
+
+        return Redirect::route('tools.edit', ['tool' => $tool->id]);
     }
 
     /**
@@ -82,12 +97,15 @@ class ToolController extends Controller
     {
         $validated = $request->validated();
 
-        $tool->update( $validated );
+        $tool->update($validated);
 
         $category = $request->input('categories');
-        if( isset( $category ) ) $tool->categories()->sync($category);
+        if (isset($category)) $tool->categories()->sync($category);
 
-        return Redirect::route( 'tools.edit', ['tool' => $tool->id]);
+        // upload logo
+        if ($request->hasFile('logo')) $this->handleLogoUpload($request->file('logo'), $tool);
+
+        return Redirect::route('tools.edit', ['tool' => $tool->id]);
     }
 
     /**
@@ -97,6 +115,6 @@ class ToolController extends Controller
     {
         $tool->delete();
 
-        return Redirect::route( 'admin.tools.index' );
+        return Redirect::route('admin.tools.index');
     }
 }

@@ -26,7 +26,7 @@ class StoreToolRequest extends FormRequest
             'name' => 'required|string|max:255',
             'website' => 'nullable|url',
             'is_opensource' => 'nullable|integer|between:0,1',
-            'logo' => 'image|max:2048',
+            'logo' => 'nullable|image|max:4048',
         ];
     }
 }

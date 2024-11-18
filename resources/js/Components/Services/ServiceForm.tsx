@@ -3,7 +3,7 @@ import { useState, useCallback } from 'react';
 import type { SyntheticEvent } from 'react';
 import ToolSelector from '../Tools/ToolSelector';
 import CategorySelector from '@/Components/Category/CategorySelector';
-import { Button, TextField } from '@mui/material';
+import { Button, TextField, Alert, Avatar } from '@mui/material';
 import type { ToolsProps, ServiceProps, Category } from '@/util/props';
 
 interface Props {
@@ -18,7 +18,7 @@ interface Props {
 }
 
 export default function ServiceForm({
-   submitButtonText = 'submit',
+   submitButtonText = 'Submit',
    onSubmit,
    service,
    tools,
@@ -43,6 +43,7 @@ export default function ServiceForm({
       designation: service?.designation || '',
       email: service?.email || '',
       contact_number: service?.contact_number || '',
+      logo: '',
    });
 
    const toolChangeHandler = useCallback((e: SyntheticEvent<HTMLInputElement>) => {
@@ -88,7 +89,26 @@ export default function ServiceForm({
 
    return (
       <div className='flex flex-col gap-4 md:gap-6'>
-         <form onSubmit={formSubmitHandler} className='flex flex-col gap-4 md:gap-6 pt-2 md:pt-4'>
+         <form
+            className='flex flex-col gap-4 md:gap-6 pt-2 md:pt-4'
+            onSubmit={formSubmitHandler}
+            encType='multipart/form-data'
+         >
+            <div>
+               {service?.logo && <Avatar src={service.logo} sx={{ width: 80, height: 80 }} />}
+               <label htmlFor='logo' className='text-xl block mb-2'>Logo</label>
+               <input
+                  id="logo"
+                  name="logo"
+                  type='file'
+                  onChange={e => {
+                     if (!e.currentTarget.files || e.currentTarget.files.length <= 0) return
+                     // @ts-ignore
+                     setData('logo', e.currentTarget.files[0])
+                  }}
+               />
+               {errors.logo && <Alert severity="error">{errors.logo}</Alert>}
+            </div>
             <div>
                <TextField
                   className='w-full'

@@ -16,7 +16,10 @@ interface Props {
 export default function Edit({ tool, categories, selectedCategories }: Props) {
    const onFormSubmitHandler = useCallback((values: any) => {
       if (!tool) return
-      router.put(route('tools.update', { id: tool.id }), values);
+      router.post(
+         route('tools.update', { id: tool.id  }),
+         { ...values, _method: 'put' }
+      );
    }, []);
 
    if (!tool) return <></>;
