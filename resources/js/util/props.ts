@@ -21,6 +21,7 @@ export interface ToolsProps {
    updated_at?: string
    logo?: string
    services?: ServiceProps[]
+   categories?: Category[]
 }
 
 export interface FormProps {

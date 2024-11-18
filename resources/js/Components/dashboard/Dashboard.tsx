@@ -8,7 +8,10 @@ import AppTheme from '../shared-theme/AppTheme';
 export default function Dashboard(props: { disableCustomTheme?: boolean, children?: any }) {
    return (
       <AppTheme {...props}>
-         <CssBaseline enableColorScheme />
+         <style>
+            {`:root{ color-scheme: dark!important}`}
+         </style>
+         <CssBaseline enableColorScheme={false} />
          <Box sx={{ display: 'flex', background: '#000', minHeight: '100vh' }}>
             <SideMenu />
             <AppNavbar />
