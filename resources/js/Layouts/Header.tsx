@@ -24,32 +24,27 @@ export default function Header() {
    return (
       <>
          <header
-            className="text-white bg-secondary px-[5%] py-2 md:py-5 flex flex-wrap justify-between items-center gap-x-5 md:gap-x-12">
-            <ClickAwayListener onClickAway={() => setAnchorEl(null)}>
-               <button
-                  className='lg:hidden'
-                  onClick={handleMenuClick}
-                  aria-describedby={menuId}
-               >
-                  <Menu className='text-white' />
-               </button>
-            </ClickAwayListener>
-            <Popper
-               id={menuId}
-               open={openMenu}
-               anchorEl={anchorEl}
-               placement='bottom-start'
+            className="text-white bg-secondary px-7 py-3.5 md:py-5 flex flex-wrap justify-between items-center gap-x-5 md:gap-x-12">
+            <button
+               className='lg:hidden'
+               onClick={handleMenuClick}
+               aria-describedby={menuId}
             >
-               <div className='w-full max-w-60 flex flex-col bg-secondary text-white p-4 rounded-2xl text-lg gap-2'>
-                  <HeaderLinks />
-               </div>
-            </Popper>
+               <Menu className='text-white' />
+            </button>
+            {openMenu &&
+               <ResponsiveMenu
+                  clickAwayHandler={() => setAnchorEl(null)}
+                  anchorEl={anchorEl}
+                  openMenu
+               />
+            }
             <div className='flex flex-wrap items-center gap-4 md:gap-6'>
-               <a className='grow max-w-20' href='https://indialeadersforsocialsector.com/' target='_blank'>
+               <a className='grow max-w-16 md:max-w-20' href='https://indialeadersforsocialsector.com/' target='_blank'>
                   <img className='w-full' src='/assets/img/logo-1.svg' />
                </a>
-               <a className='grow max-w-24' href='https://www.koitafoundation.org/' target='_blank'>
-                  <img className='w-full brightness-0 invert' src='/assets/img/logo-2.png' />
+               <a className='grow max-w-16 md:max-w-24' href='https://www.koitafoundation.org/' target='_blank'>
+                  <img className='w-full' src='/assets/img/logo-2.png' />
                </a>
             </div>
             <nav className="font-semibold md:text-lg hidden lg:flex flex-col md:flex-row gap-x-5 md:gap-x-12 ml-auto">
@@ -86,5 +81,29 @@ function HeaderLinks() {
          <Link href={route('faqs')}>FAQs</Link>
          <Link href={route('about')}>About</Link>
       </>
+   );
+}
+
+interface ResponsiveMenuProps {
+   menuId?: string
+   openMenu: boolean
+   clickAwayHandler: (e: MouseEvent | TouchEvent) => void
+   anchorEl: any
+}
+
+function ResponsiveMenu({ menuId, openMenu, clickAwayHandler, anchorEl }: ResponsiveMenuProps) {
+   return (
+      <ClickAwayListener onClickAway={clickAwayHandler}>
+         <Popper
+            id={menuId}
+            open={openMenu}
+            placement='bottom-start'
+            anchorEl={anchorEl}
+         >
+            <div className='w-full max-w-60 flex flex-col bg-secondary text-white p-4 rounded-2xl text-lg gap-2'>
+               <HeaderLinks />
+            </div>
+         </Popper>
+      </ClickAwayListener>
    );
 }

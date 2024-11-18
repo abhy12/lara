@@ -90,7 +90,6 @@ export default function Index({ tools, categories }: Props) {
                   )}
                </div>
             </div>
-            <img src="/assets/img/folder.svg" alt="Image" className="w-10 md:w-16 absolute left-2 -bottom-3" />
          </section>
       </Layout>
    );
