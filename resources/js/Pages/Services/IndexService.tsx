@@ -1,13 +1,20 @@
 import { Head, Link } from '@inertiajs/react';
-import type { ServiceProps } from '@/Components/Services/Service';
+import type { ServiceProps } from '@/util/props';
 import { route } from 'ziggy-js';
 import Layout from '@/Components/Layout';
+import { useState } from 'react';
 
 interface Props {
    services?: ServiceProps[]
 }
 
 export default function Index({ services }: Props) {
+   const [sortBy, setSortBy] = useState( false );
+
+   if( !services ) return<></>
+
+   const filterServices = sortBy ? [...services].reverse() : services;
+
    return (
       <Layout>
          <Head title='Services' />
@@ -25,15 +32,26 @@ export default function Index({ services }: Props) {
          <section className="px-[5%] py-10 md:pt-14 md:pb-28 flex flex-col md:flex-row gap-16 relative">
             <div className="basis-1/4">
                <div className="bg-white max-w-80 p-5 shadow rounded-[15px]">
-                  <select name="sortby"
-                     className="text-secondary bg-white text-[1.375rem] font-medium w-full border-b border-tertiary appearance-none bg-dropdown bg-no-repeat bg-right">
-                     <option value="">Sort by</option>
+                  <select
+                     name="sortby"
+                     className="text-secondary bg-white text-[1.375rem] font-medium w-full border-b border-tertiary appearance-none bg-dropdown bg-no-repeat bg-right"
+                     onChange={e => {
+                        const value = e.currentTarget.value;
+                        if( value == '1' ) {
+                           setSortBy( true );
+                        } else {
+                           setSortBy( false );
+                        }
+                     }}
+                  >
+                     <option value="0">Ascending</option>
+                     <option value="1">Descending</option>
                   </select>
                </div>
             </div>
             <div className="basis-3/4">
                <div className="flex flex-wrap gap-y-14 md:gap-y-20">
-                  {Array.isArray(services) && services.map(service =>
+                  {Array.isArray(filterServices) && filterServices.map(service =>
                      <div className="basis-1/2 md:basis-1/3" key={service.id}>
                         <div className="w-36 md:w-60 mx-auto md:mr-0 text-center">
                            <div className="relative mb-5 md:mb-10">

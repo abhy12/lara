@@ -2,12 +2,17 @@ import { Head, Link } from '@inertiajs/react';
 import Layout from '@/Components/Layout';
 import type { ToolsProps } from '@/util/props';
 import { route } from 'ziggy-js';
+import type { Category } from '@/util/props';
+import { useState } from 'react';
 
 interface Props {
    tools: ToolsProps[]
+   categories?: Category[]
 }
 
-export default function Index({ tools }: Props) {
+export default function Index({ tools, categories }: Props) {
+   const [filterCatgory, setFilterCategory] = useState<number | null>( null );
+
    return (
       <Layout>
          <Head title='Tools' />
@@ -29,15 +34,35 @@ export default function Index({ tools }: Props) {
                      className="appearance-none text-secondary bg-white text-[1.375rem] font-medium w-full border-b-2 border-tertiary mb-5">
                      <option value="">All Tools</option>
                   </select>
-                  <select name="category"
-                     className="text-secondary bg-white text-[1.375rem] font-medium w-full border-b-2 border-tertiary appearance-none bg-dropdown bg-no-repeat bg-right">
+                  <select
+                     name="category"
+                     className="text-secondary bg-white text-[1.375rem] font-medium w-full border-b-2 border-tertiary appearance-none bg-dropdown bg-no-repeat bg-right"
+                     onChange={(e) => {
+                        if( e.currentTarget.value !== '' ) {
+                           setFilterCategory( +e.currentTarget.value );
+                        } else {
+                           setFilterCategory( null );
+                        }
+                     }}
+                  >
                      <option value="">Categories</option>
+                     {categories?.map( cat => <option key={cat.id} value={cat.id}>{cat.name}</option>)}
                   </select>
                </div>
             </div>
             <div className="basis-3/4">
                <div className="flex flex-wrap justify-around gap-y-14 md:gap-y-20">
-                  {Array.isArray(tools) && tools.map(tool =>
+                  {Array.isArray(tools) && tools.filter(tool => {
+                     if( filterCatgory === null ) return true
+
+                     if( !Array.isArray( tool.categories ) ) return false
+
+                     for(let i = 0; i < tool.categories.length; i++ ) {
+                        if( tool.categories[i].id === filterCatgory || tool.categories[i].parent_id ) {
+                           return true;
+                        }
+                     }
+                  }).map(tool =>
                      <div className="basis-1/2 md:basis-1/3" key={tool.id}>
                         <div className="max-w-max mx-auto md:mr-0 text-center">
                            <div className="relative mb-5 md:mb-10">

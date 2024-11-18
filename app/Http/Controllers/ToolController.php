@@ -16,7 +16,8 @@ class ToolController extends Controller
     public function index()
     {
         return Inertia::render('Tools/Index', [
-            'tools' => Tool::all(),
+            'tools' => Tool::with('categories')->get(),
+            'categories' => Category::all(),
         ]);
     }
 
