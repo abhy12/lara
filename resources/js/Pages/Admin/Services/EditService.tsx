@@ -16,7 +16,11 @@ interface Props {
 
 export default function Edit({ service, tools, selectedToolIds, categories, selectedCategories }: Props) {
    const onFormSubmitHandler = useCallback((values: any) => {
-      router.put(route('services.update', { id: service.id }), values);
+      if (!service) return
+      router.post(
+         route('services.update', { id: service.id  }),
+         { ...values, _method: 'put' }
+      );
    }, []);
 
    if (!service) return <></>

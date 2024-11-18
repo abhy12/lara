@@ -2,7 +2,17 @@ import { useForm, usePage } from '@inertiajs/react';
 import type { SyntheticEvent } from 'react';
 import { useState } from 'react';
 import type { ToolsProps } from '@/util/props';
-import { Button, TextField, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel } from '@mui/material';
+import {
+   Button,
+   TextField,
+   Radio,
+   RadioGroup,
+   FormControlLabel,
+   FormControl,
+   FormLabel,
+   Avatar,
+   Alert,
+} from '@mui/material';
 import { useCallback } from 'react';
 import type { Category } from '@/util/props';
 import CategorySelector from '@/Components/Category/CategorySelector';
@@ -36,6 +46,7 @@ export default function ToolForm({
       sgb_domain: tool?.sgb_domain || '',
       ngo_ref: tool?.ngo_ref || '',
       additional_comments: tool?.additional_comments || '',
+      logo: '',
    });
 
    const handleChange = useCallback((e: SyntheticEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -79,7 +90,26 @@ export default function ToolForm({
 
    return (
       <div className='flex flex-col gap-4 md:gap-6'>
-         <form onSubmit={formSubmitHandler} className='flex flex-col gap-4 md:gap-6 pt-2 md:pt-4'>
+         <form
+            className='flex flex-col gap-4 md:gap-6 pt-2 md:pt-4'
+            onSubmit={formSubmitHandler}
+            encType='multipart/form-data'
+         >
+            <div>
+               {tool?.logo && <Avatar src={tool.logo} sx={{ width: 80, height: 80 }} />}
+               <label htmlFor='logo' className='text-xl block mb-2'>Logo</label>
+               <input
+                  id="logo"
+                  name="logo"
+                  type='file'
+                  onChange={e => {
+                     if (!e.currentTarget.files || e.currentTarget.files.length <= 0) return
+                     // @ts-ignore
+                     setData('logo', e.currentTarget.files[0])
+                  }}
+               />
+               {errors.logo && <Alert severity="error">{errors.logo}</Alert>}
+            </div>
             <div>
                <TextField
                   className='w-full'

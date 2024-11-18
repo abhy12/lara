@@ -28,7 +28,7 @@ export default function Single({ service }: Props) {
                   <div className="flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-24">
                      <div className="basis-1/4">
                         <div className="bg-white w-36 lg:w-64 aspect-square rounded-full p-3 lg:p-7 flex justify-center items-center">
-                           <img src="/assets/img/service-02.png" alt="Image" />
+                           <img src={service?.logo || "/assets/img/placeholder-image.webp"} alt="Image" />
                         </div>
                      </div>
                      <div className="basis-2/4">

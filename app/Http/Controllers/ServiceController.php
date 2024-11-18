@@ -11,6 +11,18 @@ use App\Models\Category;
 
 class ServiceController extends Controller
 {
+    public $upload_path = 'uploads';
+
+    protected function handleLogoUpload($logo, Service $service)
+    {
+        $logoName = time() . '_' . $logo->getClientOriginalName(); // Generate unique name
+        $logo->move(public_path($this->upload_path), $logoName);
+
+        // Optionally store the logo path in the database
+        $service->logo = '/' . $this->upload_path . '/' . $logoName;
+        $service->save();
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -23,20 +35,21 @@ class ServiceController extends Controller
         }])
         ->get()->sortDesc()->values()->all(); */
 
-        $services = Service::select('id', 'name', 'description')->get()->sortDesc()->values()->all();
+        $services = Service::select('id', 'name', 'description', 'logo')->get()->sortDesc()->values()->all();
 
         return Inertia::render('Services/IndexService', [
             'services' => $services,
         ]);
     }
 
-    public function adminIndex() {
+    public function adminIndex()
+    {
         $services = Service::with('tools', 'categories')
-        ->select( 'id', 'name', 'created_at' )
-        ->get()
-        ->sortDesc()
-        ->values()
-        ->all();
+            ->select('id', 'name', 'created_at')
+            ->get()
+            ->sortDesc()
+            ->values()
+            ->all();
 
         return Inertia::render('Admin/Services/IndexServices', [
             'services' => $services,
@@ -52,7 +65,6 @@ class ServiceController extends Controller
             'tools' => Tool::all(),
             'categories' => Category::where('parent_id', null)->with('subcategory')->get(),
         ]);
-
     }
 
     /**
@@ -62,14 +74,17 @@ class ServiceController extends Controller
     {
         $vaildated = $request->validated();
 
-        $service = Service::create( $vaildated );
+        $service = Service::create($vaildated);
 
         $data = $request->input('tools');
 
-        if( isset( $data ) ) $service->tools()->sync($data);
+        if (isset($data)) $service->tools()->sync($data);
 
         $category = $request->input('categories');
-        if( isset( $category ) ) $service->categories()->sync($category);
+        if (isset($category)) $service->categories()->sync($category);
+
+        // upload logo
+        if ($request->hasFile('logo')) $this->handleLogoUpload($request->file('logo'), $service);
 
         return Redirect::route('services.edit', ['service' => $service->id]);
     }
@@ -105,13 +120,16 @@ class ServiceController extends Controller
     {
         $vaildated = $request->validated();
 
-        $service->update( $vaildated );
+        $service->update($vaildated);
 
         $tools = $request->input('tools');
-        if( isset( $tools ) ) $service->tools()->sync($tools);
+        if (isset($tools)) $service->tools()->sync($tools);
 
         $category = $request->input('categories');
-        if( isset( $category ) ) $service->categories()->sync($category);
+        if (isset($category)) $service->categories()->sync($category);
+
+        // upload logo
+        if ($request->hasFile('logo')) $this->handleLogoUpload($request->file('logo'), $service);
     }
 
     /**
@@ -121,6 +139,6 @@ class ServiceController extends Controller
     {
         $service->delete();
 
-        return Redirect::route( 'admin.services.index' );
+        return Redirect::route('admin.services.index');
     }
 }
