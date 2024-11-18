@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('designation')->nullable();
             $table->string('email')->nullable();
             $table->string('contact_number')->nullable();
+            $table->string('logo')->nullable();
             $table->timestamps();
         });
     }
