@@ -9,9 +9,10 @@ class Tool extends Model
 {
     /** @use HasFactory<\Database\Factories\ToolFactory> */
     use HasFactory;
+    protected $guarded = ['id'];
 
-    protected $fillable = [
-        'id',
+    /* protected $fillable = [
+        'name',
         'is_opensource',
         'website',
         'cost_structure',
@@ -22,7 +23,7 @@ class Tool extends Model
         'ngo_ref',
         'additional_comments',
         'logo',
-    ];
+    ]; */
 
     public function services()
     {
