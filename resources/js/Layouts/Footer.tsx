@@ -46,6 +46,7 @@ export default function Footer() {
          <PopupModal
             isActive={isPopupModalActive}
             onClose={handleCloseModal}
+            closeOnDefault={false}
          >
             <PopupForm
                submitButtonText="Get Started"
