@@ -9,70 +9,78 @@ interface Props {
 }
 
 export default function Index({ services }: Props) {
-   const [sortBy, setSortBy] = useState( false );
+   const [sortBy, setSortBy] = useState(false);
 
-   if( !services ) return<></>
+   if (!services) return <></>
 
    const filterServices = sortBy ? [...services].reverse() : services;
 
    return (
       <Layout>
          <Head title='Services' />
-         <section className="bg-primary px-[5%] pt-10 md:pt-20 pb-5 md:pb-7">
-            <nav className="text-[#909090] text-lg">
-               <Link href={route('home')}>Home</Link>&nbsp; / &nbsp;
-               <Link href={route('services.index')} className="text-secondary font-semibold">Service Providers</Link>
+         <section className="bg-primary px-[5%] pt-10 md:pt-20 pb-12 md:pb-7 lg:pt-16 lg:pb-6">
+            <nav className="text-[#909090] text-xl font-semibold">
+               <Link href={route('home')}>Home</Link>
+               &nbsp;/&nbsp;
+               <Link
+                  className="text-secondary "
+                  href={route('services.index')}
+               >Service Providers</Link>
             </nav>
-            <div className="flex justify-between items-center">
-               <h1 className="text-[#363636] font-DMSerifDisplay text-5xl md:text-[4.071rem] leading-none">Service Providers</h1>
-               <img src="/assets/img/gear.gif" alt="Image" className="w-28 rounded-full" />
+            <div className="flex justify-between items-center mt-12 md:mt-6">
+               <h1 className="text-[#363636] font-DMSerifDisplay text-6xl">Service Providers</h1>
+               <img className="w-full max-w-28" src="/assets/img/gear.gif" alt="Image" />
             </div>
          </section>
 
-         <section className="px-[5%] py-10 md:pt-14 md:pb-28 flex flex-col md:flex-row gap-16 relative">
+         <section className="px-[5%] py-10 md:pt-14 md:pb-28 flex flex-col lg:flex-row gap-16 relative">
             <div className="basis-1/4">
-               <div className="bg-white max-w-80 p-5 shadow rounded-[15px]">
+               <div className="bg-white lg:max-w-80 p-5 shadow rounded-[15px]">
                   <select
                      name="sortby"
-                     className="text-secondary bg-white text-[1.375rem] font-medium w-full border-b border-tertiary appearance-none bg-dropdown bg-no-repeat bg-right"
+                     className="text-secondary bg-white text-lg font-medium w-full border-b
+                     border-tertiary appearance-none bg-dropdown bg-no-repeat bg-right"
                      onChange={e => {
                         const value = e.currentTarget.value;
-                        if( value == '1' ) {
-                           setSortBy( true );
+                        if (value == '1') {
+                           setSortBy(true);
                         } else {
-                           setSortBy( false );
+                           setSortBy(false);
                         }
                      }}
                   >
-                     <option value="0">Ascending</option>
-                     <option value="1">Descending</option>
+                     <option value=''>Sort by</option>
+                     <option value="0">A to Z</option>
+                     <option value="1">Z to A</option>
                   </select>
                </div>
             </div>
-            <div className="basis-3/4">
-               <div className="flex flex-wrap gap-y-14 md:gap-y-20">
+            <div className="basis-3/4 pb-10 md:pb-0">
+               <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-8 gap-y-14 lg:gap-x-40 lg:gap-y-32 text-center">
                   {Array.isArray(filterServices) && filterServices.map(service =>
-                     <div className="basis-1/2 md:basis-1/3" key={service.id}>
-                        <div className="w-36 md:w-60 mx-auto md:mr-0 text-center">
-                           <div className="relative mb-5 md:mb-10">
-                              <div
-                                 className="bg-white w-36 md:w-60 aspect-square flex justify-center items-center border border-primary rounded-full p-4 md:p-7">
-                                 <img
-                                    src={service?.logo || "/assets/img/placeholder-image.webp"}
-                                    alt="Image"
-                                 />
-                              </div>
-                              <Link href={route('services.show', { id: service.id })}
-                                 className="bg-primary w-11 md:w-20 aspect-square p-2 rounded-full flex justify-center items-center absolute right-0 bottom-0">
-                                 <img
-                                    src="/assets/img/arrow.svg"
-                                    alt="Image"
-                                 />
-                              </Link>
+                     <div className="w-full " key={service.id}>
+                        <div className="relative mb-5 md:mb-10">
+                           <div
+                              className="bg-white aspect-square flex justify-center items-center
+                              border border-primary rounded-full p-5 md:p-7"
+                           >
+                              <img
+                                 src={service?.logo || "/assets/img/placeholder-image.webp"}
+                                 alt="Image"
+                              />
                            </div>
-                           <h2 className="text-[#F9B624] font-semibold text-2xl md:text-[2.188rem] leading-[1.457em]">{service.name}</h2>
-                           <p className="text-[#454545] font-medium text-xs md:text-[1.375rem] leading-[1.455em]">{service.description}</p>
+                           <Link href={route('services.show', { id: service.id })}
+                              className="bg-primary w-full max-w-12 md:max-w-14 aspect-square p-2 rounded-full
+                              flex justify-center items-center absolute right-0 bottom-0"
+                           >
+                              <img
+                                 src="/assets/img/arrow.svg"
+                                 alt="Image"
+                              />
+                           </Link>
                         </div>
+                        <h2 className="text-[#F9B624] font-semibold text-xl md:text-2xl">{service.name}</h2>
+                        {/* <p className="text-[#454545] font-medium text-xs md:text-[1.375rem] leading-[1.455em]">{service.description}</p> */}
                      </div>
                   )}
                </div>

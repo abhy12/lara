@@ -14,20 +14,26 @@ export default function Single({ service }: Props) {
       <Layout>
          <Head title={service.name} />
          <main className="grow">
-            <section className="px-8 pt-10 lg:pt-16 pb-10 lg:pb-28 bg-[url('/assets/img/service-01.svg')] bg-cover bg-bottom">
+            <section className="px-8 pt-10 lg:pt-16 pb-20 lg:pb-28 bg-[url('/assets/img/service-01.svg')] bg-cover bg-bottom">
                <div className="container mx-auto">
                   <p className="text-[#909090] font-semibold text-lg mb-10">
                      <Link href="/">Home</Link>
                      &nbsp;/&nbsp;
                      <Link
-                        href={route('services.index')}>Service Providers</Link>
+                        href={route('services.index')}
+                     >Service Providers</Link>
                      &nbsp;/&nbsp;
-                     <Link href={route('services.show', { id: service.id })}
-                        className="text-[#762E5E]">{service.name}</Link>
+                     <Link
+                        className="text-[#762E5E]"
+                        href={route('services.show', { id: service.id })}
+                     >{service.name}</Link>
                   </p>
                   <div className="flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-24">
                      <div className="basis-1/4">
-                        <div className="bg-white w-36 lg:w-64 aspect-square rounded-full p-3 lg:p-7 flex justify-center items-center">
+                        <div
+                           className="bg-white w-full max-w-36 lg:max-w-64 aspect-square
+                           rounded-full p-4 lg:p-7 flex justify-center items-center"
+                        >
                            <img src={service?.logo || "/assets/img/placeholder-image.webp"} alt="Image" />
                         </div>
                      </div>

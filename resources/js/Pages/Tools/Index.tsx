@@ -24,7 +24,7 @@ export default function Index({ tools, categories }: Props) {
             </nav>
             <div className="flex flex-wrap justify-between items-center mt-8 md:mt-6">
                <h1 className="font-DMSerifDisplay text-5xl">Tools</h1>
-               <img src="/assets/img/wheel.gif" alt="Image" className="w-full max-w-16" />
+               <img className="w-full max-w-16" src="/assets/img/wheel.gif" alt="Image" />
             </div>
          </section>
 
@@ -73,7 +73,7 @@ export default function Index({ tools, categories }: Props) {
                            <div className="relative mb-5 md:mb-10">
                               <div
                                  className="bg-white w-full aspect-square
-                                 flex justify-center items-center border border-tertiary rounded-full p-4 md:p-7"
+                                 flex justify-center items-center border border-tertiary rounded-full p-5 md:p-7"
                               >
                                  <img
                                     src={tool?.logo || "/assets/img/placeholder-image.webp"}
@@ -92,7 +92,9 @@ export default function Index({ tools, categories }: Props) {
                               </Link>
                            </div>
                            <h2 className="text-tertiary font-semibold text-xl md:text-2xl">{tool.name}</h2>
-                           <p className="text-secondary font-medium md:text-[1.375rem] leading-[1.455em]">Dhwani RIS</p>
+                           {tool?.service_provider &&
+                              <p className="text-secondary font-medium md:text-[1.375rem] leading-[1.455em]">{tool.service_provider}</p>
+                           }
                         </div>
                      </div>
                   )}

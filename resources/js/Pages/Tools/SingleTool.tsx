@@ -21,7 +21,7 @@ export default function Single({ tool }: Props) {
                      &nbsp;/&nbsp;
                      <Link href={route('tools.index')}>Tools</Link>
                      &nbsp;/&nbsp;
-                     <Link href={route('tools.show', { id: tool.id })} className="text-[#762E5E]">Mform</Link>
+                     <Link href={route('tools.show', { id: tool.id })} className="text-[#762E5E]">{tool.name}</Link>
                   </p>
                   <div className="flex flex-col lg:flex-row lg:items-end gap-10 lg:gap-24">
                      <div className="basis-1/4">
