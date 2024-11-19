@@ -82,37 +82,39 @@ export default function Single({ service }: Props) {
             </section>
 
             <section className="px-8 pt-16 lg:pt-24 pb-10 lg:pb-40">
-               <div className="container mx-auto grid grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-20 2xl:gap-24 gap-y-16">
-                  <div className="basis-1/5">
+               <div className="container mx-auto">
+                  <div className="mb-8 lg:mb-24">
                      <img src="/assets/img/service-06.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
-                     <hr className="border-primary mt-5 mb-3" />
-                     <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">Services Provided</h2>
+                     <hr className="border-primary mt-5 mb-3 max-w-44" />
+                     <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem] mb-2">Services Provided</h2>
                      <p className="text-[#4A4A4A] text-sm lg:text-base 2xl:text-[1.154rem]">{service.services_provided}</p>
                   </div>
-                  <div className="basis-1/5">
-                     <img src="/assets/img/service-07.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
-                     <hr className="border-primary mt-5 mb-3" />
-                     <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-xl 2xl:text-[1.309rem]">Cost of services</h2>
-                     <p className="text-[#4A4A4A] text-sm lg:text-base 2xl:text-[1.154rem]">{service.services_cost}</p>
-                  </div>
-                  <div className="basis-1/5">
-                     <img src="/assets/img/service-08.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
-                     <hr className="border-primary mt-5 mb-3" />
-                     <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-xl 2xl:text-[1.309rem]">Products Offered</h2>
-                     <p className="text-[#4A4A4A] text-sm lg:text-base 2xl:text-[1.154rem]">{service.product_offered}</p>
-                  </div>
-                  <div className="basis-1/5">
-                     <img src="/assets/img/service-09.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
-                     <hr className="border-primary mt-5 mb-3" />
-                     <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-xl 2xl:text-[1.309rem]">Cost of products</h2>
-                     <p className="text-[#4A4A4A] text-sm lg:text-base 2xl:text-[1.154rem]">{service.product_cost || 'N.A'}</p>
-                  </div>
-                  <div className="basis-1/5">
-                     <img src="/assets/img/service-10.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
-                     <hr className="border-primary mt-5 mb-3" />
-                     <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-xl 2xl:text-[1.309rem]">Functional Expertise
-                     </h2>
-                     <p className="text-[#4A4A4A] text-sm lg:text-base 2xl:text-[1.154rem]">{service.functional_expertise}</p>
+                  <div className='grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-20 2xl:gap-24 gap-y-16'>
+                     <div>
+                        <img src="/assets/img/service-07.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
+                        <hr className="border-primary mt-5 mb-3" />
+                        <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-xl 2xl:text-[1.309rem] mb-2">Cost of services</h2>
+                        <p className="text-[#4A4A4A] text-sm lg:text-base 2xl:text-[1.154rem]">{service.services_cost}</p>
+                     </div>
+                     <div>
+                        <img src="/assets/img/service-08.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
+                        <hr className="border-primary mt-5 mb-3" />
+                        <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-xl 2xl:text-[1.309rem] mb-2">Products Offered</h2>
+                        <p className="text-[#4A4A4A] text-sm lg:text-base 2xl:text-[1.154rem]">{service.product_offered}</p>
+                     </div>
+                     <div>
+                        <img src="/assets/img/service-09.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
+                        <hr className="border-primary mt-5 mb-3" />
+                        <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-xl 2xl:text-[1.309rem] mb-2">Cost of products</h2>
+                        <p className="text-[#4A4A4A] text-sm lg:text-base 2xl:text-[1.154rem]">{service.product_cost || 'N.A'}</p>
+                     </div>
+                     <div>
+                        <img src="/assets/img/service-10.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
+                        <hr className="border-primary mt-5 mb-3" />
+                        <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-xl 2xl:text-[1.309rem] mb-2">Functional Expertise
+                        </h2>
+                        <p className="text-[#4A4A4A] text-sm lg:text-base 2xl:text-[1.154rem]">{service.functional_expertise}</p>
+                     </div>
                   </div>
                </div>
             </section>
