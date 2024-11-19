@@ -22,6 +22,7 @@ export interface ToolsProps {
    logo?: string
    services?: ServiceProps[]
    categories?: Category[]
+   service_provider?: string
 }
 
 export interface FormProps {

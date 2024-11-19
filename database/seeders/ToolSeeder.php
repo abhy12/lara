@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\Tool;
 use App\Models\Category;
-use App\Models\Service;
 
 class ToolSeeder extends Seeder
 {
@@ -31,6 +30,7 @@ class ToolSeeder extends Seeder
                 'sgb_domain' => $tool['sgb_domain'],
                 'ngo_ref' => $tool['ngo_ref'],
                 'additional_comments' => $tool['additional_comments'],
+                'service_provider' => $tool['service_provider'],
             ]);
 
             // category
@@ -42,16 +42,6 @@ class ToolSeeder extends Seeder
                 if( $cat !== null ) $cat_ids[] = $cat->id;
             }
             $new_tool->categories()->sync($cat_ids);
-
-            // services
-            $service_name = $tool['service_provider'];
-            if( isset( $service_name ) ) $service_name = trim( $service_name );
-            if( $service_name !== '' ) {
-                $service = Service::where('name', $service_name )->first();
-                if( $service !== null ) {
-                    $service->tools()->sync([$new_tool->id]);
-                }
-            }
         }
     }
 }

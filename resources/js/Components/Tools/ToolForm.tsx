@@ -47,6 +47,7 @@ export default function ToolForm({
       ngo_ref: tool?.ngo_ref || '',
       additional_comments: tool?.additional_comments || '',
       logo: '',
+      service_provider: tool?.service_provider || '',
    });
 
    const handleChange = useCallback((e: SyntheticEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -150,6 +151,20 @@ export default function ToolForm({
                      />
                   </RadioGroup>
                </FormControl>
+            </div>
+            <div>
+               <TextField
+                  className='w-full'
+                  id="service_provider"
+                  label="Service Provider"
+                  variant="outlined"
+                  onChange={handleChange}
+                  value={values.service_provider}
+                  error={errors.service_provider !== undefined || false}
+                  helperText={errors.service_provider}
+                  multiline
+                  rows={4}
+               />
             </div>
             <div>
                <TextField

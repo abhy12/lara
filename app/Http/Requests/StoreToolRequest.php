@@ -24,8 +24,16 @@ class StoreToolRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'website' => 'nullable|url',
             'is_opensource' => 'nullable|integer|between:0,1',
+            'website' => 'nullable|url',
+            'cost_structure' => 'nullable|string',
+            'fee_amount' => 'nullable|string',
+            'free_credit' => 'nullable|string',
+            'support_structure' => 'nullable|string',
+            'sgb_domain' => 'nullable|string',
+            'ngo_ref' => 'nullable|string',
+            'additional_comments' => 'nullable|string',
+            'service_provider' => 'nullable|string',
             'logo' => 'nullable|image|max:4048',
         ];
     }
