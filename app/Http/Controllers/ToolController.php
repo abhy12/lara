@@ -29,7 +29,7 @@ class ToolController extends Controller
     {
         return Inertia::render('Tools/Index', [
             'tools' => Tool::with('categories')->get(),
-            'categories' => Category::all(),
+            'categories' => Category::where('parent_id', null)->with('subcategory')->get(),
         ]);
     }
 

@@ -4,6 +4,8 @@ import type { ToolsProps } from '@/util/props';
 import { route } from 'ziggy-js';
 import type { Category } from '@/util/props';
 import { useState } from 'react';
+import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
+import { ArrowDropDown } from '@mui/icons-material';
 
 interface Props {
    tools: ToolsProps[]
@@ -11,7 +13,7 @@ interface Props {
 }
 
 export default function Index({ tools, categories }: Props) {
-   const [filterCatgory, setFilterCategory] = useState( '' );
+   const [filterCatgory, setFilterCategory] = useState<ToolsProps | null>(null);
 
    return (
       <Layout>
@@ -23,7 +25,9 @@ export default function Index({ tools, categories }: Props) {
                <Link href={route('tools.index')} className="text-secondary font-semibold">Tools</Link>
             </nav>
             <div className="flex flex-wrap justify-between items-center mt-8 md:mt-6">
-               <h1 className="font-DMSerifDisplay text-5xl">Tools</h1>
+               <h1 className="font-DMSerifDisplay text-5xl">
+                  {filterCatgory !== null ? filterCatgory.name : 'All Tools'}
+               </h1>
                <img className="w-full max-w-16" src="/assets/img/wheel.gif" alt="Image" />
             </div>
          </section>
@@ -33,39 +37,82 @@ export default function Index({ tools, categories }: Props) {
                <div className="bg-white lg:max-w-80 p-5 shadow rounded-[15px] text-lg font-medium">
                   <button
                      className="text-left text-secondary bg-white w-full border-b-2 border-tertiary mb-5"
-                     onClick={() => setFilterCategory('')}
-                  >All Tools
-                  </button>
-                  <select
-                     className="text-secondary bg-white w-full border-b-2 border-tertiary
-                     appearance-none bg-dropdown bg-no-repeat bg-right px-2"
-                     name="category"
-                     value={filterCatgory}
-                     onChange={(e) => {
-                        if( e.currentTarget.value !== '' ) {
-                           setFilterCategory( e.currentTarget.value );
-                        } else {
-                           setFilterCategory('');
+                     onClick={() => setFilterCategory(null)}
+                  >All Tools</button>
+
+                  <Accordion className="!my-0 !shadow-none"
+                     sx={{
+                        '& .MuiAccordionDetails-root': {
+                           padding: 0,
+                           paddingTop: 1,
+                        },
+                        '& .MuiButtonBase-root': {
+                           borderBottom: '2px solid #402B4A',
+                           minHeight: 'unset!important',
+                        },
+                        '& .MuiAccordionSummary-content': {
+                           margin: '5px 0!important',
                         }
                      }}
                   >
-                     <option value="">Categories</option>
-                     {categories?.map( cat => <option key={cat.id} value={cat.id}>{cat.name}</option>)}
-                  </select>
+                     <AccordionSummary
+                        className="!px-0"
+                        expandIcon={<ArrowDropDown className="text-secondary" fontSize="large" />}
+                     >
+                        <h2 className="font-medium text-secondary">Category</h2>
+                     </AccordionSummary>
+                     <AccordionDetails>
+                        {Array.isArray(categories) && categories.map(cat =>
+                           <Accordion
+                              className="!my-0 !shadow-none"
+                              key={cat.id}
+                              sx={{
+                                 '&::before': {
+                                    content: 'unset',
+                                 },
+                                 '& .MuiAccordionDetails-root': {
+                                    padding: '0 0 5px 0',
+                                 },
+                                 '& .MuiButtonBase-root': {
+                                    border: 'unset!important',
+                                 },
+                              }}
+                           >
+                              <AccordionSummary
+                                 className="!px-0"
+                                 expandIcon={<ArrowDropDown className="text-secondary" fontSize="large" />}
+                              >
+                                 <h2 className="text-secondary font-normal">{cat.name}</h2>
+                              </AccordionSummary>
+                              <AccordionDetails>
+                                 {Array.isArray(cat.subcategory) &&
+                                    <div className='flex flex-col gap-2'>
+                                       {cat.subcategory.map(sub =>
+                                          <button
+                                             className='block font-normal text-left text-sm
+                                             text-[#7A7A7A] hover:text-primary'
+                                             onClick={() => setFilterCategory( sub )}
+                                             key={sub.id}
+                                          >{sub.name}</button>
+                                       )}
+                                    </div>
+                                 }
+                              </AccordionDetails>
+                           </Accordion>
+                        )}
+                     </AccordionDetails>
+                  </Accordion>
                </div>
             </div>
             <div className="basis-3/4">
                <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-8 gap-y-14 lg:gap-x-40 lg:gap-y-32">
                   {Array.isArray(tools) && tools.filter(tool => {
-                     if( filterCatgory === '' ) return true
+                     if (filterCatgory === null) return true
 
-                     if( !Array.isArray( tool.categories ) ) return false
+                     if (!Array.isArray(tool.categories)) return false
 
-                     for(let i = 0; i < tool.categories.length; i++ ) {
-                        //@ts-ignore
-                        if( tool.categories[i].id == filterCatgory || tool.categories[i].parent_id == filterCatgory ) {
-                           return true;
-                        }
+                     for (let i = 0; i < tool.categories.length; i++) {
+                        if (tool.categories[i].id == filterCatgory.id) return true;
                      }
                   }).map(tool =>
                      <div className="" key={tool.id}>
