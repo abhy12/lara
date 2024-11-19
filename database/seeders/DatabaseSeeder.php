@@ -17,20 +17,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
         User::factory()->is_admin()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
 
-        Post::factory(10)->create();
+        $this->call(CategorySeeder::class);
 
-        Service::factory(15)->create();
+        $this->call(ServiceSeeder::class);
 
-        Tool::factory(10)->create();
-
-        // create at least 10
-        Category::factory(10)->create();
+        $this->call(ToolSeeder::class);
     }
 }

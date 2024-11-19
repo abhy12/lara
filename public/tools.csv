@@ -1,0 +1,456 @@
+parent_name,category_name,name,is_opensource,service_provider,website,cost_structure,fee_amount,free_credit,support_structure,sgb_domain,ngo_ref,additional_comments
+Monitoring and Evaluation,Reporting,Tech for School,No,Tech for Social Good,www.techforschool.in,15000/Year/500 Student/10 Staff & 25000/Year/1500 Students/15 Staff,,Trial Package for 90 days/50 Student/5 Staff,We provide end to end implementation Support.,4,,
+,,Edusystem,Y,Edusystem ,edusystem.co.in,Free & Paid plans,Free for basic features; paid for advanced,Limited free usage,Community and email support,Quality Education,Used by education-focused NGOs,Open source; customizable for various education setups
+,,Frappe Framework,Yes,Frappe,https://frappe.io/,- Open-source licensing: Free - Custom implementation and support: Variable (dependent on scope and complexity) - Cloud hosting: Optional (additional cost),Implementation costs (dependent on scope) and  and Annual support and maintenance,NA,- Dhwani RIS implementation team - Frappe community forums - Official Frappe documentation,"Various, including education, healthcare, social welfare, and environmental sustainability","Azim Premji Foundation, Piramal Swasthya",
+,Video Conferencing,Jitsi Meet,Yes,"Open-source community
+",https://meet.jit.si/,"Free
+
+",N/A,NA,"Community support and forums
+",Quality Education,NA,"
+Scalable depending on server infrastructure"
+,,Google Meet,N,Google LLC,meet.google.com,Free and Workspace subscription,"Free for personal use; paid with Workspace, starts with $6",Free usage for basic,24/7 support with Workspace,"Partnerships, Quality Education",Common among global NGOs,Great for virtual meetings; integrates with Google Workspace
+,Business Management,Eduapp,N,Eduapp,eduapp.in,Tiered subscription,On contact,,Email and live support,Quality Education,,Designed for school management; supports digital learning and assessments
+,Data Collection,Mform,No,Dhwani RIS,https://dhwaniris.com/mform/,   - One Time Setup Cost: ₹3-6 lakh     - Annual SaaS Fees: ₹4-6 lakh,- First Year: ₹6-8 lakh     - Second Year Onwards: ₹4-6 lakh (SaaS,NA,"Dedicated support team, email support","Various, including education, healthcare, and social welfare","TRIF, Pradan, Nielsen, Helpage India, GGGI",
+,,SurveyCTO,No,Dobility,https://www.surveycto.com,https://www.surveycto.com/plans/,"Basic (For one-time data collection or simple ongoing workflows and organizations with limited compliance needs)- $225 per month; Pro (For ongoing data collection workflows and organizations with standard compliance needs)- $315 per month, Advanced (For highly advanced and automated data workflows and organizations with unique requirements)- $630; Enterprise (For organizations looking for a scalable path to high-quality, cost-effective data collection)- Customised",15 day free trial,"SurveyCTO Resource Center, Chatbot, 24x7 support from survey experts",,,"The SurveyCTO Collect Android app interface – so the main screen and buttons surveyors would see before they opened the actual survey form – is available in English, French, Spanish, Arabic, Chinese, Hindi, Bengali, Nepali, and Portuguese. If you want the actual Android app interface in additional languages, in certain cases, we can build a new version of the app with translations for the new language supported (whether we will be able to do this depends on our existing commitments and the popularity of the additional language among other users). If you would like to further discuss this option, please contact us at info@surveycto.com. The SurveyCTO Collect iOS app interface is only available in English.
+
+The SurveyCTO server console and documentation, as well as the web form interface (the buttons that are independent of your survey form, which can be in any language) are available in English only at the moment. However, since the documentation is publicly-available, you can translate it on your web browser."
+,,Jotform,No,Jotform,https://www.jotform.com,https://www.jotform.com/pricing/," The monthly fee for paid plans typically ranges from approximately $34 to $99 (USD), depending on factors like storage, submissions, and team access. There are discounts for annual billing and additional options for nonprofits at a reduced rate. ","Starter Free subscription (5 Forms Form Limit, 100 Monthly Submissions, 1 User per Team, 100 MB Available Space, 1,000 Monthly Form Views
+500 Total Submission Storage, 100 Fields per form, 10 Monthly Payment Submissions, 10 Monthly Signed Documents; 50 per cent discount for nonprofits","Priority support, with options for email and chat assistance for issues related to account management, technical troubleshooting, and form-building guidance",,,"Jotform also offers an entire suite of tools to streamline data management. Organize form data in Jotform Tables, manage responses in Jotform Inbox, and create fillable PDF forms in Jotform’s PDF Editor. It also offers more advanced data management tools, like Jotform Workflows to automate workflows, Jotform Report Builder for detailed analytics, and Jotform Sign to securely collect e-signatures. Jotform is a versatile and comprehensive tool that lets you efficiently collect, manage, and analyze data, all in one place."
+,,Google Form,No,Google LLC,https://www.google.com/forms/about/,"Google Forms is free for individual users with a Google account. It also comes as part of Google Workspace subscriptions, which offer additional features and higher limits. ",Workspace plans start at $12 per user per month for basic business tools and go up based on features and storage capacity.,Free for individuals,"Google Forms offers support through an extensive Help Center with articles, tutorials, and troubleshooting guides. Users can also access Google’s support through community forums. For Google Workspace users (paid plans), there is additional support via email and chat for more complex issues.",,,
+,,Mform,No,Dhwani RIS,https://dhwaniris.com/mform/,   - One Time Setup Cost: ₹3-6 lakh     - Annual SaaS Fees: ₹4-6 lakh,- First Year: ₹6-8 lakh     - Second Year Onwards: ₹4-6 lakh (SaaS,NA,"Dedicated support team, email support","Various, including education, healthcare, and social welfare","TRIF, Pradan, Nielsen, Helpage India, GGGI",
+,,SurveyCTO,No,Dobility,https://www.surveycto.com,https://www.surveycto.com/plans/,"Basic (For one-time data collection or simple ongoing workflows and organizations with limited compliance needs)- $225 per month; Pro (For ongoing data collection workflows and organizations with standard compliance needs)- $315 per month, Advanced (For highly advanced and automated data workflows and organizations with unique requirements)- $630; Enterprise (For organizations looking for a scalable path to high-quality, cost-effective data collection)- Customised",15 day free trial,"SurveyCTO Resource Center, Chatbot, 24x7 support from survey experts",,,"The SurveyCTO Collect Android app interface – so the main screen and buttons surveyors would see before they opened the actual survey form – is available in English, French, Spanish, Arabic, Chinese, Hindi, Bengali, Nepali, and Portuguese. If you want the actual Android app interface in additional languages, in certain cases, we can build a new version of the app with translations for the new language supported (whether we will be able to do this depends on our existing commitments and the popularity of the additional language among other users). If you would like to further discuss this option, please contact us at info@surveycto.com. The SurveyCTO Collect iOS app interface is only available in English.
+
+The SurveyCTO server console and documentation, as well as the web form interface (the buttons that are independent of your survey form, which can be in any language) are available in English only at the moment. However, since the documentation is publicly-available, you can translate it on your web browser."
+,,Jotform,No,Jotform,https://www.jotform.com,https://www.jotform.com/pricing/," The monthly fee for paid plans typically ranges from approximately $34 to $99 (USD), depending on factors like storage, submissions, and team access. There are discounts for annual billing and additional options for nonprofits at a reduced rate. ","Starter Free subscription (5 Forms Form Limit, 100 Monthly Submissions, 1 User per Team, 100 MB Available Space, 1,000 Monthly Form Views
+500 Total Submission Storage, 100 Fields per form, 10 Monthly Payment Submissions, 10 Monthly Signed Documents; 50 per cent discount for nonprofits","Priority support, with options for email and chat assistance for issues related to account management, technical troubleshooting, and form-building guidance",,,"Jotform also offers an entire suite of tools to streamline data management. Organize form data in Jotform Tables, manage responses in Jotform Inbox, and create fillable PDF forms in Jotform’s PDF Editor. It also offers more advanced data management tools, like Jotform Workflows to automate workflows, Jotform Report Builder for detailed analytics, and Jotform Sign to securely collect e-signatures. Jotform is a versatile and comprehensive tool that lets you efficiently collect, manage, and analyze data, all in one place."
+,,Google Form,No,Google LLC,https://www.google.com/forms/about/,"Google Forms is free for individual users with a Google account. It also comes as part of Google Workspace subscriptions, which offer additional features and higher limits. ",Workspace plans start at $12 per user per month for basic business tools and go up based on features and storage capacity.,Free for individuals,"Google Forms offers support through an extensive Help Center with articles, tutorials, and troubleshooting guides. Users can also access Google’s support through community forums. For Google Workspace users (paid plans), there is additional support via email and chat for more complex issues.",,,
+,,mWater,Yes,mWater Foundation,mwater.co,"Free, subscription options","Free, paid options",Basic free tier,"Email support, community forums",SDG 6 (Clean Water & Sanitation),"Water.org, World Vision",Optimized for WASH-related data collection and management
+,,Synergy Survey and Analytics,No,SynergyConnect Data Innovations private Limted,www.synergyconnect.in,SaaS Based Subscription,1.5 Lakhs Onwards,No,24 x 7 Support (India Time),All,Swades Foundation,The platform has been used by large size Foundations
+,,Zoho Creator,No,Zoho ,https://www.zoho.com/creator/,Licenses Yearly/Monthly,yearly 18000 | monthly 2220,upto 10% NGO discount,Available from Zoho,"Sustainable Development Goal (SDG) 9: Industry, Innovation, and Infrastructure","Simple Education Foundation, Global School Leaders",It can be used for robust MIS and data management
+,,Google Sheets,N,Google,sheets.google.com,Free and subscription-based (Google Workspace),Free for personal; Google Workspace starts at $6/user/month,Free personal use,"Email, community support",Partnerships for the Goals,,"Widely used, simple, and highly flexible"
+,,Zoho Forms,No,Zoho ,https://www.zoho.com/forms/,https://www.zoho.com/forms/pricing.html?src=headermenu,,Please send an email to sales@zohocorp.com for discounts which Zoho offers to NGOs.,,,,"Templates  Integrations Solutions by Industry, Size and Role are available for 'ready to use'."
+,,Kobo Toolbox,Yes,Kobo,https://www.kobotoolbox.org/,https://www.kobotoolbox.org/pricing/,"Free for basic services, professional plan starts at $159 per month",,https://www.kobotoolbox.org/services/,,,"KoboToolbox is used by over 14,000 organizations around the world. Most of our partners are in the humanitarian, global development, environmental protection, and human rights sectors."
+,,InsightOne,N,InsightOne Solutions,https://insightone.com/,"Subscription-based, custom pricing",Varies by service,N/A,Customer Support and Training,"Health, Education",,Analytical tool designed for big data management and insights.
+,,CommCare by Dimagi,Y,Dimagi,https://dimagi.com/commcare,"Standard, Pro, Advanced, and Enterprise Plans https://dimagi.com/commcare-pricing/",Standard: $250/mo Pro: $500/mo Advanced: $1000/mo Enterprise: $4000/mo,Discounts for annual payments,"Email, Priority, and Premium Support","Health, Education, Agriculture","Save the Children, Bill & Melinda Gates Foundation",Widely used for mobile data collection and case management by field workers.
+,,"
+SynergyConnect (Social Integrated platform)",No,Synergy Connect,"https://synergyconnect.in/
+https://impactdash.com/
+",Customizable pricing,Custom quote,N/A,Email and Chat Support,,,Integration platform designed for social sector connectivity and collaboration.
+,,Digital Green AI-Powered Assistant,N,Digital Green,https://digitalgreen.org/,"Free for smallholders, funded model",Mostly free,Funded partnerships for scaling,Online and In-person Support,"SDG 2 (Zero Hunger), SDG 8 (Decent Work)","CARE, USAID","AI-driven support tool aimed at smallholder farmers, helping with agricultural advice."
+,,Commons.farm,No,Platform Commons,https://commons.farm,Onboarding and Annual SaaS Fee,Starts from Rs.10 per farmer per month,,,All SDGs,Vrutti,
+,Data Analysis,Microsoft Excel,N,Microsoft,microsoft.com/excel,Subscription-based (Office 365),Part of Office 365 starting at 145 rupees/user/month,Free through Office Online,"Email, chat, community support",,,Widely used; strong data analysis capabilities
+,,PowerBI,No,Microsoft,https://www.microsoft.com/en-us/power-platform/products/power-bi,https://www.microsoft.com/en-us/power-platform/products/power-bi/pricing,,,,,Sanjhi Sikhiya,
+,,Alteryx,No,Alteryx,https://www.alteryx.com/,https://www.alteryx.com/products/pricing,,,https://my.alteryx.com/,,,https://www.alteryx.com/open-source
+,,Google DataStudio,Yes,Google,https://cloud.google.com/looker-studio,https://cloud.google.com/looker-studio#pricing,,,,,,
+,,Superset,Yes,Apache Software Foundation,https://superset.apache.org/,Free,,,,,https://github.com/apache/superset/blob/master/RESOURCES/INTHEWILD.md,
+,,Dalgo,Yes,Tech4Dev,https://dalgo.in/,https://dalgo.in/pricing/,,,,,"Goalkeep, SHRI, TAP, The Agency Fund",
+,,Zoho Analytics,No,Zoho,https://www.zoho.com/analytics/,Licenses Yearly/Monthly,yearly 11520 | monthly 1200,upto 10% NGO discount,available from Zoho and implementation through EdZola,SDG 9,"TRRAIN, Simple Education Foundation","used for reporting, dashboards and insights"
+,Reporting,Document360,N,Kovai.co,document360.com,Subscription-based https://document360.com/pricing/,Starts at $199/project/month,6 months of free access to startups,Email and online help center,,,Useful for creating knowledge bases
+,,Zoho Analytics,No,Zoho,https://www.zoho.com/analytics/,Licenses Yearly/Monthly,yearly 11520 | monthly 1200,upto 10% NGO discount,available from Zoho and implementation through EdZola,SDG 9,"TRRAIN, Simple Education Foundation","used for reporting, dashboards and insights"
+,,Salesforce,No,Salesforce,https://www.salesforce.com/in/,https://www.salesforce.com/in/editions-pricing/overview/,,,,,,Discounted Price program for NGOs available
+,,Google Analytics,No,Google,analytics.google.com,Free (Premium for GA 360),Variable for GA 360,Free tier available,Extensive online resources and forums,,,Standard for website analytics; integrates with other Google tools.
+,,Google Looker Studio,No,Google,lookerstudio.google.com,Free,Free,N/A,Google support and community,,,Same as Looker Studio; includes enterprise-level options with Google Cloud integration.
+,Dashboarding,Power BI,No,Microsoft,powerbi.microsoft.com,"Free, Pro, Premium https://www.microsoft.com/en-in/power-platform/products/power-bi/pricing",Starts at 830rupees/user/month,Free version available for basic needs,"Extensive documentation, online support forums, premium for enterprises",,,Affordable for smaller organizations​
+,,Tableau,No,Tableau Software,tableau.com,"Subscription-based, Free Public version",Starts at $35/user/month,Free trial and Tableau Public (limited features),"Online forums, premium support for paid plans",,,Advanced visualization features​
+,,Superset,Yes,Apache,superset.apache.org,Free,Free,N/A,Community support,,,Open-source BI tool with extensive customization and integration capabilities.
+,,HotJar,No,HotJar Ltd.,hotjar.com,Subscription-based https://www.hotjar.com/pricing/,Starts at $32/month,Free tier available,Email and chat support,Quality Education (SDG 4),,User behavior tracking tool; suitable for UX improvements.
+,,Samajaa,No,Frappe Technologies,samajaa.org,Custom pricing,Varies,N/A,Limited support details,,,Tailored for nonprofit data tracking; integrates well with local systems.
+,,Dalgo,Yes,Tech4Dev,https://dalgo.in/,https://dalgo.in/pricing/,,,,,"Goalkeep, SHRI, TAP, The Agency Fund",
+,,Big Query,N,Google,cloud.google.com/bigquery,Pay-as-you-go,Varies by query,Free usage limits,24/7 Support,Industry Innovation,-,Managed data warehouse
+,,Salesforce,No,Salesforce,https://www.salesforce.com/in/,https://www.salesforce.com/in/editions-pricing/overview/,,,,,,Discounted Price program for NGOs available
+,,Google Looker Studio,No,Google,lookerstudio.google.com,Free,Free,N/A,Google support and community,,,Same as Looker Studio; includes enterprise-level options with Google Cloud integration.
+,End to end Development Program Management,Participatory Digital Attestation,No,Socion.io,https://www.socion.io/what-we-do/platforms/,,,,Email,Agnostic,,
+Fundraising,Grant/Donor Management,Zoho CRM,No,Zoho CRM,https://www.zoho.com/en-in/crm,"₹2,400/user/month billed annually",,Free up to 3 User,We provide end to end implementation Support with Zoho.,17,,
+,,ERPNext DMS,Yes,ERPNext,https://docs.erpnext.com/docs/v13/user/videos/learn/file-manager,Free or paid for hosted version,Varies,NA,Limited to community and paid support,Partnerships for Goals,NA,Customization may require technical expertise
+,,Salesforce CRM,No,Salesforce,https://www.salesforce.com/in/crm/,Subscription-based https://www.salesforce.com/uk/sales/pricing/,Varies by plan (contact for quote),"30 days free trial; The Power of Us program gives eligible nonprofit organisations access to Salesforce products and resources to help expand their collective impact. The program includes 10 donated Salesforce subscriptions and deep discounts on additional subscriptions, products and services from Salesforce. https://www.salesforce.com/uk/solutions/industries/nonprofit/overview/","24/7 support, knowledge base, community",,,Highly customizable and scalable; nonprofit version available.
+,,DMSHive,No,DigiMantra Labs,http://ifr.wwfdmshive.com,Subscription-based https://www.bigin.com/pricing.html?source_from=biginheadernew,Contact for pricing,No free credits,"Email, phone, live chat, knowledge base",,,Designed specifically for donor and grant management for nonprofits.
+,,Bigin,No,Zoho CRM,https://www.bigin.com,Subscription-based,Starts at 400/user/month to 1080/user/month,"15 day free trial, free for single user","Email support, community forums
+",,,"Tailored for small teams, simple CRM setup within the Zoho ecosystem."
+,,Hubspot,No,Hubspot Inc,https://www.hubspot.com/products/crm,Freemium with paid plans https://www.hubspot.com/pricing/marketing/starter?hubs_content=www.hubspot.com%2Fproducts%2Fcrm&hubs_content-cta=nav-pricing&term=annual,"Free tools up to two users, plans start at $15/month/seat","14-day free trial on paid plans, 40% discount for nonprofits https://www.hubspot.com/nonprofits","24/7 support, knowledge base, live chat",,,Great for marketing automation and donor engagement.
+,,Notion,No,Notion,https://www.notion.so,Freemium with paid plans https://www.notion.so/pricing,"Free for individuals, paid plans from $10/user/month","50% discount for nonprofits, starts at $5/seat/month https://www.notion.so/pages/nonprofits","Email support, community forums
+",,,"Flexible tool, but not specialised for donor management."
+,,ERP4Impact,No,Aria ERP4Impact LLP,https://erp4impact.com,Subscription-based,Contact for pricing,NA,"Email, phone, support community",,"Access Life, Atma, Life Tree","Tailored for nonprofits, integrates ERP with donor and grant management."
+,,Streak,No,Streak,https://www.streak.com,Subscription-based  https://www.streak.com/pricing,Starts at $59/user/month,20% discount if billed annually,"Email, knowledge base, community ",,,"Works within Gmail; useful for smaller nonprofits, "
+,,Social Integrated Platform,No,SynergyConnect Data Innovations Private Limited,www.synergyconnect.in,Subscription Based SAAS Service,1 Lakh Onwards,No,24 X 7 Online Support,ALL,KOITA Foundation,"The SaaS Platform has multiple modules that are useful to NPOs, including project, survey, purchase and voucher management, donor management, LMS, BI Analytics, impact apps, etc. "
+,,SynergyDonor - Donor Relationship Platform,No,SynergyConnect Data Innovations Private Limited,www.synergyconnect.in,SaaA - User based subscriptions,90 thousands onwards,Two Months,24 x 7 Support (India Time),ALL,Swades Foundation,Includes CRM Lifecycle - Contacts - Leads - Prospects - MOU - Donor - Reallocations - Addendum
+,,MGrant,No,Dhwani RIS,https://dhwaniris.com/mgrant/,One Time Setup Cost (6-8 Lakh) + Annual SaaS Fees (8-12 Lakh),"16 to 18 Lakh First Year Cost, 8-12 Lakh SaaS Cost 2nd Year Onwards",NA,"Dedicated support team, SDG domain expertis","Various, including education, healthcare, and social welfare","One Stage Foundation, TRIF, Smile Founadtion",
+,Crowdfunding,danamojo,No,Danamojo,danamojo.org,Subscription-based and transaction fee,Platform charge starting 3499,None,"Email, Phone, and Live Chat Support",,,Focuses on nonprofits and social enterprises. Integration with websites.
+,,Fuel a dream,No,Fuel a Dream,fuelfadream.com,"Advance processing charges, contract charges, and payment processing charges https://www.fueladream.com/crowdfunding/pricing-charges","Starts at 3000 per campaign, 6% contract charge, 3% payment processing charge",None,"Email Support, Phone Support",,,Tailored for social enterprises and changemakers.
+,,Milaap,No,Milaap,milaap.org,"No platform fee, Transaction-based https://milaap.org/crowdfunding/pricing",5%,None,"Dedicated relationship manager, 24X7 Expert support, All-in-one mobile app",,,Popular for medical and emergency fundraising.
+,,Give India,No,GiveIndia,giveindia.org,Transaction costs,,None,Email and Call Support,,"Bhumi, Goonj, Smile Foundation, Cuddles Foundation and HelpAge India",Known for working with a wide range of verified NGOs and causes.
+,,Better Together,No,Platform Commons,https://bettertogether.co,Onboarding and Annual SaaS Fee,2% transaction fee,No SaaS Fee for nonprofits,,All SDGs,"Make a Difference, Commons.farm","""Better Together is a versatile software designed to streamline and enhance community engagement and management. It offers a wide range of features, including:
+
+Volunteer Management: Easily recruit, schedule, and track volunteers.
+Fundraising: Manage donations, campaigns, and donor relationships.
+Community Engagement & Social Networking: Foster connections and build community.
+Communication: Facilitate effective communication within the community.
+Event Management: Plan, promote, and execute events seamlessly.
+Recruitment: Attract and hire new members or staff.
+Project Management: Organize and collaborate on community projects.
+Learning Management System: Offer educational courses and workshops.
+Fellowship Management: Connect and support community members.
+Placemaking: Create vibrant and inclusive community spaces.
+
+Better Together is a comprehensive solution that empowers communities to thrive and achieve their goals."""
+Project Management,Training,Moodle,Yes,Moodle (Dhwani RIS implementing the tool for organisations),https://moodle.com/solutions/lms/,    - One Time Setup Cost: ₹6-8 lakh     - Annual SaaS Fees: ₹8-12 lakh,  - First Year: ₹16-18 lakh     - Second Year Onwards: ₹8-12 lakh (SaaS),NA," Dedicated support team, email support","Various, including education, healthcare, and social welfare","TRIF, Vihara Innovation Network, Nasscom Foundation",
+,,mLearn,No,Dhwani RIS,https://dhwaniris.com/mlearn/,- One-time setup cost: ₹2-4 lakh - Annual SaaS fees: ₹3-5 lakh,    - First Year: ₹5-7 lakh     - Second Year Onwards: ₹3-5 lakh onwards,NA,"Dedicated support team, email support","Various, including education, healthcare, and social welfare","Yash Johar Foundation, PCI, TRIF, AKDN",
+,Learning Management System,Better Together,No,Platform Commons,https://bettertogether.co,Onboarding and Annual SaaS Fee,Starts from Rs. 10000 per month ,"First month free, upto 10% off for nonprofits",,All SDGs,"Ashoka University, Kaivalya Education Foundation,","Better Together is a versatile software designed to streamline and enhance community engagement and management. It offers a wide range of features, including:
+
+Volunteer Management: Easily recruit, schedule, and track volunteers.
+Fundraising: Manage donations, campaigns, and donor relationships.
+Community Engagement & Social Networking: Foster connections and build community.
+Communication: Facilitate effective communication within the community.
+Event Management: Plan, promote, and execute events seamlessly.
+Recruitment: Attract and hire new members or staff.
+Project Management: Organize and collaborate on community projects.
+Learning Management System: Offer educational courses and workshops.
+Fellowship Management: Connect and support community members.
+Placemaking: Create vibrant and inclusive community spaces.
+
+Better Together is a comprehensive solution that empowers communities to thrive and achieve their goals."
+,Fellowship Management,Better Together,No,Platform Commons,https://bettertogether.co,Onboarding and Annual SaaS Fee,Starts from Rs. 10000 per month ,NA,,All SDGs,"SBI Youth for India Fellowship, Teach for India, Gandhi Fellowship, Bhumi Fellowship","Better Together is a versatile software designed to streamline and enhance community engagement and management. It offers a wide range of features, including:
+
+Volunteer Management: Easily recruit, schedule, and track volunteers.
+Fundraising: Manage donations, campaigns, and donor relationships.
+Community Engagement & Social Networking: Foster connections and build community.
+Communication: Facilitate effective communication within the community.
+Event Management: Plan, promote, and execute events seamlessly.
+Recruitment: Attract and hire new members or staff.
+Project Management: Organize and collaborate on community projects.
+Learning Management System: Offer educational courses and workshops.
+Fellowship Management: Connect and support community members.
+Placemaking: Create vibrant and inclusive community spaces.
+
+Better Together is a comprehensive solution that empowers communities to thrive and achieve their goals."
+,Agile Project Management,Redmine,Yes,Open-source community,https://www.redmine.org,Free,NA,NA,"
+Community support",,,Strong issue tracking and workflow customization
+,,Taiga,Yes,Open-source community,https://taiga.io,"Free (limited version)
+",Paid for additional features,Limited,Community and developer support,,,Suitable for agile teams and product management
+,Task Management,Trello,N,Atlassian,trello.com,Subscription-based https://trello.com/pricing,Free; Paid starts at $5/user/month,Discounts available for nonprofits https://support.atlassian.com/trello/docs/non-profit-and-educational-discounts/,"Email, chat support, and community forum",,Multiple NGOs,Popular for its intuitive visual boards
+,,ClickUp,N,Mango Technologies,clickup.com,Subscription-based https://clickup.com/pricing,Free; Paid starts at $7/user/month,Discounts available for nonprofits https://clickup.com/teams/non-profit/discount,"Email, chat support, and knowledge base",,Various,Highly customizable for multi-projects
+,,Monday.com,N,Monday.com Ltd.,monday.com,Subscription-based https://monday.com/pricing,Paid starts at $9/seat/month,"Free for upto 10 users, 70% discount upto 50 users, discounts available on contact for bigger teams https://monday.com/nonprofits/pricing","24/7 support; chat, email, phone",Partnerships for the Goals,Several,Ideal for collaboration with customization
+,,Jira,N,Atlassian,jira.com,Subscription-based https://www.atlassian.com/software/jira/pricing,Free up to 10 users; Paid starts at $7.53/user/month,Free to try and 75% off for eligible nonprofits,"Email, chat support, and extensive documentation",,,Primarily for agile teams; popular for tech projects
+,,Avaza,N,Avaza,avaza.com,Subscription-based https://www.avaza.com/pricing/,Paid plans start at $11.95/user/month,No,"Email, chat, knowledge base",,,Includes time tracking and client billing
+,,Google Sheets,N,Google,sheets.google.com,Free and subscription-based (Google Workspace),Free for personal; Google Workspace starts at $6/user/month,Free personal use,"Email, community support",,,"Widely used, simple, and highly flexible"
+,,Smart Sheets,N,Smartsheet Inc.,smartsheet.com,Subscription-based https://www.smartsheet.com/pricing,Paid plans start at $9/member/month,No,"24/7 support, email, phone, chat","Industry, Innovation & Infrastructure",Some,Combines spreadsheets with project management features
+,,Basecamp,N,Basecamp,basecamp.com,Subscription-based https://basecamp.com/pricing/india,4800/month,10% off for nonprofits,Email and knowledge base,Partnerships for the Goals,Several,Known for team communication and file sharing
+,,Notion,No,Notion,https://www.notion.so,Freemium with paid plans https://www.notion.so/pricing,"Free for individuals, paid plans from $10/user/month","50% discount for nonprofits, starts at $5/seat/month https://www.notion.so/pages/nonprofits","Email support, community forums
+",,,
+,,Zoho Projects,N,Zoho Corporation,zoho.com/projects,Subscription-based,Paid starts at 280 rupees/user/month,Startup credits https://survey.zohopublic.com/zs/6yD7Dn,"Email, phone support, extensive knowledge base",Decent Work & Economic Growth,Few,Part of Zoho suite; integrates well with other Zoho tools
+,,GitHub,N,Microsoft,github.com,Free and subscription-based https://github.com/pricing,Free; Paid plans start at $4/user/month,Exclusive access to a free GitHub Team plan or 25% off the GitHub Enterprise cloud plan,"Extensive documentation, email support",,,Mostly for developers; project boards for issue tracking
+,,Microsoft Excel,N,Microsoft,microsoft.com/excel,Subscription-based (Office 365),Part of Office 365 starting at 145 rupees/user/month,Free through Office Online,"Email, chat, community support",,,Widely used; strong data analysis capabilities
+,,AirTable,N,AirTable,airtable.com,Subscription-based https://airtable.com/pricing?_gl=1*g7v2l1*_gcl_au*MTA3Mzk2NjE4NS4xNzMxNTczNjYz*_ga*MTYyOTgzNjQ2My4xNzMxNTczNjY0*_ga_VJY8J9RFZM*MTczMTU3MzY2My4xLjAuMTczMTU3MzY3MC41My4wLjA.,Free; Paid starts at $20/user/month,50% discount for nonprofits https://support.airtable.com/docs/nonprofit-and-educational-plans-faqs,Email and community support,,,Combines spreadsheet simplicity with database functionality
+,,Collaborate,No,Platform Commons,https://digitalcommons.io/product/circlein,Onboarding and Annual SaaS Fee,Starts from Rs. 5000 per month,"First month free, 10% off for nonprofits",,All SDGs,"ReachOne, Make a Difference","Collaborate is a powerful app designed to streamline project management and task tracking for NGOs. With Collaborate, users can easily create and manage their projects, assign tasks to team members, and track progress in real-time. The app is specifically designed with the needs of NGOs in mind, offering intuitive workflows and tools that reflect their unique way of working"
+,,Asana,N,Asana,https://asana.com,Free for individual and small ,$5/user/month,Free for up to 15 users,"Visual task tracking, collaboration tools",,,
+,,Better Together,No,Platform Commons,https://bettertogether.co,Onboarding and Annual SaaS Fee,Starts from Rs. 5000 per month,"First month free, 10% off for nonprofits",,All SDGs,"ReachOne, Make a Difference","""Better Together is a versatile software designed to streamline and enhance community engagement and management. It offers a wide range of features, including:
+
+Volunteer Management: Easily recruit, schedule, and track volunteers.
+Fundraising: Manage donations, campaigns, and donor relationships.
+Community Engagement & Social Networking: Foster connections and build community.
+Communication: Facilitate effective communication within the community.
+Event Management: Plan, promote, and execute events seamlessly.
+Recruitment: Attract and hire new members or staff.
+Project Management: Organize and collaborate on community projects.
+Learning Management System: Offer educational courses and workshops.
+Fellowship Management: Connect and support community members.
+Placemaking: Create vibrant and inclusive community spaces.
+
+Better Together is a comprehensive solution that empowers communities to thrive and achieve their goals."""
+Office Automation,IT Infrastructure,Google Workspace,N,Google,workspace.google.com,Subscription-based,Starts at $6/user/month,Free 14-day trial,"Online help center, email, chat, and phone support",,,"Widely used for collaboration, reliable security features"
+,,Zabbix,Yes,Zabbix LLC,https://www.zabbix.com/,Free,NA,NA,Extensive community and professional support,,,Comprehensive monitoring with scalability
+,,Zapier,N,Zapier Inc.,zapier.com,Subscription-based https://zapier.com/pricing,Starts at 1719.82/month,15% discount for nonprofits,"Online support, help center",,,Great for automating workflows across multiple apps
+,,Nagios,Yes,Nagios Enterprises,https://www.nagios.org/,Free and paid versions,Varies,NA,Community and enterprise support,,,Plugin-based architecture for extensibility
+,Workflow Management,Flux,No,Flux Corporation,https://flux.ly,"Paid, varies by feature",Contact for details,,Phone and Email Support,,,Comprehensive tool for scheduling and automating complex workflows. Deployable on-premise or cloud.
+,Resource Management,ClickTime,N,ClickTime,clicktime.com,Subscription-based https://www.clicktime.com/pricing,Starts at $12/user/month,Nonprofit discounts available at $11 per user per month https://www.clicktime.com/nonprofit-time-tracking/timesheet-pricing,"Phone, email, and online support",,,Good for managing timesheets and budgeting
+,Database and Knowledge Management,M-Files,N,M-Files,m-files.com,Subscription-based,Custom pricing,N/A,Online support and training,,,Useful for document and information management
+,,OneDrive,N,Microsoft,onedrive.com,Subscription https://www.microsoft.com/en-in/microsoft-365/onedrive/online-cloud-storage#Pricing,Starts at 149 rupees/user/mo,"5 GB of cloud storage
+15 GB of mailbox storage","Email, Chat",Quality Education,-,Integrates with MS Office
+,,Notion,No,Notion,https://www.notion.so,Freemium with paid plans https://www.notion.so/pricing,"Free for individuals, paid plans from $10/user/month","50% discount for nonprofits, starts at $5/seat/month https://www.notion.so/pages/nonprofits","Email support, community forums
+",,,
+,,Document360,N,Kovai.co,document360.com,Subscription-based https://document360.com/pricing/,Starts at $199/project/month,6 months of free access to startups,Email and online help center,,,Useful for creating knowledge bases
+,Device Management,Esper,N,Esper.io,esper.io,Subscription-based https://www.esper.io/pricing,"Custom pricing, Starts with $2/user/month",Free trial,"Online support, email, and chat",,,Primarily for device management in enterprise environments
+,Scheduling,Calendly,No,Calendly LLC,https://calendly.com,Freemium https://calendly.com/pricing/users,Starts at $12 per seat per month,Free for individuals with basic scheduling,"Email, Online Support",,,Simplified scheduling solution
+Human Resources,Attendance & Payroll Management,Keka,No,Keka,https://www.keka.com/,"- Foundation : 9999/month (For companies that are just getting started with automation)
+- Strength: 12999/month (Scaling with advanced automation & employee engagement)
+- Growth: 15999/month (With in-built performance management capabilities and business reviews)","Varies;
+
+Our guided configuration of Payroll, import of employee information, and past month salary information, costs a nominal setup fee","Sign Up for Free Trial
+
+Free Tools: https://www.keka.com/free-tools",Onboarding and Implementation Support + Phone/Email/Live Chat Support,All SDGs,,"Keka is the only attendance management system in India that integrates every aspect of time tracking right from capturing time anywhere, scheduling shifts, and tracking over-time which is fully integrated with payroll.
+"
+,,Kelsa,No,Kelsa,https://kelsa.co.in/hrms/,Subscription-based,Varies,N/A,Customer service available,,,Focused on payroll and financial management for nonprofits
+,,Paybooks,No,Paybooks,https://www.paybooks.in,Not available on website but can request a call back from sales team: https://paybooks.in/contact-sales-form/,,Free demo available,,,,"Paybooks’ experts manage end to end payroll, compliance, HR, and employee life cycle for your business and you and your employees will literally love the experience.
+
+Monitor real-time attendance with awesome dashboards
+"
+,,GreyTHR,No,GreyTHR,https://www.greythr.com/,"greytHR offers plans for Small, Mid and Large businesses. https://www.greythr.com/pricing/",,"Free trial available; When you sign up for free trial, you get exclusive access to a greytHR account with full features. No billing for the first 7 days. You will receive email before your trial expires. To continue greytHR service, you have to select a plan, share some basic data, and agree to pay the subscription charges.
+
+You can request a demo also.",,,,"Get an online attendance management system for your employees. Gather real-time attendance swipes from multiple devices using multiple mechanisms, across multiple locations.
+
+Payroll with greytHR is very thorough and complete. No stone has been left unturned in creating the most exhaustive payroll software available in the market today. No detail ignored. No situation overlooked.
+
+"
+,,Zoho People,no,Zoho,https://www.zoho.com/people,per employee costing yearly/monthly,Varies,Free sign up; Demo can be requested; 30 day free trial,"Get 24/5 email support for all plans at no additional cost.
+",,,"Spend less time tracking time and days off. Zoho People's time and attendance system lets you focus on employee productivity while accurately tracking work hours and providing error-free reporting.
+
+Zoho People and Payroll solutions work together to power up your people and payroll processes. With comprehensive and simple process design, experience stress-free payroll."
+,,Beehive,no,BeeHive Productivity Catalysts,https://www.beehivesoftware.in/,"Pricing is dependent upon the mode of deployment, the modules you want to implement and finally on the basis of user licenses required. It starts with as low as rupee 1 per employee per day and goes till Rs. 150 Per employee per month.",Varies,N/a,"Once the problem is registered and ticket is generated, based on the type of the issue, there is turn around time (TAT) defined and the solution will be provided for the registered issue by Beehive’s technical support helpdesk team.
+
+Beehive offers pre sales and post sales support with implementation and handling customers support queries. There are dedicated teams available for the customer support. We have customer friendly SLA’s defined to make sure the queries are addressed timely and effective manner",,,"Beehive HRMS presents an advanced Time and Attendance Management feature that revolutionizes the way organizations track and manage employee work hours. Our comprehensive solution empowers businesses to optimize workforce efficiency, ensure compliance with labor regulations, and foster a punctual work culture. 
+
+Beehive HRMS presents a comprehensive Payroll Management feature, meticulously designed to streamline payroll processing and ensure accurate employee compensation. Our robust solution empowers organizations to efficiently manage payroll calculations, employee benefits, and statutory compliance with ease. "
+,Recruitment,ERP Next for HR,Yes,ERPNext,https://erpnext.com/,Free or paid for hosted version,Varies,N/A,"Community support, paid support for hosted versions",Decent Work and Economic Growth,N/A,"
+Complexity in implementation may require training"
+,,Zoho People,No,Zoho,https://www.zoho.com/people/,per employee costing yearly/monthly,yearly 576 | monthly 60,upto 10% NGO discount,available from Zoho and implementation through EdZola,SDG 9,FMCH India,"Onboarding, LMS, Leave tracker, Performance appraisal, etc."
+,,BeeHive,No,BeeHive Productivity Catalysts, https://www.beehivesoftware.in,"Pricing is dependent upon the mode of deployment, the modules you want to implement and finally on the basis of user licenses required. It starts with as low as rupee 1 per employee per day and goes till Rs. 150 Per employee per month.
+",Varies,N/A,"Once the problem is registered and ticket is generated, based on the type of the issue, there is turn around time (TAT) defined and the solution will be provided for the registered issue by Beehive’s technical support helpdesk team.
+
+Beehive offers pre sales and post sales support with implementation and handling customers support queries. There are dedicated teams available for the customer support. We have customer friendly SLA’s defined to make sure the queries are addressed timely and effective manner
+",,N/A,"A HR software, which is also known as a human resource information system or human resource management system (HRMS), is basically an intersection of human resources and information technology through HR software. This allows HR activities and processes to occur electronically.
+
+e-recruitment module track candidates across various stages, streamline your interview process and generate offer letters effortlessly.
+"
+,,People Hub,No,People Hub,https://peoplehub.co.in,₹4999/Month,Varies,Free plan up to 5 user,We provide end to end implementation Support.,17,,"Recruitment & Onboarding:
+Post job listings, manage applications, schedule interviews, and streamline the onboarding process—all within one intuitive platform."
+,,Zoho One,No,Zoho,https://www.zoho.com/one,"Flexible-User Pricing
+
+We offer Flexible-User Pricing at ₹4,000 per user per month, or ₹3,500 per user per month with an annual subscription. This means you can buy any number of user licenses; you do not have to purchase licenses for ALL employees.
+
+All Employee Pricing
+
+We offer the All Employee Pricing at a special price of ₹2,500 per employee per month, or ₹1,250 per employee per month with an annual subscription, provided you purchase licenses for ALL employees in the company.",,"No, we have already priced Zoho One as competitively as possible.
+","Plans Vary
+
+https://help.zoho.com/portal/en/home",,,"Find new talent
+Growing businesses depend on hiring new people. Zoho One gives you tools to find the right people for the right jobs. (Fill Openings, Resume Parsing, Interviews, Create Offer Letters)"
+,,Better Together,No,Platform Commons,https://bettertogether.co,Onboarding and Annual SaaS Fee,Starts from Rs. 2500 per month,NA,"For Non-Profits
+
+Leverage Better Together VMS to organize your volunteers' efforts. We provide verified volunteers to our Nonprofit Partners around the world who are committed to drive social change. Start free.",All SDGs,"SBI Youth for India Fellowship, Make a Difference, U&I, Gandhi Fellowship, Bhumi Fellowship","""Better Together is a versatile software designed to streamline and enhance community engagement and management. It offers a wide range of features, including:
+
+Volunteer Management: Easily recruit, schedule, and track volunteers.
+Fundraising: Manage donations, campaigns, and donor relationships.
+Community Engagement & Social Networking: Foster connections and build community.
+Communication: Facilitate effective communication within the community.
+Event Management: Plan, promote, and execute events seamlessly.
+Recruitment: Attract and hire new members or staff.
+Project Management: Organize and collaborate on community projects.
+Learning Management System: Offer educational courses and workshops.
+Fellowship Management: Connect and support community members.
+Placemaking: Create vibrant and inclusive community spaces.
+
+Better Together is a comprehensive solution that empowers communities to thrive and achieve their goals."""
+,Training,GreytHR Academy,No,GreytHR,"https://www.greythr.com/
+
+https://www.greythr.com/academy/",Cost details of the training programs not published on website.,,,N/A,,,"Only academy offering courses for HR & Payroll in India. Certified triaining courses for working professionals and students. Available in multiple Indian languages
+"
+,Comprehensive HR solutions,FactoHR,No,factoHR,https://factohr.com,"You just need to pay subscription charges quarterly or yearly as well as the training charges for your staff to use the software effectively.
+",Varies,Free trial can be requested,,,,"Our mission is to design an excellent workforce management solution that will automate all the HR processes and help grow the business
+"
+,Employee Welfare,Keka HR,N,Keka HR,https://www.keka.com/,"- Foundation : 9999/month (For companies that are just getting started with automation)
+- Strength: 12999/month (Scaling with advanced automation & employee engagement)
+- Growth: 15999/month (With in-built performance management capabilities and business reviews)","Varies;
+
+Our guided configuration of Payroll, import of employee information, and past month salary information, costs a nominal setup fee","Sign Up for Free Trial
+
+Free Tools: https://www.keka.com/free-tools",Onboarding and Implementation Support + Phone/Email/Live Chat Support,All SDGs,,"Keka HR software is designed to delight your employees. Our employee centric user experience coupled with hooks and data insights always piques your employee's curiosity and adopt the platform.
+"
+Finance and Accounts,Payroll Management,Zoho Payroll,No,Zoho,https://www.zoho.com/in/payroll,Tiered pricing https://www.zoho.com/in/payroll/pricing/,Starts at 40 rupees/user/month,,"Email, Phone, Community Forum, Hel docs, FAQs, Webinars",,,
+,,Zimyo,No,Zimyo,https://www.zimyo.com,Tiered pricing https://www.zimyo.com/pricing/,Starts at 80 rupees/user/month,,"Zimyo support portal, email, phone",,,Easy to use HR software
+,,SynergyWorks - Office AutomationSoftware,No,SynergyConnect Data Innovations Private Limited,www.synergyconnect.in,SaaS-based subscriptions,2 Lakhs Onwards,No,24 x 7 Support,ALL,Sevatarang,"Includes Asset Management, Purchase Management and Voucher Management for NGO"
+,,Realbooks,No,Adansa Solutions Private Limited,https://www.realbooks.in/,"Start for Free, Pay as You Grow",Starts at 500 rupees/user/month,14 day free trial,"Free demo, chatbot, phone support, email",,,
+Communication,Outreach and Marketing,Telegram,Y,Telegram FZ LLC,telegram.org,Free,Free,Free,Online FAQs,-,-,End-to-end encryption
+,,WhatsApp,N,Meta Platforms,whatsapp.com,Free,Free,Free,Online FAQs,-,-,End-to-end encrypted messaging
+,,"OpenCart
+",Yes,OpenCart Community,https://www.opencart.com/,"Free
+",NA,NA,"Community support and paid extensions
+Decent Work and Economic Growth",,,Ideal for small to medium-sized online stores
+,,Magento,No,Deltek,https://magento.com/,Free (open-source) or paid,Varies,N/A,Extensive community and paid support options,,,Suitable for large-scale e-commerce requirements
+,,Big Query,N,Google,cloud.google.com/bigquery,Pay-as-you-go,Varies by query,Free usage limits,24/7 Support,Industry Innovation,-,Managed data warehouse
+,Email Marketing,Mailchimp,N,Intuit,mailchimp.com,Freemium https://mailchimp.com/pricing/marketing/,Starts at 575/mo,15% discount to nonprofits,"Email, 24/7 Chat",-,-,Automations & analytics
+,,SendGrid,No,Twilio SendGrid,sendgrid.com,Tiered (Free and Paid Plans) https://sendgrid.com/en-us/pricing,Starts at $19.95/month,Free for 100 mails a day,"Email, Knowledge Base, and 24/7 support​
+",,,"Easy-to-use drag-and-drop email editor​
+"
+,,Substack,No,Substack Inc.,substack.com,Revenue share (10% fee),No upfront costs; 10% of subscriber payments​,"No specific free credits, but no hosting fees",Email and community support forums​,,,Supports multimedia content for newsletters​
+,,Wix,N,Wix.com,wix.com,Freemium,Starts at $16/mo,Basic plan free,"Email, Forum",-,-,Drag-and-drop editor
+,,Socioboard,Yes,Socioboard community,https://socioboard.org/,Free (limited plan) or paid,Varies,Limited free version,Community support,,NA,Customization options available with extensions
+,,"Buffer
+",No,Buffer,https://buffer.com/,Paid plans,"Starts at $5/mo
+",N/A,"Email support, knowledge base",NA,NA,Suitable for nonprofits with customizable plans
+,,Meta,No,Meta Platforms,meta.com,Ads-based,Costs vary by ad campaigns​,"No free credits, but free use for organic reach",Knowledge base and community forums​,,Used for digital outreach,Best for social media campaigns​
+,,X (previously twitter),No,X Corp (Elon Musk),twitter.com,Ads-based,Costs depend on ad campaign settings,Free access for organic reach​,"Knowledge base, help center​",,Used widely for campaigns,Powerful for real-time communication​
+,,Instagram,No,Meta Platforms,instagram.com,Free,Free,Free,Online Support,-,-,Visual storytelling tool
+,,Canva,N,Canva Pvt Ltd,canva.com,Freemium https://www.canva.com/en_in/pricing/,Starts at 4000/year,Free for nonprofits https://www.canva.com/en_in/canva-for-nonprofits/,"Email, Help Center",-,"Fistula Foundation, Amnesty International, Rise Against Hunger, Opera America, Muscular Dystrophy WA",Easy-to-use design platform
+,Community Engagement,Google Groups,No,Google,https://groups.google.com/,Free and included with Google Workspace subscriptions,Free (for personal use) or part of Workspace fee,N/A,Community forums and paid Workspace support,,Commonly used by NGOs for discussions and collaboration,Useful for team communication and archiving discussions.
+,,Better Together,No,Platform Commons,https://bettertogether.co,Onboarding and Annual SaaS Fee,Starts from Rs. 5000 per month,"First month free, upto 10% off for nonprofits",,All SDGs,Teach for India,"Better Together is a versatile software designed to streamline and enhance community engagement and management. It offers a wide range of features, including:
+
+Volunteer Management: Easily recruit, schedule, and track volunteers.
+Fundraising: Manage donations, campaigns, and donor relationships.
+Community Engagement & Social Networking: Foster connections and build community.
+Communication: Facilitate effective communication within the community.
+Event Management: Plan, promote, and execute events seamlessly.
+Recruitment: Attract and hire new members or staff.
+Project Management: Organize and collaborate on community projects.
+Learning Management System: Offer educational courses and workshops.
+Fellowship Management: Connect and support community members.
+Placemaking: Create vibrant and inclusive community spaces.
+
+Better Together is a comprehensive solution that empowers communities to thrive and achieve their goals."
+,Placemaking,Better Together,No,Platform Commons,https://bettertogether.co,Onboarding and Annual SaaS Fee,Starts from Rs. 2500 per month,"First month free, upto 10% off for nonprofits",,All SDGs,"Periferia, Boskea","""Better Together is a versatile software designed to streamline and enhance community engagement and management. It offers a wide range of features, including:
+
+Volunteer Management: Easily recruit, schedule, and track volunteers.
+Fundraising: Manage donations, campaigns, and donor relationships.
+Community Engagement & Social Networking: Foster connections and build community.
+Communication: Facilitate effective communication within the community.
+Event Management: Plan, promote, and execute events seamlessly.
+Recruitment: Attract and hire new members or staff.
+Project Management: Organize and collaborate on community projects.
+Learning Management System: Offer educational courses and workshops.
+Fellowship Management: Connect and support community members.
+Placemaking: Create vibrant and inclusive community spaces.
+
+Better Together is a comprehensive solution that empowers communities to thrive and achieve their goals."""
+,Customer Communications,Discord,No,Discord Inc.,https://discord.com/,Free and paid plans (Nitro),Cost varies depending on your country and plan.,Free for basic use,"Community support, FAQ, paid support for Nitro",,Widely used for volunteer coordination,"Great for real-time communication; supports voice, video, and text."
+,Ticketing System,"UVDesk
+",Yes,Webkul,https://www.uvdesk.com/,Free for open-source; paid plans,Varies,NA,Community and paid support,,,Multichannel support and automation features
+,,"DeskPro
+",No,DeskPro,https://www.deskpro.com/,"Paid plans
+",Starts at $30/user/mo,N/A,"Email, chat, and phone support",,,Comprehensive support for ticket management
+,Video Editing,Olive Video Editor,Yes,Open-source community,https://olivevideoeditor.org/,"Free
+",NA,NA,Community forums and resources,,,Suitable for both beginners and advanced users
+,Website Management,Google Lighthouse,Yes,Google,https://developer.chrome.com/docs/lighthouse/overview,Free,Free,N/A,Documentation and GitHub Issues,,Utilized by NGOs for website performance improvement,Performance and accessibility analysis for websites.
+,,Wix,N,Wix.com,wix.com,Freemium https://www.wix.com/plans,Starts at 200 rupees/mo,Basic plan free,"Email, Forum",-,-,Drag-and-drop editor
+,,Squarespace,No,"Squarespace, Inc.",https://squarespace.com/,Paid plans only https://www.squarespace.com/pricing,Starting ~$16/month,N/A,Email and live chat support,,Often used by NGOs for professional websites,Easy-to-use website builder with templates.
+,,Joomla,Yes,Joomla Community,https://www.joomla.org,Free,NA,NA,Community support and extensive documentation,,,Requires knowledge of PHP for customization
+,Adobe Creative Suite,GIMP,Yes,GNU Project,https://www.gimp.org,Free,NA,NA,Extensive community forums and tutorials,,,Lacks some advanced features found in commercial tools
+,,Inkscape,Yes,Open-source community,https://inkscape.org/,"
+Free",NA,NA,Community-based support,,,Learning curve for beginners
+,,Better Together,No,Platform Commons,https://bettertogether.co,Onboarding and Annual SaaS Fee,Starts from Rs. 2500 per month,"First month free, 10% off for nonprofits",,All SDGs,"Vrutti, ReachOne, iVolunteer","""Better Together is a versatile software designed to streamline and enhance community engagement and management. It offers a wide range of features, including:
+
+Volunteer Management: Easily recruit, schedule, and track volunteers.
+Fundraising: Manage donations, campaigns, and donor relationships.
+Community Engagement & Social Networking: Foster connections and build community.
+Communication: Facilitate effective communication within the community.
+Event Management: Plan, promote, and execute events seamlessly.
+Recruitment: Attract and hire new members or staff.
+Project Management: Organize and collaborate on community projects.
+Learning Management System: Offer educational courses and workshops.
+Fellowship Management: Connect and support community members.
+Placemaking: Create vibrant and inclusive community spaces.
+
+Better Together is a comprehensive solution that empowers communities to thrive and achieve their goals."""
+Data & AI,Data Collection,Avni,Yes,Samanvay Foundation,https://avniproject.org/,"12 hours of Avni low-code platform live training 8 hours of consulting support over the next 1 month One month of free hosting after training Pricing: ₹40,000/-   Avni Cloud Hosting (After first month)  Up to 20 users, 5k forms per month, 200GB storage: ₹7,000/- per month (paid upfront annually) Up to 100 users:, 10k forms per month, 1TB storage: ₹10,000/- per month (paid upfront annually) More than 100 users: Custom quote",,,,,,
+,Data Analytics,Apache Superset,Yes,Apache Foundation,https://superset.apache.org/,NA,NA,,"Dedicated Team to host, customise ,train and  manage  different instances of superset",Supports all,,"Superset is fast, lightweight, intuitive, and loaded with options that make it easy for users of all skill sets to explore and visualize their data, from simple line charts to highly detailed geospatial charts."
+,,Dalgo,Yes,Project Tech4Dev,https://dalgo.in/,"Base Plan - Data Platform Base SaaS cost for running ingestion, transformation and orchestration infrastructure and Dalgo support. If an external vendor is providing you with end to end onboarding and support then this price is reduced.​  2,04,000*/p.a.​, Optional - Superset Superset is the visualisation platform managed and supported by Dalgo within the platform. NGOs may choose to connect to their own visualisation tools.  48,000*/p.a.",,,,,"Goalkeep, SHRI, TAP, The Agency Fund",
+,Cloud Computing,Google Cloud,N,Google,cloud.google.com,Pay-as-you-go https://cloud.google.com/pricing/?hl=en,Varies by service,$300 in credits,"Email, 24/7 Support",Various,-,Offers scalable cloud services
+,,Microsoft Azure,No,Microsoft,https://azure.microsoft.com/,Pay-as-you-go and subscription https://azure.microsoft.com/en-in/pricing/#Pricing-by-product,Variable by service,Free $200 for 30 days,"Email, live chat, and ticket-based support","Industry, Innovation, Infrastructure",Used by large NGOs for scalable cloud solutions,Advanced cloud computing platform with many integrations.
+,,Dropbox,N,Dropbox Inc.,dropbox.com,Freemium https://www.dropbox.com/plans?billing=monthly,Starts at $18/mo,2 GB free,"Email, Chat",-,-,Collaborative file sharing
+,Data Warehousing for Structured Data,Big Query,N,Google,cloud.google.com/bigquery,Pay-as-you-go,Varies by query,Free usage limits,24/7 Support,Industry Innovation,-,Managed data warehouse
+,,DataSpace,Yes,CivicDataLab,https://civicdatalab.in/,Freemium,NA,NA,Dedicated Product Team ,Supports all sectors ,,"A Dataspace can be a transformative initiative designed to create a shared data infrastructure for multiple use cases across sectors, enabling data sharing, re-use, and AI-driven innovation.  It provides open access to datasets that can spur innovation in fields like public finance,law and justice, climate, healthcare, urban development, and more, where individuals or organizations can consume or contribute data with ease. "
+,,Zoho Creator,No,Zoho Corporation,https://www.zoho.com/creator/,Paid plans available https://www.zoho.com/creator/pricing.html?src=hdd,Starting at 480 rupees/user/month,15-day free trial,"Email, chat, and call support",,,No-code app builder for various custom requirements.
+,Data Warehousing for Unstructured Data,Ecourts Data Scrapper,No,CivicDataLab,https://civicdatalab.in/,,,,"Data Engineer Team to source, clean and analyse data from official ecourts  ","SDG 16- Peace, Justice and strong institutions","Enfold, Agami ",
+,,Google DataStudio,N,Google,https://lookerstudio.google.com/u/0/navigation/reporting,Free,N/A,N/A,Google community and enterprise support,,N/A,Part of the Google Workspace tools; integrates well with Google Analytics
+,ETL,Zoho Analytics,N,Zoho,ZohoAnalytics,"Free 15 day trial on cloud, 30 day trial on premise",Varies,N/A,"Zoho support, documentation, forums",,N/A,Cloud-based analytics tool with strong integration features
+,Data Quality Management,Tally,No,Tally Solutions Pvt. Ltd.,https://tallysolutions.com/,One-time purchase or subscription https://tallysolutions.com/buy-tally/,Starting at 750 rupees/month,Free trial available,Email and phone support,,,Popular accounting software in India.
+,,Zoho Invoice,No,Zoho Corporation,https://www.zoho.com/in/invoice/,Free https://www.zoho.com/in/invoice/pricing/?src=invoice-newheader,Free for Indian businesses,Free for limited use,"Email, chat, and call support",,,Feature-rich invoicing solution for small and large teams.
+,,Samajaa,No,Frappe Technologies,samajaa.org,Custom pricing,Varies,N/A,Limited support details,Social welfare,Limited usage,Tailored for nonprofit data tracking; integrates well with local systems.
+,Other tools,Data Maturity Assessment,No,data.org,https://data.org/dma/,free,free,,,,,
+Chatbot,,GupShup,No,GupShup Technology,https://gupshup.io/,Pay-per-use,Varies,Free credits on registration,Email and ticket-based support,,,Excellent for WhatsApp and SMS-based communication.
+,,Lio,No,Lio Apps Pvt. Ltd.,https://lio.io/,Free and paid plans https://www.lio.io/pricing,Contact for pricing,Free for basic use,Email and chat support,,,Helps with data organization and reporting.
+,,Glific,Yes,Project Tech4Dev,https://glific.org/,"Monthly subscription fee- INR 9500+taxes, one time set up cost: INR 15000 + taxes",,,"Support through email, Discord, in-person quarterly meet ups",,,
+,,WATI,N,WATI,https://www.wati.io/,https://www.wati.io/pricing/,,,,,https://www.wati.io/education/,"-Integrated WhatsApp biz APIs
+- Flexible pricing 
+- Most comprehensive feature set, 
+- Extremely reliable"
+,,Zoko,N,Zoko,https://www.zoko.io/,https://www.zoko.io/pricing,,,,,https://www.zoko.io/case-study,"-Integrated WhatsApp biz APIs
+- Hands on support
+- Decent feature set"
+,,WhatsApp,Yes,Consortium (https://www.jugalbandi.ai/mission),https://www.jugalbandi.ai/liveapplications,Free,,,Support through email,Domain agnostic,Agami.in,
+AI (productivity & creativity tools),General/Multi-purpose,ChatGPT,N,OpenAI,chatgpt.com,Freemium,$20/mo (Plus),Limited free tier,"Community, Email, Documentation",,,Indian Languages Supported: Hindi| Bengali| Tamil| Telugu| Kannada| Malayalam| Marathi| Gujarati (Basic support)
+,,Claude,N,Anthropic,claude.ai,Usage-based,$0.008/1K tokens,No,"Community, Email, Documentation",,,Indian Languages Supported: Hindi| Tamil| Bengali (Basic support)
+,,Meta AI,N,Meta,gemini.google.com,,,,"Community, Email, Documentation",,,Indian Languages Supported: Hindi | Bengali | Tamil | Telugu | Malayalam
+,,Gemini,N,Google,meta.ai,,,,"Community, Email, Documentation",,,Indian Languages Supported: Hindi | Bengali | Tamil | Telugu | Malayalam | Marathi | Gujarati | Kannada | Punjabi
+,Text & Content,Copy.ai,N,Copy.ai,copy.ai,Tiered,$36+/mo,Free trial,Chat,,,Indian Languages Supported: Hindi (Limited)
+,,Jasper,N,Jasper.ai,jasper.ai,Tiered,$49-500/mo,5-day trial,24/7 chat,,,Indian Languages Supported: Hindi (Basic support)
+,Image Creation,DALL-E 3,N,OpenAI,openai.com,Credits,$0.040-0.080/image,Limited,Email,,,Text prompts in Hindi| Bengali| Tamil (Output in English)
+,,Midjourney,N,Midjourney Inc.,midjourney.com,Subscription,$10-60/mo,No,Discord,,,Limited text prompt support
+,,Canva,N,Canva,canva.com,Tiered,$12-30/mo,Free tier,"Email, Help Center",,,Indian Languages Supported: Hindi| Tamil| Telugu| Marathi| Bengali| Gujarati| Kannada| Malayali
+,Presentations,Beautiful.ai,N,Beautiful.ai,beautiful.ai,Tiered,$12-40/user/mo,Free trial,"Email, Chat",,,No Indian language support
+,,Gamma,N,Gamma,gamma.app,Freemium,$10-30/mo,Basic free tier,Email,,,No Indian language support
+,Audio & Voice,ElevenLabs,N,ElevenLabs,elevenlabs.io,Tiered,$5-330/mo,10K chars/mo,"Discord, Email",,,Indian Languages Supported: Hindi (Beta)
+,,Play.ht,N,Play.ht,play.ht,Subscription,$14.95-119/mo,Limited trial,Email,,,Indian Languages Supported: Hindi| Tamil| Telugu| Bengali| Marathi| Gujarati| Kannada
+,Music,Soundraw,N,Soundraw,soundraw.io,Subscription,$19-99/mo,Free trial,Email,,,N/A
+,,Amper,N,Shutterstock,ampermusic.com,Enterprise,Custom,Demo,Email,,,N/A
+,Video & Animation,D-ID,N,D-ID,d-id.com,Tiered,$5.99-150/mo,Limited trial,"Email, Chat",,,Hindi voice support
+,,Synthesia,N,Synthesia,synthesia.io,Custom,$30/video+,Demo,Email,,,Indian Languages Supported: Hindi| Tamil| Telugu
+,,Descript,N,Descript,descript.com,Tiered,$12-24/mo,Free trial,"Email, Chat",,,No Indian language support
+,,Runway,N,Runway,runway.ml,Subscription,$15-35/mo,Limited free,"Email, Docs",,,Text interface in Hindi
+,Code & Development,GitHub Copilot,N,GitHub,github.com/copilot,Subscription,$10-19/mo,Student free,Documentation,,,Code comments in Hindi (Basic)
+,,Amazon Code Whisperer,N,Amazon,aws.amazon.com,Tiered,Pay per use,Free tier,AWS Support,,,Limited Hindi support for comments
+,3D Design,Point-E,Y,OpenAI,github.com/openai/point-e,Free,Self-hosted,N/A,GitHub,,,No Indian language support
+,,Get3D,Y,NVIDIA,github.com/nvidia/get3d,Free,Self-hosted,N/A,GitHub,,,No Indian language support
+,Language & Translation,DeepL,N,DeepL,deepl.com,Tiered,€5.99-39.99/mo,500K chars/mo,Email,,,Hindi only
+,,KUDO,N,KUDO,kudoway.com,Custom,Contact sales,Demo,24/7 support,,,Indian Languages Supported: Hindi| Bengali| Tamil| Telugu
+,Speech Recognition,Whisper,Y,OpenAI,github.com/openai/whisper,Free/API,Usage-based,Limited,GitHub,,,Indian Languages Supported: Hindi| Tamil| Telugu| Bengali| Marathi| Gujarati| Kannada| Malayal
+,,AssemblyAI,N,AssemblyAI,assemblyai.com,Usage,$0.00099/sec,$10 credit,"Email, Docs",,,Hindi (Beta)
+,Document Processing,DocuAI,N,DocuAI,docuai.io,Tiered,Contact sales,Demo,Email,,,Indian Languages Supported: Hindi| Marathi
+,,Rossum,N,Rossum,rossum.ai,Custom,Contact sales,Trial,"Email, Chat",,,No Indian language support
+,Data Analysis,Obviously AI,N,Obviously AI,obviously.ai,Custom,Contact sales,Demo,"Email, Chat",,,Interface in Hindi
+,,MindsDB,Y,MindsDB,mindsdb.com,Usage-based,Custom pricing,Free tier,"Github, Slack",,,Basic support for Indian languages
+,,Chat CSV,Y,FlatFiile,chatcsv.co,Free,Free,Free,Documentation,,,No Indian language support
+,Data Visualization,Graphite,N,Graphite,graphite.com,Subscription,$29-99/mo,Limited free,Email,,,Limited Hindi support
+,,ChartPixel,N,Chart Pixel,chartpixel.com,Freemium,$5-$10/mo,Discounts for NPOs,"Email, Documentation",,,No Indian language support
+,Content Analysis,MonkeyLearn,N,MonkeyLearn,monkeylearn.com,Tiered,$299-999/mo,Free trial,Email,,,Hindi| Bengali support
+,,Hive,N,Hive,thehive.ai,Usage,Custom,Demo,Email,,,Indian Languages Supported: Hindi| Tamil| Telugu (basic)
+,Social Media,Hootsuite,N,Hootsuite,hootsuite.com,Tiered,$99-739/mo,30-day trial,"Chat, Email",,,Hindi| Tamil| Bengali posting support
+,,Later,N,Later,later.com,Tiered,$18-40/mo,Free plan,Email,,,Basic Hindi support
+,Scheduling,Motion,N,Motion,motion.app,Per user,$19-34/mo,7-day trial,Chat,,,No Indian language support
+,,Reclaim.ai,N,Reclaim,reclaim.ai,Tiered,$8-16/user/mo,Free plan,Email,,,No Indian language support
+,Workflow Automation,Zapier,N,Zapier,zapier.com,Tiered,$19.99-599/mo,Limited tasks,"Chat, Email",,,Limited Hindi interface
+,,Slack,No,"Slack Technologies, LLC",slack.com,"Free, Pro, Business+, Enterprise https://slack.com/intl/en-in/pricing",Starts at 245.25 rupees/user/month (billed annually); others vary,"Free tier available, limited features","24/7 support varies by plan, priority for higher tiers",Communication,,Ideal for team collaboration and communication​
+,,Make,N,Make,make.com,Tiered,$9-$29/mo (10K ops),Basic version,"Chat, Email",,,No Indian language support
+,Writing Assistant,Grammarly,N,Grammarly,grammarly.com,Freemium,$12-15/mo,Basic free,"Email, KB",,,English only
+,,ProWritingAid,N,ProWritingAid,prowritingaid.com,Subscription,$20/mo,Free trial,Email,,,English on
+,SEO & Marketing,Clearscope,N,Clearscope,clearscope.io,Tiered,$170+/mo,Demo,Email,,,Limited Hindi SEO
+,,MarketMuse,N,MarketMuse,marketmuse.com,Custom,Contact sales,Demo,"Chat, Email",,,No Indian language support
+Event Management,,Cvent,N,Cvent,https://www.cvent.com,Custom,Contact sales,Demo,"Phone, Email, Knwoledge base",,,Great product to conduct event planning at one place
+,,Better Together,No,Platform Commons,https://bettertogether.co,Onboarding and Annual SaaS Fee,Starts from Rs. 2500 per month,NA,,All SDGs,"SBI Foundation, Make a Difference, U&I","Better Together is a versatile software designed to streamline and enhance community engagement and management. It offers a wide range of features, including:
+
+Volunteer Management: Easily recruit, schedule, and track volunteers.
+Fundraising: Manage donations, campaigns, and donor relationships.
+Community Engagement & Social Networking: Foster connections and build community.
+Communication: Facilitate effective communication within the community.
+Event Management: Plan, promote, and execute events seamlessly.
+Recruitment: Attract and hire new members or staff.
+Project Management: Organize and collaborate on community projects.
+Learning Management System: Offer educational courses and workshops.
+Fellowship Management: Connect and support community members.
+Placemaking: Create vibrant and inclusive community spaces.
+
+Better Together is a comprehensive solution that empowers communities to thrive and achieve their goals."
+Digital Learning and Training,,Orchard (Formerly Campus Cloud),No,Platform Commons,https://platformcommons.org/school-erp-campus-cloud/,Onboarding and Annual SaaS Fee,Starts from Rs. 10000 per month ,"First month free, upto 10% off for nonprofits",,All SDGs,"Learning Links Foundation, Make a Difference, Gubbachi","Campus Cloud is an app for educators and volunteers to manage classroom tasks. It helps mark attendance, conduct assessments, and evaluate progress. Additionally, it enables inspections and manages teachers and volunteers. Simplify your tasks with Campus Cloud."
+,,Synergy Skills and Learning Management,No,SynergyConnect Data Innovations Private Limited,www.synergyconnect.in,Subscription based,2 Lakhs Onwards,500 Participants,24 x 7 Support (India Time),Economic Development,Dr Lal Path Lab,Includes automation of Mobilisation to Placements lifecycle and Online Learning
+Others,,Common Farm,Yes,Platform Commons,https://commons.farm/markify-seller/commons-home,Per FPO based Pricing,Starting from Rs.2000 per FPO per Month,"Yes , based on no.of farmer the FPO has",Master Training and In person support ,Sustainable Agriculture ,,Complete FPO management tool with Market Linkage and Supply chain management 
+,Stack management,New Relic,No,New Relic Inc,https://newrelic.com,,,,,,,
+,Full stack suite,Sarvam.ai,No,Sarvam.ai,Sarvam.ai,,,,Email,Legal + other domains,,
+,AI,AI Lab - multiple products / tools enabled by AI,"Yes
+(For Ashoka Fellows)",https://socialinnovationsjournal.com/index.php/sij/article/view/7104,ashoka.org,,,,https://www.ashoka.org/en-in/story/social-entrepreneurs-leveraging-and-shaping-artificial-intelligencee,,,"Contact to know more:
+https://www.linkedin.com/in/odinmuehlenbein/
+https://www.linkedin.com/in/danimatielo/"
+,Presentations,SlideShare,No,LinkedIn,https://www.slideshare.net,Free,Free,Free,Online FAQs,Domain Agnostic,"Share presentations globally
+",share PowerPoint slides and presentations.
+,Presentations,Prezi,No,Prezi Inc,https://prezi.com/?click_source=logged_element&page_location=header&element_type=logo,https://prezi.com/pricing/?click_source=logged_element&page_location=header&element_text=pricing,Starts at $5 per month,14 Days Free Trial,,Domain Agnostic,,"Create and share presentations online with the cloud- based, free software"
+,Capacity Building,Commons.farm,No,Platform Commons,https://commons.farm,Onboarding and Annual SaaS Fee,Starts from Rs.10 per farmer per month,,,All SDGs,Vrutti,Capacity building for farmers
+,,Wordwall,No,Wordwall.net,https://wordwall.net,https://wordwall.net/price-plans,Starts at 210 rupees per month,,Email support and website guide ,SDG 4: Quality Education,,Great to create teaching resources
+,Marketplace,Commons.farm,No,Platform Commons,https://commons.farm,Onboarding and Annual SaaS Fee,Starts from Rs.10 per farmer per month,,,All SDGs,Vrutti,
+,FPO ERP,Commons.farm,No,Platform Commons,https://commons.farm,Onboarding and Annual SaaS Fee,Starts from Rs.10 per farmer per month,,,All SDGs,Vrutti,
+,Organic Transformation,Commons.farm,No,Platform Commons,https://commons.farm,Onboarding and Annual SaaS Fee,Starts from Rs.10 per farmer per month,,,All SDGs,Vrutti,
+,Change Management System,Journeys of Change,No,Platform Commons,https://digitalcommons.io/product/journeysofchange,Onboarding and Annual SaaS Fee,Starts from Rs. 20000 per month,NA,,All SDGs,Gandhi Fellowship,
+,Mentorship,Ally,No,Platform Commons,https://digitalcommons.io/product/ally,Onboarding and Annual SaaS Fee,Starts from Rs. 10000 per month ,"First month free, upto 10% off for nonprofits",,All SDGs,,"Ally is a mentorship app connecting mentors and mentees for online & offline sessions. The platform offers progress tracking, video call integration, auto recording, and feedback features. With Ally, nonprofits can observe progress of mentees and mentors towards desired goals. Leverage Ally to transform & scale your mentorship program."
+,Security Cloud,Kaspersky Cloud for Endpoint Protection,No,Kaspersky,https://www.kaspersky.com/small-to-medium-business-security/cloud,Subscription-based,Varies by license,Trial available,"24/7 support, live chat, and resources",,"Subscription-based
+Varies by license
+Trial available
+24/7 support, live chat, and resources",
+,Hospital Management,Bahmni,Yes,Bahmni Coalition,https://www.bahmni.org,Free with community support; paid options,NA,,"Community support, paid options available",SDG 3 (Good Health & Well-being),"WHO, PATH, MSF",Tailored for low-resource health settings.
+,Link Management,Bitly,No,Bitly,https://www.bitly.com/,"Subscription, Free Tier https://bitly.com/pages/pricing","Free, paid from $8/month",Basic free tier,"Email support, self-service resources",,Global Giving,Useful for tracking engagement in campaigns.
+,Logistics/Shipping and Tracking,Shiprocket,No,Shiprocket,https://www.shiprocket.in,"Subscription, per shipment https://www.shiprocket.in/pricing/",Starts at 26/500 grams,,"Email, phone support available",,,Facilitates logistics for distributed NGOs.
+,Payment Processing/Gateway,Razorpay,No,Razorpay,https://razorpay.com/,"Per transaction, subscription options",~2% per transaction,,"Email support, 24/7 helpdesk",,GiveIndia,Popular for fundraising and processing donations online.
