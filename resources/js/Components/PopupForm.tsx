@@ -2,16 +2,18 @@ import { TextField, Button } from "@mui/material";
 import { useCallback, SyntheticEvent, ChangeEvent } from "react";
 import { useForm } from "@inertiajs/react";
 import { route } from 'ziggy-js';
+import { FormControlLabel, Checkbox } from "@mui/material";
 
 interface Props {
    afterSuccess?: CallableFunction
    submitButtonText?: string
    showMessageField?: boolean
    footerText?: string
+   consentCheck?: boolean
 }
 
-export default function PopupForm({ afterSuccess, submitButtonText = 'Submit', showMessageField = false, footerText }: Props) {
-   const { data, setData, post } = useForm({
+export default function PopupForm({ afterSuccess, submitButtonText = 'Submit', showMessageField = false, footerText, consentCheck = true }: Props) {
+   const { data, setData, post, errors } = useForm({
       name: '',
       organization: '',
       email: '',
@@ -23,7 +25,6 @@ export default function PopupForm({ afterSuccess, submitButtonText = 'Submit', s
 
       post(route('forms.store', data), {
          onSuccess: () => {
-            console.log('suc');
             if (typeof afterSuccess === 'function') afterSuccess();
          },
       });
@@ -51,6 +52,8 @@ export default function PopupForm({ afterSuccess, submitButtonText = 'Submit', s
                   required
                   value={data.name}
                   onChange={inputChangeHandler}
+                  error={errors.name !== undefined}
+                  helperText={errors.name}
                />
                <TextField
                   id="organization"
@@ -59,14 +62,19 @@ export default function PopupForm({ afterSuccess, submitButtonText = 'Submit', s
                   required
                   value={data.organization}
                   onChange={inputChangeHandler}
+                  error={errors.organization !== undefined}
+                  helperText={errors.organization}
                />
                <TextField
                   id="email"
+                  type="email"
                   label="Email Id"
                   variant="outlined"
                   required
                   value={data.email}
                   onChange={inputChangeHandler}
+                  error={errors.email !== undefined}
+                  helperText={errors.email}
                />
                {showMessageField &&
                   <TextField
@@ -77,8 +85,15 @@ export default function PopupForm({ afterSuccess, submitButtonText = 'Submit', s
                      onChange={inputChangeHandler}
                      multiline
                      rows={4}
+                     error={errors.message !== undefined}
+                     helperText={errors.message}
                   />
                }
+               <FormControlLabel
+                  required
+                  control={<Checkbox />}
+                  label="I hereby consent to receiving communication from the ILSS team."
+               />
                <Button
                   type="submit"
                   className="!bg-primary !text-[#464646] !text-lg !font-medium !py-3 mt-2 md:!mt-3 !rounded-lg shadow-[0px_0px_9.7px_0px_#00000040]"
