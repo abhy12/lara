@@ -62,7 +62,10 @@ export default function Index({ tools, categories }: Props) {
                         <h2 className="font-medium text-secondary">Category</h2>
                      </AccordionSummary>
                      <AccordionDetails>
-                        {Array.isArray(categories) && categories.map(cat =>
+                        {Array.isArray(categories) &&
+                        categories
+                        .sort((a, b) => ( a.name > b.name ) ? 1 : 0 )
+                        .map(cat =>
                            <Accordion
                               className="!my-0 !shadow-none"
                               key={cat.id}
@@ -87,7 +90,9 @@ export default function Index({ tools, categories }: Props) {
                               <AccordionDetails>
                                  {Array.isArray(cat.subcategory) &&
                                     <div className='flex flex-col gap-2'>
-                                       {cat.subcategory.map(sub =>
+                                       {cat.subcategory
+                                       .sort((a, b) => ( a.name > b.name ) ? 1 : 0 )
+                                       .map(sub =>
                                           <button
                                              className='block font-normal text-left text-sm
                                              text-[#7A7A7A] hover:text-primary'
