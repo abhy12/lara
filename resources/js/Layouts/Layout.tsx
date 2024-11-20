@@ -6,11 +6,13 @@ interface Props {
 }
 
 export default function Layout({ children }: Props) {
-   return(
-      <>
-         <Header />
-         {children}
+   return (
+      <div className="flex flex-col justify-between min-h-screen">
+         <div>
+            <Header />
+            {children}
+         </div>
          <Footer />
-      </>
+      </div>
    );
 }

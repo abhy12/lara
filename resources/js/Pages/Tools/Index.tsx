@@ -1,5 +1,5 @@
 import { Head, Link } from '@inertiajs/react';
-import Layout from '@/Components/Layout';
+import Layout from '@/Layouts/Layout';
 import type { ToolsProps } from '@/util/props';
 import { route } from 'ziggy-js';
 import type { Category } from '@/util/props';

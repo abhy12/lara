@@ -1,7 +1,7 @@
 import { Head, Link } from '@inertiajs/react';
 import type { ServiceProps } from '@/util/props';
 import { route } from 'ziggy-js';
-import Layout from '@/Components/Layout';
+import Layout from '@/Layouts/Layout';
 import { useState } from 'react';
 
 interface Props {

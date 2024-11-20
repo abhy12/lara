@@ -1,4 +1,4 @@
-import Layout from "@/Components/Layout";
+import Layout from "@/Layouts/Layout";
 import { Head } from "@inertiajs/react";
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import { ArrowDropDown } from '@mui/icons-material';

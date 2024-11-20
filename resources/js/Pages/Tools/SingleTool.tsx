@@ -1,5 +1,5 @@
 import type { ToolsProps } from "@/util/props"
-import Layout from "@/Components/Layout";
+import Layout from "@/Layouts/Layout";
 import { Head, Link } from "@inertiajs/react";
 import { route } from 'ziggy-js';
 

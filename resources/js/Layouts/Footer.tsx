@@ -1,6 +1,7 @@
 import PopupModal from "@/Components/PopupModal";
 import { useState, useCallback } from "react";
 import PopupForm from "@/Components/PopupForm";
+import Container from "./Container";
 
 const cookieName = "popupFormSubmitted";
 const cookieValue = "1";
@@ -38,20 +39,22 @@ export default function Footer() {
    return (
       <>
          <footer
-
-            className="relative text-white text-[0.688rem] md:text-xs md:text-center px-[5%] pt-8 md:pt-14 pb-6 md:pb-9 bg-foot md:bg-mdFoot bg-cover"
+            className="relative text-white text-[0.688rem] md:text-xs md:text-center pt-8
+            md:pt-14 pb-6 md:pb-9 bg-foot md:bg-mdFoot bg-cover"
          >
-            <img
-               src="/assets/img/folder.svg"
-               alt="Image"
-               className="w-10 md:w-16 absolute left-2 top-4 -translate-y-full"
-            />
-            <img
-               src="/assets/img/clouds.svg"
-               alt="Image"
-               className="absolute right-2 md:hidden top-4 -translate-y-full"
-            />
-            <p>The information provided here is created as a community resource and is not intended as professional advice or a recommendation by ILSS or Koita Foundation. While we strive to ensure the accuracy of the content, we do not take responsibility for any errors or omissions. Users should use their own discretion before making any decisions based on this information. ILSS or Koita Foundation assume no liability for any actions taken based on the information provided.</p>
+            <Container>
+               <img
+                  src="/assets/img/folder.svg"
+                  alt="Image"
+                  className="w-10 md:w-16 absolute left-2 top-4 -translate-y-full"
+               />
+               <img
+                  src="/assets/img/clouds.svg"
+                  alt="Image"
+                  className="absolute right-2 md:hidden top-4 -translate-y-full"
+               />
+               <p>The information provided here is created as a community resource and is not intended as professional advice or a recommendation by ILSS or Koita Foundation. While we strive to ensure the accuracy of the content, we do not take responsibility for any errors or omissions. Users should use their own discretion before making any decisions based on this information. ILSS or Koita Foundation assume no liability for any actions taken based on the information provided.</p>
+            </Container>
          </footer>
          <PopupModal
             isActive={isPopupModalActive}

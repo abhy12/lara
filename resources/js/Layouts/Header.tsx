@@ -5,6 +5,7 @@ import { useState, useCallback } from "react";
 import PopupForm from "@/Components/PopupForm";
 import { Popper, ClickAwayListener } from '@mui/material';
 import { Menu } from '@mui/icons-material';
+import Container from '@/Layouts/Container';
 
 export default function Header() {
    const [isHelpModalActive, setIsHelpModalActive] = useState(false);
@@ -24,36 +25,41 @@ export default function Header() {
    return (
       <>
          <header
-            className="text-white bg-secondary px-7 py-3.5 md:py-5 flex flex-wrap justify-between items-center gap-x-5 md:gap-x-12">
-            <button
-               className='lg:hidden'
-               onClick={handleMenuClick}
-               aria-describedby={menuId}
-            >
-               <Menu className='text-white' />
-            </button>
-            {openMenu &&
-               <ResponsiveMenu
-                  clickAwayHandler={() => setAnchorEl(null)}
-                  anchorEl={anchorEl}
-                  openMenu
-               />
-            }
-            <div className='flex flex-wrap items-center gap-4 md:gap-6'>
-               <a className='grow max-w-16 md:max-w-20' href='https://indialeadersforsocialsector.com/' target='_blank'>
-                  <img className='w-full' src='/assets/img/logo-1.svg' />
-               </a>
-               <a className='grow max-w-16 md:max-w-24' href='https://www.koitafoundation.org/' target='_blank'>
-                  <img className='w-full' src='/assets/img/logo-2.png' />
-               </a>
-            </div>
-            <nav className="font-semibold md:text-lg hidden lg:flex flex-col md:flex-row gap-x-5 md:gap-x-12 ml-auto">
-               <HeaderLinks />
-            </nav>
-            <button
-               className="text-tertiary bg-primary font-semibold px-3 py-1 rounded-lg"
-               onClick={() => setIsHelpModalActive(true)}
-            >Help</button>
+            className="text-white bg-secondary "
+         >
+            <Container className='flex flex-wrap
+            justify-between items-center gap-x-5 md:gap-x-12 py-3.5 md:py-5'>
+
+               <button
+                  className='lg:hidden'
+                  onClick={handleMenuClick}
+                  aria-describedby={menuId}
+               >
+                  <Menu className='text-white' />
+               </button>
+               {openMenu &&
+                  <ResponsiveMenu
+                     clickAwayHandler={() => setAnchorEl(null)}
+                     anchorEl={anchorEl}
+                     openMenu
+                  />
+               }
+               <div className='flex flex-wrap items-center gap-4 md:gap-6'>
+                  <a className='grow max-w-16 md:max-w-20' href='https://indialeadersforsocialsector.com/' target='_blank'>
+                     <img className='w-full' src='/assets/img/logo-1.svg' />
+                  </a>
+                  <a className='grow max-w-16 md:max-w-24' href='https://www.koitafoundation.org/' target='_blank'>
+                     <img className='w-full' src='/assets/img/logo-2.png' />
+                  </a>
+               </div>
+               <nav className="font-semibold md:text-lg hidden lg:flex flex-col md:flex-row gap-x-5 md:gap-x-12 ml-auto">
+                  <HeaderLinks />
+               </nav>
+               <button
+                  className="text-tertiary bg-primary font-semibold px-3 py-1 rounded-lg"
+                  onClick={() => setIsHelpModalActive(true)}
+               >Help</button>
+            </Container>
          </header>
          <PopupModal
             isActive={isHelpModalActive}
