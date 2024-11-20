@@ -34,7 +34,7 @@ class StoreToolRequest extends FormRequest
             'ngo_ref' => 'nullable|string',
             'additional_comments' => 'nullable|string',
             'service_provider' => 'nullable|string',
-            'logo' => 'nullable|image|max:4048',
+            // 'logo' => 'nullable|image|max:4048',
         ];
     }
 }
