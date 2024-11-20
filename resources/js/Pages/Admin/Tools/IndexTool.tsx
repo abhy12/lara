@@ -90,7 +90,7 @@ export default function Index({ tools }: Props) {
                rows={rows}
                columns={columns}
                disableColumnFilter={true}
-               hideFooter={true}
+               // hideFooter={true}
             />
          </div>
       </Dashboard>
