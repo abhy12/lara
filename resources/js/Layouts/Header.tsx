@@ -67,9 +67,7 @@ export default function Header() {
          >
             <PopupForm
                afterSuccess={handleCloseModal}
-               footerText="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-               Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-               Lorem Ipsum is simply dummy text of the printing and typesetting."
+               footerText="The information provided here is created as a community resource and is not intended as professional advice or a recommendation by ILSS or Koita Foundation. While we strive to ensure the accuracy of the content, we do not take responsibility for any errors or omissions. Users should use their own discretion before making any decisions based on this information. ILSS or Koita Foundation assume no liability for any actions taken based on the information provided."
                submitButtonText='Send'
                showMessageField={true}
             />
@@ -82,10 +80,10 @@ function HeaderLinks() {
    return (
       <>
          <Link href={route('home')}>Home</Link>
+         <Link href={route('about')}>About</Link>
          <Link href={route('tools.index')}>Tools</Link>
          <Link href={route('services.index')}>Service Provider</Link>
          <Link href={route('faqs')}>FAQs</Link>
-         <Link href={route('about')}>About</Link>
       </>
    );
 }

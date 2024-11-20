@@ -63,48 +63,48 @@ export default function Index({ tools, categories }: Props) {
                      </AccordionSummary>
                      <AccordionDetails>
                         {Array.isArray(categories) &&
-                        categories
-                        .sort((a, b) => ( a.name > b.name ) ? 1 : 0 )
-                        .map(cat =>
-                           <Accordion
-                              className="!my-0 !shadow-none"
-                              key={cat.id}
-                              sx={{
-                                 '&::before': {
-                                    content: 'unset',
-                                 },
-                                 '& .MuiAccordionDetails-root': {
-                                    padding: '0 0 5px 0',
-                                 },
-                                 '& .MuiButtonBase-root': {
-                                    border: 'unset!important',
-                                 },
-                              }}
-                           >
-                              <AccordionSummary
-                                 className="!px-0"
-                                 expandIcon={<ArrowDropDown className="text-secondary" fontSize="large" />}
-                              >
-                                 <h2 className="text-secondary font-normal">{cat.name}</h2>
-                              </AccordionSummary>
-                              <AccordionDetails>
-                                 {Array.isArray(cat.subcategory) &&
-                                    <div className='flex flex-col gap-2'>
-                                       {cat.subcategory
-                                       .sort((a, b) => ( a.name > b.name ) ? 1 : 0 )
-                                       .map(sub =>
-                                          <button
-                                             className='block font-normal text-left text-sm
+                           categories
+                              .sort((a, b) => (a.name > b.name) ? 1 : 0)
+                              .map(cat =>
+                                 <Accordion
+                                    className="!my-0 !shadow-none"
+                                    key={cat.id}
+                                    sx={{
+                                       '&::before': {
+                                          content: 'unset',
+                                       },
+                                       '& .MuiAccordionDetails-root': {
+                                          padding: '0 0 5px 0',
+                                       },
+                                       '& .MuiButtonBase-root': {
+                                          border: 'unset!important',
+                                       },
+                                    }}
+                                 >
+                                    <AccordionSummary
+                                       className="!px-0"
+                                       expandIcon={<ArrowDropDown className="text-secondary" fontSize="large" />}
+                                    >
+                                       <h2 className="text-secondary font-normal">{cat.name}</h2>
+                                    </AccordionSummary>
+                                    <AccordionDetails>
+                                       {Array.isArray(cat.subcategory) &&
+                                          <div className='flex flex-col gap-2'>
+                                             {cat.subcategory
+                                                .sort((a, b) => (a.name > b.name) ? 1 : 0)
+                                                .map(sub =>
+                                                   <button
+                                                      className='block font-normal text-left text-sm
                                              text-[#7A7A7A] hover:text-primary'
-                                             onClick={() => setFilterCategory( sub )}
-                                             key={sub.id}
-                                          >{sub.name}</button>
-                                       )}
-                                    </div>
-                                 }
-                              </AccordionDetails>
-                           </Accordion>
-                        )}
+                                                      onClick={() => setFilterCategory(sub)}
+                                                      key={sub.id}
+                                                   >{sub.name}</button>
+                                                )}
+                                          </div>
+                                       }
+                                    </AccordionDetails>
+                                 </Accordion>
+                              )}
                      </AccordionDetails>
                   </Accordion>
                </div>

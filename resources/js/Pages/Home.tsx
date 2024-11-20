@@ -17,14 +17,19 @@ export default function Welcome() {
                <div className="md:basis-2/5 pt-10 md:pt-20 pb-10">
                   <div className="relative">
                      <h1 className="text-tertiary font-DMSerifDisplay text-[2.558rem] md:text-[3rem] leading-none">Digital <br /><span
-                        className="text-primary text-[2.95rem] md:text-[4.25rem]">Transformation</span></h1>
+                        className="text-primary text-[2.95rem] md:text-[4.25rem]">Toolbook</span></h1>
                      <img src="/assets/img/cloud.svg" alt="Image"
                         className="w-20 md:w-auto absolute right-0 bottom-2 md:-right-8 md:bottom-3 -z-10" />
                   </div>
-                  <p className="text-tertiary font-light text-[1.728rem] md:text-[2rem] leading-none text-right mt-2 mb-10">
-                     <span className="border-current border-b">for non profits</span>
+                  <p
+                     className="text-tertiary font-light text-[1.728rem] md:text-[2rem]
+                     leading-none text-right mt-2 mb-10 flex items-center gap-3"
+                  >
+                     <div className='border-current border-b flex-grow'></div>
+                     <span className="flex-shrink-0">for social impact (DiTSI)</span>
                   </p>
-                  <h2 className="text-[#454545] text-xl md:text-[1.65rem] leading-[1.486em] mb-3 md:mb-8">What are you looking for?
+                  <h2 className="text-[#454545] text-xl md:text-[1.65rem] leading-[1.486em] mb-3 md:mb-8">
+                     What are you looking for?
                   </h2>
                   <div className="flex justify-between gap-5">
                      <div className="text-center max-w-36 md:max-w-none">

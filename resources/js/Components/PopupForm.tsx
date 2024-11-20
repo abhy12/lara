@@ -79,7 +79,7 @@ export default function PopupForm({ afterSuccess, submitButtonText = 'Submit', s
                {showMessageField &&
                   <TextField
                      id="message"
-                     label="Message"
+                     label="Queries"
                      variant="outlined"
                      value={data.message}
                      onChange={inputChangeHandler}
