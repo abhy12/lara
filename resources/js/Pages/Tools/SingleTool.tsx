@@ -16,14 +16,14 @@ export default function Single({ tool }: Props) {
          <main className="grow">
             <section className="text-white px-8 pt-10 lg:pt-16 pb-20 lg:pb-28 bg-[url('/assets/img/tool-01.svg')] bg-cover bg-bottom">
                <div className="container mx-auto">
-                  <p className="text-[#909090] font-semibold text-lg mb-10">
+                  <p className="text-[#909090] font-semibold text-lg mb-10 lg:mb-16">
                      <Link href="/">Home</Link>
                      &nbsp;/&nbsp;
                      <Link href={route('tools.index')}>Tools</Link>
                      &nbsp;/&nbsp;
                      <Link href={route('tools.show', { id: tool.id })} className="text-[#762E5E]">{tool.name}</Link>
                   </p>
-                  <div className="flex flex-col lg:flex-row lg:items-end gap-10 lg:gap-24">
+                  <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-24">
                      <div className="basis-1/4">
                         <div className="bg-white w-36 lg:w-64 aspect-square rounded-full p-3 lg:p-7 flex justify-center items-center">
                            <img src={tool.logo || "/assets/img/placeholder-image.webp"} alt="Image" />
@@ -40,7 +40,12 @@ export default function Single({ tool }: Props) {
                         </p>
                      </div>
                      <div className="basis-1/4 flex lg:justify-end items-end">
-                        <a href={tool.website || '#'} target="_blank" className="bg-primary text-lg text-center block w-64 p-2 rounded-lg shadow-md">Visit Website</a>
+                        <a
+                           className="bg-primary text-lg text-center block w-64 p-2 rounded-lg shadow-md
+                           transition hover:bg-dark hover:text-primary"
+                           href={tool.website || '#'}
+                           target="_blank"
+                        >Visit Website</a>
                      </div>
                   </div>
                </div>

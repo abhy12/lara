@@ -19,6 +19,7 @@ export default {
             primary: 'rgba(255, 201, 84, 1)',
             secondary: 'rgba(118, 46, 94, 1)',
             tertiary: 'rgba(64, 43, 74, 1)',
+            dark: '#363636',
          }
       },
    },

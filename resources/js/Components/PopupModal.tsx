@@ -17,7 +17,7 @@ export default function PopupModal({ isActive, onClose, children, closeOnDefault
          hideBackdrop={!closeOnDefault}
       >
          <div
-            className="h-full flex justify-center items-center bg-white/35"
+            className="h-full flex justify-center items-center bg-white/35 px-4"
             onClick={e => { if (e.target === e.currentTarget && closeOnDefault) onClose() }}
          >
             {children}

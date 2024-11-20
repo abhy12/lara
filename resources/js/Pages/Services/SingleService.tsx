@@ -16,7 +16,7 @@ export default function Single({ service }: Props) {
          <main className="grow">
             <section className="px-8 pt-10 lg:pt-16 pb-20 lg:pb-28 bg-[url('/assets/img/service-01.svg')] bg-cover bg-bottom">
                <div className="container mx-auto">
-                  <p className="text-[#909090] font-semibold text-lg mb-10">
+                  <p className="text-[#909090] font-semibold text-lg mb-10 lg:mb-16">
                      <Link href="/">Home</Link>
                      &nbsp;/&nbsp;
                      <Link
@@ -32,7 +32,7 @@ export default function Single({ service }: Props) {
                      <div className="basis-1/4">
                         <div
                            className="bg-white w-full max-w-36 lg:max-w-64 aspect-square
-                           rounded-full p-4 lg:p-7 flex justify-center items-center"
+                           rounded-full p-7 lg:p-10 flex justify-center items-center"
                         >
                            <img src={service?.logo || "/assets/img/placeholder-image.webp"} alt="Image" />
                         </div>
@@ -71,7 +71,8 @@ export default function Single({ service }: Props) {
                                  href={`tel:${service.contact_number}`}
                               >{service.contact_number}</a></p>
                            <a
-                              className="bg-white text-lg text-center block max-w-64 p-2 rounded-lg shadow-md"
+                              className="bg-white hover:bg-dark hover:text-primary transition
+                              text-lg text-center block max-w-64 p-2 rounded-lg shadow-md"
                               href={service.website}
                               target='_blank'
                            >Visit Website</a>

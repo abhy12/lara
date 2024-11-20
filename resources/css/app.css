@@ -20,7 +20,7 @@ body::before{
    background: url('/assets/img/body-background.jpg');
    background-size: contain;
    z-index: -1;
-   @apply absolute inset-0 opacity-40;
+   @apply absolute inset-0 opacity-20;
 }
 
 .MuiInputBase-input:focus{
@@ -49,4 +49,9 @@ body::before{
 input:not([class*="Mui"]) {
    padding: 10px;
    @apply border;
+}
+@media(max-width: 767px) {
+   .mui-popupform-input-field .MuiInputBase-input{
+      padding: 13.5px 14px!important;
+   }
 }

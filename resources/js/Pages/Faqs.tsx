@@ -2,6 +2,7 @@ import Layout from "@/Layouts/Layout";
 import { Head } from "@inertiajs/react";
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import { ArrowDropDown } from '@mui/icons-material';
+import { useState, useCallback, SyntheticEvent } from "react";
 
 interface Faq {
    title: string
@@ -60,14 +61,19 @@ const faqs: Faq[] = [
 ];
 
 export default function Faq() {
+   const [isActiveAccordion, setIsActiveAccordion] = useState<string | boolean>(false);
+   const handleAccordionChange = useCallback((title: string) => (_: SyntheticEvent, newExpanded: boolean) => {
+      setIsActiveAccordion(newExpanded ? title : false);
+   }, []);
+
    return (
       <Layout>
          <Head title="FAQs" />
          <main className="grow">
-            <section className="text-white px-8 py-10 lg:pt-20 lg:pb-16 bg-[url('/assets/img/faqs-01.svg')] bg-cover bg-bottom">
+            <section className="text-white px-8 py-8 lg:pt-20 lg:pb-16 bg-[url('/assets/img/faqs-01.svg')] bg-cover bg-bottom">
                <div className="container mx-auto flex justify-between items-center">
-                  <h1 className="font-DMSerifDisplay text-6xl lg:text-[2.813rem]">FAQs</h1>
-                  <img src="/assets/img/faqs-02.gif" alt="Image" className="w-20 lg:w-28" />
+                  <h1 className="font-DMSerifDisplay text-5xl">FAQs</h1>
+                  <img src="/assets/img/faqs-02.gif" alt="Image" className="w-20 lg:w-28 flex-shrink" />
                </div>
             </section>
 
@@ -76,25 +82,12 @@ export default function Faq() {
                   <div className="basis-2/3">
                      <div className="bg-white max-w-[40rem] p-5 lg:p-8 rounded-2xl">
                         {faqs.map(faq =>
-                           <Accordion key={faq.title} className="!my-0 !shadow-none" sx={{
-                              '&::before': {
-                                 backgroundColor: '#402B4A'
-                              },
-                              '& .MuiAccordionDetails-root': {
-                                 padding: 0,
-                                 paddingBottom: 1.5,
-                              }
-                           }}>
-                              <AccordionSummary
-                                 className="!px-0"
-                                 expandIcon={<ArrowDropDown className="text-secondary" fontSize="large" />}
-                              >
-                                 <h2 className="font-semibold text-secondary">{faq.title}</h2>
-                              </AccordionSummary>
-                              <AccordionDetails>
-                                 <p>{faq.details}</p>
-                              </AccordionDetails>
-                           </Accordion>
+                           <AccordionFaq
+                              key={faq.title}
+                              title={faq.title}
+                              expanded={isActiveAccordion === faq.title}
+                              onClick={handleAccordionChange(faq.title)}
+                           ><p>{faq.details}</p></AccordionFaq>
                         )}
                      </div>
                   </div>
@@ -105,5 +98,42 @@ export default function Faq() {
             </section>
          </main>
       </Layout>
+   );
+}
+
+interface AccordionFaqProps {
+   title: string
+   children?: any
+   expanded: boolean
+   onClick: CallableFunction
+}
+
+function AccordionFaq({ title, expanded, children, onClick }: AccordionFaqProps) {
+   return (
+      <Accordion
+         className="!my-0 !shadow-none"
+         expanded={expanded}
+         //@ts-ignore
+         onChange={onClick}
+         sx={{
+            '&::before': {
+               backgroundColor: '#402B4A'
+            },
+            '& .MuiAccordionDetails-root': {
+               padding: 0,
+               paddingBottom: 1.5,
+            }
+         }}
+      >
+         <AccordionSummary
+            className="!px-0"
+            expandIcon={<ArrowDropDown className="text-secondary" fontSize="large" />}
+         >
+            <h2 className="font-semibold text-secondary">{title}</h2>
+         </AccordionSummary>
+         <AccordionDetails>
+            {children}
+         </AccordionDetails>
+      </Accordion>
    );
 }

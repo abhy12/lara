@@ -8,8 +8,8 @@ export default function About() {
          <main className="grow">
             <section className="text-white px-8 py-10 lg:pt-20 lg:pb-16 bg-[url('/assets/img/about-01.svg')] bg-cover bg-bottom">
                <div className="container mx-auto flex justify-between items-center">
-                  <h1 className="font-DMSerifDisplay text-6xl lg:text-[2.813rem]">About</h1>
-                  <img src="/assets/img/about-02.gif" alt="Image" className="w-20 lg:w-28" />
+                  <h1 className="font-DMSerifDisplay text-5xl lg:text-[2.813rem]">About</h1>
+                  <img src="/assets/img/about-02.gif" alt="Image" className="w-20 lg:w-28 flex-shrink" />
                </div>
             </section>
 
@@ -27,13 +27,18 @@ export default function About() {
                         by providing a comprehensive resource of tools, technologies, and service providers tailored for the unique requirements of the nonprofit sector.</p>
                      <p
                         className="text-[#363636] text-[0.888rem] 2xl:text-[1.075rem]"
-                     >In our The State Of The Sector Report On Digital Transformation For Nonprofits In India,
+                     >In our <a
+                           className='text-blue-500'
+                           href='https://indialeadersforsocialsector.com/download-ilss-digital-transformation-for-social-impact-program-report/'
+                           target='_blank'
+                        >The State Of The Sector Report On Digital Transformation For Nonprofits In India</a>,
                         we found that organisations, despite their diverse objectives and locations,
                         face common technology-related challenges. These challenges include uncertainty
                         about the available digital tools and technologies, struggles with identifying and
                         articulating technology needs and goals, and budgeting dilemmas beyond just applications and subscriptions.<br />
                         We also learnt that nonprofits are at various stages in their digital journey. While many have experimented with some form of digital tools and technologies, a significant number still grapple with foundational questions and uncertainties.
                      </p>
+                     <br/>
                      <p
                         className="text-[#363636] text-[0.888rem] 2xl:text-[1.075rem] mb-6"
                      >This compendium was inspired by the needs and opportunities highlighted in our study. Our goal is to offer nonprofits a practical starting point by providing clear and accessible information on available digital tools and technologies. We aim to empower organizations to confidently embark and progress on their digital transformation journey.</p>

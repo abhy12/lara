@@ -17,7 +17,7 @@ export default function Header() {
 
    const handleMenuClick = (event: React.MouseEvent<HTMLElement>) => {
       setAnchorEl(anchorEl ? null : event.currentTarget);
-   };
+   }
 
    const openMenu = Boolean(anchorEl);
    const menuId = openMenu ? 'simple-popper' : undefined;
@@ -82,7 +82,7 @@ function HeaderLinks() {
          <Link href={route('home')}>Home</Link>
          <Link href={route('about')}>About</Link>
          <Link href={route('tools.index')}>Tools</Link>
-         <Link href={route('services.index')}>Service Provider</Link>
+         <Link href={route('services.index')}>Service Providers</Link>
          <Link href={route('faqs')}>FAQs</Link>
       </>
    );

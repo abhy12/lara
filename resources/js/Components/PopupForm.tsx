@@ -46,6 +46,7 @@ export default function PopupForm({ afterSuccess, submitButtonText = 'Submit', s
          <div className="p-3 md:p-10 md:pb-6">
             <form className="flex flex-col gap-3 md:gap-5" onSubmit={formSubmitHandler}>
                <TextField
+                  className="mui-popupform-input-field"
                   id="name"
                   label="Your Name"
                   variant="outlined"
@@ -56,6 +57,7 @@ export default function PopupForm({ afterSuccess, submitButtonText = 'Submit', s
                   helperText={errors.name}
                />
                <TextField
+                  className="mui-popupform-input-field"
                   id="organization"
                   label="Organization"
                   variant="outlined"
@@ -66,6 +68,7 @@ export default function PopupForm({ afterSuccess, submitButtonText = 'Submit', s
                   helperText={errors.organization}
                />
                <TextField
+                  className="mui-popupform-input-field"
                   id="email"
                   type="email"
                   label="Email Id"
@@ -78,6 +81,7 @@ export default function PopupForm({ afterSuccess, submitButtonText = 'Submit', s
                />
                {showMessageField &&
                   <TextField
+                     className="mui-popupform-input-field"
                      id="message"
                      label="Queries"
                      variant="outlined"
@@ -96,7 +100,8 @@ export default function PopupForm({ afterSuccess, submitButtonText = 'Submit', s
                />
                <Button
                   type="submit"
-                  className="!bg-primary !text-[#464646] !text-lg !font-medium !py-3 mt-2 md:!mt-3 !rounded-lg shadow-[0px_0px_9.7px_0px_#00000040]"
+                  className="!bg-primary !text-[#464646] !text-base md:!text-lg !font-medium
+                  !py-2 md:!py-3 mt-2 md:!mt-3 !rounded-lg shadow-[0px_0px_9.7px_0px_#00000040]"
                >{submitButtonText}</Button>
             </form>
          </div>

@@ -28,8 +28,8 @@ export default function Index({ services }: Props) {
                >Service Providers</Link>
             </nav>
             <div className="flex justify-between items-center mt-12 md:mt-6">
-               <h1 className="text-[#363636] font-DMSerifDisplay text-6xl">Service Providers</h1>
-               <img className="w-full max-w-28" src="/assets/img/gear.gif" alt="Image" />
+               <h1 className="text-[#363636] font-DMSerifDisplay text-5xl">Service Providers</h1>
+               <img className="w-full max-w-28 flex-shrink" src="/assets/img/gear.gif" alt="Image" />
             </div>
          </section>
 
@@ -70,13 +70,13 @@ export default function Index({ services }: Props) {
                               />
                            </div>
                            <Link href={route('services.show', { id: service.id })}
-                              className="bg-primary w-full max-w-12 md:max-w-14 aspect-square p-2 rounded-full
-                              flex justify-center items-center absolute right-0 bottom-0"
+                              className="w-full max-w-12 md:max-w-14 aspect-square p-4 rounded-full
+                              flex justify-center items-center absolute right-0 bottom-0 text-white
+                              transition bg-primary border border-primary hover:bg-white hover:text-primary"
                            >
-                              <img
-                                 src="/assets/img/arrow.svg"
-                                 alt="Image"
-                              />
+                              <svg viewBox="0 0 23 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M22.2931 6.99029C22.586 6.6974 22.586 6.22253 22.2931 5.92963L17.5201 1.15666C17.2272 0.863768 16.7523 0.863768 16.4594 1.15666C16.1665 1.44955 16.1665 1.92443 16.4594 2.21732L20.7021 6.45996L16.4594 10.7026C16.1665 10.9955 16.1665 11.4704 16.4594 11.7633C16.7523 12.0562 17.2272 12.0562 17.5201 11.7633L22.2931 6.99029ZM0.476562 7.20996L21.7627 7.20996L21.7627 5.70996L0.476563 5.70996L0.476562 7.20996Z" fill="currentColor" />
+                              </svg>
                            </Link>
                         </div>
                         <h2 className="text-[#F9B624] font-semibold text-xl md:text-2xl">{service.name}</h2>
