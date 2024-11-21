@@ -55,3 +55,12 @@ input:not([class*="Mui"]) {
       padding: 13.5px 14px!important;
    }
 }
+
+.home-hero-section{
+   --section-height: calc(100vh - (var(--header-height, 0px) + var(--footer-height,0px)));
+   min-height: var(--section-height, 0px);
+}
+
+.home-hero-image{
+   max-height: calc( var(--section-height) - 25px );
+}

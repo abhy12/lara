@@ -76,7 +76,6 @@ export default function Index({ tools, categories }: Props) {
                         <AccordionDetails>
                            {Array.isArray(categories) &&
                               categories
-                                 .sort((a, b) => (a.name > b.name) ? 1 : 0)
                                  .map(cat =>
                                     <Accordion
                                        className="!my-0 !shadow-none"

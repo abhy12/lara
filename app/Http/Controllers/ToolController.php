@@ -28,8 +28,8 @@ class ToolController extends Controller
     public function index()
     {
         return Inertia::render('Tools/Index', [
-            'tools' => Tool::with('categories')->get(),
-            'categories' => Category::where('parent_id', null)->with('subcategory')->get(),
+            'tools' => Tool::with('categories')->orderBy('name')->get(),
+            'categories' => Category::where('parent_id', null)->orderBy('name')->with('subcategory')->get(),
         ]);
     }
 

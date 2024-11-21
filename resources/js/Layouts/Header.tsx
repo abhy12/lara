@@ -1,13 +1,14 @@
 import { route } from 'ziggy-js';
 import { Link } from '@inertiajs/react';
 import PopupModal from "@/Components/PopupModal";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import PopupForm from "@/Components/PopupForm";
 import { Popper, ClickAwayListener } from '@mui/material';
 import { Menu } from '@mui/icons-material';
 import Container from '@/Layouts/Container';
 
 export default function Header() {
+   const headerRef = useRef<null| HTMLElement>(null);
    const [isHelpModalActive, setIsHelpModalActive] = useState(false);
    const handleCloseModal = useCallback(() => {
       setIsHelpModalActive(false);
@@ -22,10 +23,16 @@ export default function Header() {
    const openMenu = Boolean(anchorEl);
    const menuId = openMenu ? 'simple-popper' : undefined;
 
+   useEffect(() => {
+      if( !headerRef.current ) return
+      document.documentElement.style.setProperty("--header-height", headerRef.current.getBoundingClientRect().height + "px");
+   }, [headerRef]);
+
    return (
       <>
          <header
-            className="text-white bg-secondary "
+            className="text-white bg-secondary"
+            ref={headerRef}
          >
             <Container className='flex flex-wrap
             justify-between items-center gap-x-5 md:gap-x-12 py-3.5 md:py-5'>

@@ -1,5 +1,5 @@
 import PopupModal from "@/Components/PopupModal";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import PopupForm from "@/Components/PopupForm";
 import Container from "./Container";
 
@@ -25,6 +25,7 @@ const extractUserNameFromCookie = (cookieName: string) => {
 
 export default function Footer() {
    const [isPopupModalActive, setIsPopupModalActive] = useState(extractUserNameFromCookie(cookieName) !== '1');
+   const footerRef = useRef<null| HTMLElement>(null);
 
    const handleCloseModal = useCallback(() => {
       setIsPopupModalActive(false);
@@ -36,17 +37,23 @@ export default function Footer() {
       document.cookie = cookieName + '=' + cookieValue + '; expires=' + daysToExpire;
    }, []);
 
+   useEffect(() => {
+      if( !footerRef.current ) return
+      document.documentElement.style.setProperty("--footer-height", footerRef.current.getBoundingClientRect().height + "px");
+   }, [footerRef]);
+
    return (
       <>
          <footer
             className="relative text-white text-[0.688rem] md:text-xs md:text-center pt-8
             md:pt-14 pb-6 md:pb-9 bg-foot md:bg-mdFoot bg-cover"
+            ref={footerRef}
          >
             <Container>
                <img
                   src="/assets/img/folder.svg"
                   alt="Image"
-                  className="w-10 md:w-16 absolute left-2 top-4 -translate-y-full"
+                  className="w-10 md:w-16 absolute left-0.5 top-2.5 -translate-y-full"
                />
                <img
                   src="/assets/img/clouds.svg"
