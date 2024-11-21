@@ -36,7 +36,6 @@ Route::resource( 'posts', PostController::class )
 ->middleware(['auth']);
 
 Route::resource( 'category', CategoryController::class )
-->only(['store', 'update'])
 ->middleware(['auth', UserIsAdmin::class]);
 
 Route::resource( 'services', ServiceController::class )

@@ -28,14 +28,7 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        // get with tools
-        /* $services = Service::select('id', 'name', 'description')
-        ->with(['tools' => function( $query) {
-            $query->select('tool_id', 'name');
-        }])
-        ->get()->sortDesc()->values()->all(); */
-
-        $services = Service::select('id', 'name', 'description', 'logo')->get()->sortDesc()->values()->all();
+        $services = Service::orderBy('name')->get();
 
         return Inertia::render('Services/IndexService', [
             'services' => $services,

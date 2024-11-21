@@ -14,9 +14,9 @@ export default function Home() {
             <Container
                className='flex flex-col lg:flex-row lg:justify-between lg:items-center home-hero-section'
             >
-               <div className="lg:basis-2/5 pt-10 md:pt-12">
+               <div className="lg:basis-2/5 pt-8">
                   <div className="relative">
-                     <h1 className="text-tertiary font-DMSerifDisplay text-[2.558rem] md:text-[3rem] xl:text-6xl leading-none">
+                     <h1 className="text-tertiary font-DMSerifDisplay text-[2.558rem] md:text-[3rem] xl:text-[4rem] leading-none">
                         Digital <br />
                         <span
                            className="text-primary text-[2.95rem] md:text-[4.25rem] xl:text-8xl"
@@ -32,13 +32,15 @@ export default function Home() {
                      className="text-tertiary font-light text-[1.728rem] md:text-[2rem]
                      leading-none text-right mt-2 mb-10 flex items-center gap-3"
                   >
-                     <span className="flex-shrink-0">for Social impact (<strong className='font-bold'>DiTSI</strong>)</span>
+                     <span
+                        className="flex-shrink-0 m-4 md:ml-10 lg:ml-16"
+                     >for Social Impact (<strong className='font-medium'>DiTSI</strong>)</span>
                   </p>
-                  <h2 className="text-[#454545] text-xl md:text-[1.65rem] leading-[1.486em] mb-3 md:mb-8">
+                  <h2 className="text-[#454545] text-xl md:text-[1.65rem] leading-[1.486em] mb-3 md:mb-6">
                      What are you looking for?
                   </h2>
                   <div
-                     className="flex justify-between sm:justify-start gap-5 sm:gap-14 md:gap-20 lg:gap-28 2xl:gap-32"
+                     className="flex justify-between sm:justify-start gap-5 sm:gap-14 md:gap-20 lg:gap-28 2xl:gap-28"
                   >
                      <Link href={route('tools.index')} className="block text-center">
                         <div className="bg-tertiary aspect-square rounded-full mx-auto p-5 md:p-8 mb-3 max-w-32 md:max-w-44 xl:max-w-48">

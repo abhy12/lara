@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Inertia\Inertia;
 
 class CategoryController extends Controller
 {
@@ -12,7 +14,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('Admin/Category/IndexCategory', [
+            'categories' => Category::with('parent')->orderBy('name')->get(),
+        ]);
     }
 
     /**
@@ -20,7 +24,9 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Admin/Category/CreateCategory', [
+            'parents' => Category::where('parent_id', null)->orderBy('name')->get(),
+        ]);
     }
 
     /**
@@ -33,7 +39,9 @@ class CategoryController extends Controller
             'parent_id' => 'nullable|exists:categories,id',
         ]);
 
-        Category::create( $validate );
+        $category = Category::create( $validate );
+
+        return Redirect::route('category.edit', ['category'=> $category->id]);
     }
 
     /**
@@ -49,7 +57,10 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return Inertia::render('Admin/Category/EditCategory', [
+            'category' => $category,
+            'parents' => Category::where('parent_id', null)->orderBy('name')->get(),
+        ]);
     }
 
     /**
@@ -57,7 +68,12 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $validate = $request->validate([
+            'name' => 'required|string:255',
+            'parent_id' => 'nullable|exists:categories,id',
+        ]);
+
+        $category->update( $validate );
     }
 
     /**
@@ -65,6 +81,8 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+
+        return Redirect::route('category.index');
     }
 }

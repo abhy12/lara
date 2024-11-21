@@ -1,6 +1,6 @@
 import type { Category } from '@/util/props';
 import { SyntheticEvent } from 'react';
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 import { useForm } from '@inertiajs/react';
 import {
    FormControlLabel,
@@ -34,10 +34,6 @@ export default function CategorySelector({ categories, selectedCategories, onCha
          onSuccess: () => reset()
       });
    }, [data]);
-
-   useEffect(() => {
-      // console.error(errors);
-   }, [errors]);
 
    if (!Array.isArray(categories)) return <></>;
 

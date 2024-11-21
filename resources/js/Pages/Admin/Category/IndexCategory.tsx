@@ -1,5 +1,5 @@
 import { Head, Link, router } from '@inertiajs/react';
-import type { ServiceProps } from '@/util/props';
+import type { Category } from '@/util/props';
 import { route } from 'ziggy-js';
 import Dashboard from '@/Components/dashboard/Dashboard';
 import dayjs from 'dayjs';
@@ -20,7 +20,7 @@ import {
 dayjs.extend(relativeTime);
 
 interface Props {
-   services?: ServiceProps[]
+   categories?: Category[]
 }
 
 const removeDefaultColSettings = {
@@ -32,36 +32,23 @@ const removeDefaultColSettings = {
    flex: 1,
 }
 
-export default function Index({ services }: Props) {
-   const rows: GridRowsProp | undefined = services?.map(service => {
-      const catgory: string[] = [];
-      const tools: string[] = [];
-
-      service.categories?.map(cat => {
-         catgory.push(cat.name);
-      });
-
-      service.tools?.map(tool => {
-         tools.push(tool.name);
-      });
-
+export default function Index({ categories }: Props) {
+   const rows: GridRowsProp | undefined = categories?.map(cat => {
       return {
-         id: service.id,
-         name: service.name,
-         category: catgory.join(', '),
-         tools: tools.join(', '),
-         created_at: service.created_at ? dayjs(service.created_at || '').format('DD/MM/YY') : '',
+         id: cat.id,
+         name: cat.name,
+         parent: (cat.parent_id && cat.parent) ? cat.parent.name : '',
+         created_at: cat.created_at ? dayjs(cat.created_at || '').format('DD/MM/YY') : '',
       }
    });
 
-   const serviceEditHandler = useCallback((id: GridRowId) => {
-      router.get(route('services.edit', { id: id }));
+   const categoryEditHandler = useCallback((id: GridRowId) => {
+      router.get(route('category.edit', { id: id }));
    }, []);
 
    const columns: GridColDef[] = [
       { field: 'name', headerName: 'Name', width: 200, ...removeDefaultColSettings },
-      { field: 'category', headerName: 'Category', width: 200, ...removeDefaultColSettings },
-      { field: 'tools', headerName: 'Tools', width: 200, ...removeDefaultColSettings },
+      { field: 'parent', headerName: 'Parent', width: 200, ...removeDefaultColSettings },
       { field: 'created_at', headerName: 'Created', width: 200, ...removeDefaultColSettings },
       {
          field: 'actions',
@@ -72,14 +59,14 @@ export default function Index({ services }: Props) {
                <GridActionsCellItem
                   icon={<EditIcon />}
                   label='Edit'
-                  onClick={() => serviceEditHandler(id)}
+                  onClick={() => categoryEditHandler(id)}
                   title='Edit'
                />,
                <GridActionsCellItem
-                  icon={<DeleteIcon/>}
+                  icon={<DeleteIcon />}
                   label='Delete'
                   title='Delete'
-                  onClick={() => router.delete(route('services.destroy', {id}))}
+                  onClick={() => router.delete(route('category.destroy', { id }))}
                />
             ];
          }
@@ -88,13 +75,13 @@ export default function Index({ services }: Props) {
 
    return (
       <Dashboard>
-         <Head title='Services' />
+         <Head title='Categories' />
          <Link
-            href={route('services.create')}
+            href={route('category.create')}
             className='mb-4 inline-block'
          >
             <Button variant='outlined' color="primary" startIcon={<AddIcon />}>
-               Add Service
+               Add Category
             </Button>
          </Link>
 
