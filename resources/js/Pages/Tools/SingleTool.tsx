@@ -25,7 +25,7 @@ export default function Single({ tool }: Props) {
                </p>
                <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-24">
                   <div className="basis-1/4">
-                     <div className="bg-white w-36 lg:w-64 aspect-square rounded-full p-5 lg:p-6 flex justify-center items-center overflow-hidden">
+                     <div className="bg-white w-36 lg:w-52 aspect-square rounded-full p-5 lg:p-6 flex justify-center items-center overflow-hidden">
                         <img src={tool.logo || "/assets/img/placeholder-image.webp"} alt="Image" />
                      </div>
                   </div>

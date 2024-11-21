@@ -1,5 +1,5 @@
 import { TextField, Button } from "@mui/material";
-import { useCallback, SyntheticEvent, ChangeEvent } from "react";
+import { useCallback, useState, SyntheticEvent, ChangeEvent } from "react";
 import { useForm } from "@inertiajs/react";
 import { route } from 'ziggy-js';
 import { FormControlLabel, Checkbox } from "@mui/material";
@@ -9,10 +9,10 @@ interface Props {
    submitButtonText?: string
    showMessageField?: boolean
    footerText?: string
-   consentCheck?: boolean
 }
 
-export default function PopupForm({ afterSuccess, submitButtonText = 'Submit', showMessageField = false, footerText, consentCheck = true }: Props) {
+export default function PopupForm({ afterSuccess, submitButtonText = 'Submit', showMessageField = false, footerText }: Props) {
+   const [isCheckboxTicked, setIsCheckboxTicked] = useState(false);
    const { data, setData, post, errors } = useForm({
       name: '',
       organization: '',
@@ -42,7 +42,7 @@ export default function PopupForm({ afterSuccess, submitButtonText = 'Submit', s
    }, [setData]);
 
    return (
-      <div className="flex-grow bg-white w-full max-w-[500px] rounded-2xl shadow-md overflow-hidden">
+      <div className="flex-grow bg-white w-full max-w-[600px] rounded-2xl shadow-md overflow-hidden">
          <div className="p-3 md:p-10 md:pb-6">
             <form className="flex flex-col gap-3 md:gap-5" onSubmit={formSubmitHandler}>
                <TextField
@@ -95,13 +95,18 @@ export default function PopupForm({ afterSuccess, submitButtonText = 'Submit', s
                }
                <FormControlLabel
                   required
-                  control={<Checkbox />}
+                  control={
+                  <Checkbox
+                     onChange={e => setIsCheckboxTicked( e.currentTarget.checked )}
+                  />
+                  }
                   label="I hereby consent to receiving communication from the ILSS team."
                />
                <Button
                   type="submit"
-                  className="!bg-primary !text-[#464646] !text-base md:!text-lg !font-medium
-                  !py-2 md:!py-3 mt-2 md:!mt-3 !rounded-lg shadow-[0px_0px_9.7px_0px_#00000040]"
+                  className={`${isCheckboxTicked ? '!bg-primary' : '!bg-gray-300'} !text-[#464646] !text-base md:!text-lg !font-medium
+                  !py-2 md:!py-3 mt-2 md:!mt-3 !rounded-lg shadow-[0px_0px_9.7px_0px_#00000040]`}
+                  disabled={!isCheckboxTicked}
                >{submitButtonText}</Button>
             </form>
          </div>
