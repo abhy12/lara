@@ -62,7 +62,7 @@ export default function Index({ services }: Props) {
                         <div className="relative mb-5 md:mb-10">
                            <div
                               className="bg-white aspect-square flex justify-center items-center
-                              border border-primary rounded-full p-5 md:p-7"
+                              border border-primary rounded-full p-5 lg:p-6 overflow-hidden"
                            >
                               <img
                                  src={service?.logo || "/assets/img/placeholder-image.webp"}

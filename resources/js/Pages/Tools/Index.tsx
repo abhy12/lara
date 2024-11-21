@@ -137,7 +137,7 @@ export default function Index({ tools, categories }: Props) {
                            <div className="relative mb-5 md:mb-10">
                               <div
                                  className="bg-white w-full aspect-square
-                                 flex justify-center items-center border border-tertiary rounded-full p-5 md:p-7"
+                                 flex justify-center items-center border border-tertiary rounded-full p-5 lg:p-6 overflow-hidden"
                               >
                                  <img
                                     src={tool?.logo || "/assets/img/placeholder-image.webp"}

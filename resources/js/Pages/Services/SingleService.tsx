@@ -32,13 +32,13 @@ export default function Single({ service }: Props) {
                      <div className="basis-1/4">
                         <div
                            className="bg-white w-full max-w-36 lg:max-w-64 aspect-square
-                           rounded-full p-7 lg:p-10 flex justify-center items-center"
+                           rounded-full p-5 lg:p-6 flex justify-center items-center overflow-hidden"
                         >
                            <img src={service?.logo || "/assets/img/placeholder-image.webp"} alt="Image" />
                         </div>
                      </div>
                      <div className="basis-2/4">
-                        <h1 className="font-semibold text-2xl lg:text-3xl 2xl:text-[2.313rem] mb-2">{service.name}</h1>
+                        <h1 className="font-semibold text-2xl lg:text-3xl 2xl:text-[2.3rem] mb-2">{service.name}</h1>
                         <p className="text-[#363636] text-sm 2xl:text-[1.063rem] mb-5">{service.description}</p>
                      </div>
                      <div className="basis-1/4 hidden lg:flex lg:justify-end">

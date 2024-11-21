@@ -14,7 +14,7 @@ export default function Single({ tool }: Props) {
       <Layout>
          <Head title={tool.name} />
          <main className="grow">
-            <section className="text-white px-8 pt-10 lg:pt-16 pb-20 lg:pb-28 bg-[url('/assets/img/tool-01.svg')] bg-cover bg-bottom">
+            <section className="text-white px-8 pt-10 lg:pt-16 pb-20 lg:pb-20 bg-[url('/assets/img/tool-01.svg')] bg-cover bg-bottom">
                <div className="container mx-auto">
                   <p className="text-[#909090] font-semibold text-lg mb-10 lg:mb-16">
                      <Link href="/">Home</Link>
@@ -25,7 +25,7 @@ export default function Single({ tool }: Props) {
                   </p>
                   <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-24">
                      <div className="basis-1/4">
-                        <div className="bg-white w-36 lg:w-64 aspect-square rounded-full p-3 lg:p-7 flex justify-center items-center">
+                        <div className="bg-white w-36 lg:w-64 aspect-square rounded-full p-5 lg:p-6 flex justify-center items-center overflow-hidden">
                            <img src={tool.logo || "/assets/img/placeholder-image.webp"} alt="Image" />
                         </div>
                      </div>
@@ -66,13 +66,6 @@ export default function Single({ tool }: Props) {
                      <p className="text-[#4A4A4A] text-[0.931rem] lg:text-[0.869rem] 2xl:text-base">{tool.fee_amount}</p>
                   </div>
                   <div className="basis-1/5">
-                     <img src="/assets/img/tool-05.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
-                     <hr className="border-secondary mt-5 mb-3" />
-                     <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">Additional Comments
-                     </h2>
-                     <p className="text-[#4A4A4A] text-[0.931rem] lg:text-[0.869rem] 2xl:text-base">{tool.additional_comments || 'N.A'}</p>
-                  </div>
-                  <div className="basis-1/5">
                      <img src="/assets/img/tool-06.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
                      <hr className="border-secondary mt-5 mb-3" />
                      <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">Fee Credit</h2>
@@ -95,6 +88,13 @@ export default function Single({ tool }: Props) {
                      <hr className="border-secondary mt-5 mb-3" />
                      <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">NGO References</h2>
                      <p className="text-[#4A4A4A] text-[0.869rem] 2xl:text-base">{tool.ngo_ref}</p>
+                  </div>
+                  <div className="basis-1/5">
+                     <img src="/assets/img/tool-05.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
+                     <hr className="border-secondary mt-5 mb-3" />
+                     <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">Additional Comments
+                     </h2>
+                     <p className="text-[#4A4A4A] text-[0.931rem] lg:text-[0.869rem] 2xl:text-base">{tool.additional_comments || 'N.A'}</p>
                   </div>
                </div>
             </section>
