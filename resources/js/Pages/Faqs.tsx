@@ -3,6 +3,7 @@ import { Head } from "@inertiajs/react";
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import { ArrowDropDown } from '@mui/icons-material';
 import { useState, useCallback, SyntheticEvent } from "react";
+import Container from "@/Layouts/Container";
 
 interface Faq {
    title: string
@@ -69,34 +70,32 @@ export default function Faq() {
    return (
       <Layout>
          <Head title="FAQs" />
-         <main className="grow">
-            <section className="text-white px-8 py-8 lg:pt-20 lg:pb-16 bg-[url('/assets/img/faqs-01.svg')] bg-cover bg-bottom">
-               <div className="container mx-auto flex justify-between items-center">
-                  <h1 className="font-DMSerifDisplay text-5xl">FAQs</h1>
-                  <img src="/assets/img/faqs-02.gif" alt="Image" className="w-20 lg:w-28 flex-shrink" />
-               </div>
-            </section>
+         <section className="text-white py-8 lg:pt-20 lg:pb-16 bg-[url('/assets/img/faqs-01.svg')] bg-cover bg-bottom">
+            <Container className="flex justify-between items-center">
+               <h1 className="font-DMSerifDisplay text-5xl">FAQs</h1>
+               <img src="/assets/img/faqs-02.gif" alt="Image" className="w-20 lg:w-28 flex-shrink" />
+            </Container>
+         </section>
 
-            <section className="px-8 pt-10 lg:pt-20 lg:pb-32">
-               <div className="container mx-auto flex flex-col lg:flex-row gap-20 lg:gap-24">
-                  <div className="basis-2/3">
-                     <div className="bg-white max-w-[40rem] p-5 lg:p-8 rounded-2xl">
-                        {faqs.map(faq =>
-                           <AccordionFaq
-                              key={faq.title}
-                              title={faq.title}
-                              expanded={isActiveAccordion === faq.title}
-                              onClick={handleAccordionChange(faq.title)}
-                           ><p>{faq.details}</p></AccordionFaq>
-                        )}
-                     </div>
-                  </div>
-                  <div className="basis-1/3 flex justify-end">
-                     <img src="/assets/img/faqs-04.svg" alt="Image" className="-mb-3" />
+         <section className="pt-10 lg:pt-20 lg:pb-32">
+            <Container className="container flex flex-col lg:flex-row gap-20 lg:gap-24">
+               <div className="basis-2/3">
+                  <div className="bg-white max-w-[40rem] p-5 lg:p-8 rounded-2xl shadow-sm">
+                     {faqs.map(faq =>
+                        <AccordionFaq
+                           key={faq.title}
+                           title={faq.title}
+                           expanded={isActiveAccordion === faq.title}
+                           onClick={handleAccordionChange(faq.title)}
+                        ><p>{faq.details}</p></AccordionFaq>
+                     )}
                   </div>
                </div>
-            </section>
-         </main>
+               <div className="basis-1/3 flex self-start mt-6 lg:mt-20">
+                  <img src="/assets/img/faqs-04.svg" alt="Image" className="-mb-3" />
+               </div>
+            </Container>
+         </section>
       </Layout>
    );
 }

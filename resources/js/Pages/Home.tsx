@@ -8,17 +8,17 @@ export default function Home() {
       <Layout>
          <Head title='Home' />
          <section
-            className="grow lg:grow-0 relative mt-auto min-h-[85vh] lg:min-h-[75vh]"
+            className="grow lg:grow-0 relative mt-auto"
          >
             <div className='absolute inset-0 bg-homeBg bg-no-repeat bg-cover bg-[right_top] z-[-1] translate-y-8'></div>
             <Container
-               className='flex flex-col lg:flex-row lg:justify-between lg:items-center'
+               className='flex flex-col lg:flex-row lg:justify-between lg:items-center min-h-[95vh]'
             >
                <div className="lg:basis-2/5 pt-10 md:pt-20 pb-10">
                   <div className="relative">
                      <h1 className="text-tertiary font-DMSerifDisplay text-[2.558rem] md:text-[3rem] xl:text-6xl leading-none">
                         Digital <br /><span
-                        className="text-primary text-[2.95rem] md:text-[4.25rem] xl:text-8xl">Toolbook</span></h1>
+                           className="text-primary text-[2.95rem] md:text-[4.25rem] xl:text-8xl">Toolbook</span></h1>
                      <img src="/assets/img/cloud.svg" alt="Image"
                         className="w-20 md:w-auto absolute right-0 bottom-2 md:-right-8 md:bottom-3 -z-10" />
                   </div>
@@ -48,8 +48,8 @@ export default function Home() {
                      </Link>
                   </div>
                </div>
-                  <div className="basis-1/2 hidden lg:flex justify-end items-start pt-10 lg:translate-y-[90px] xl:translate-y-14 z-10">
-                  <img src="/assets/img/featured.svg" alt="Image" className="max-w-[33rem]" />
+               <div className="basis-1/2 hidden lg:flex self-end justify-end items-start pt-10 z-10">
+                  <img src="/assets/img/featured.svg" alt="Image" className="w-full translate-y-10" />
                </div>
             </Container>
          </section>
