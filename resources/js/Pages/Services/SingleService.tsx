@@ -49,7 +49,7 @@ export default function Single({ service }: Props) {
                               src="/assets/img/service-03.svg"
                               alt="Image"
                            />
-                           {service.point_contact} {service.point_contact ? `(${service.designation})` : ''}
+                           {service.point_contact} {service.designation ? `(${service.designation})` : ''}
                         </p>
                         <p className="text-[#363636] flex gap-7 mb-7">
                            <img src="/assets/img/service-04.svg" alt="Image"
