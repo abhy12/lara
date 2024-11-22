@@ -46,7 +46,7 @@ export default function Index({ services }: Props) {
       });
 
       return {
-         id: service.id,
+         id: service.slug,
          name: service.name,
          category: catgory.join(', '),
          tools: tools.join(', '),
@@ -55,7 +55,7 @@ export default function Index({ services }: Props) {
    });
 
    const serviceEditHandler = useCallback((id: GridRowId) => {
-      router.get(route('services.edit', { id: id }));
+      router.get(route('services.edit', { service: id }));
    }, []);
 
    const columns: GridColDef[] = [
@@ -79,7 +79,7 @@ export default function Index({ services }: Props) {
                   icon={<DeleteIcon/>}
                   label='Delete'
                   title='Delete'
-                  onClick={() => router.delete(route('services.destroy', {id}))}
+                  onClick={() => router.delete(route('services.destroy', {service: id}))}
                />
             ];
          }

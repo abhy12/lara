@@ -25,7 +25,7 @@ export default function Single({ service }: Props) {
                   &nbsp;/&nbsp;
                   <Link
                      className="text-[#762E5E]"
-                     href={route('services.show', { id: service.id })}
+                     href={route('services.show', { service: service.slug })}
                   >{service.name}</Link>
                </p>
                <div className="flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-24">

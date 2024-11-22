@@ -65,7 +65,7 @@ class ToolController extends Controller
         // upload logo
         if ($request->hasFile('logo')) $this->handleLogoUpload($request->file('logo'), $tool);
 
-        return Redirect::route('tools.edit', ['tool' => $tool->id]);
+        return Redirect::route('tools.edit', ['tool' => $tool->slug]);
     }
 
     /**
@@ -105,7 +105,7 @@ class ToolController extends Controller
         // upload logo
         if ($request->hasFile('logo')) $this->handleLogoUpload($request->file('logo'), $tool);
 
-        return Redirect::route('tools.edit', ['tool' => $tool->id]);
+        return Redirect::route('tools.edit', ['tool' => $tool->slug]);
     }
 
     /**

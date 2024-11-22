@@ -16,8 +16,9 @@ interface Props {
 export default function Edit({ tool, categories, selectedCategories }: Props) {
    const onFormSubmitHandler = useCallback((values: any) => {
       if (!tool) return
+         console.log( route('tools.update', { tool: tool.slug } ) );
       router.post(
-         route('tools.update', { id: tool.id  }),
+         route('tools.update', { tool: tool.slug }),
          { ...values, _method: 'put' }
       );
    }, []);
@@ -29,7 +30,7 @@ export default function Edit({ tool, categories, selectedCategories }: Props) {
          <Head title='Add Tool' />
          <div className="">
             <Link
-               href={route('tools.show', { id: tool.id })}
+               href={route('tools.show', { tool: tool.slug })}
                className='mb-4 inline-block'
             >
                <Button variant='outlined' color="primary">

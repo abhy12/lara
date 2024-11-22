@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Tool extends Model
 {
@@ -33,5 +34,27 @@ class Tool extends Model
     public function categories()
     {
         return $this->belongsToMany(Category::class, 'tool_categories');
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    public static function createUniqueSlug($name)
+    {
+        $slug = Str::slug($name);
+        $count = Tool::where('slug', 'LIKE', "{$slug}%")->count();
+
+        return $count ? "{$slug}-{$count}" : $slug;
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($tool) {
+            $tool->slug = Str::slug($tool->name);
+        });
     }
 }

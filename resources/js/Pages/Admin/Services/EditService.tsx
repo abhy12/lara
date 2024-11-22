@@ -18,7 +18,7 @@ export default function Edit({ service, tools, selectedToolIds, categories, sele
    const onFormSubmitHandler = useCallback((values: any) => {
       if (!service) return
       router.post(
-         route('services.update', { id: service.id  }),
+         route('services.update', { service: service.slug  }),
          { ...values, _method: 'put' }
       );
    }, []);
@@ -30,7 +30,7 @@ export default function Edit({ service, tools, selectedToolIds, categories, sele
          <Head title='Edit Service' />
          <div>
             <Link
-               href={`/services/${service?.id}`}
+               href={route('services.show', { service: service.slug })}
                className='mb-4 inline-block'
             >
                <Button variant='outlined' color="primary">

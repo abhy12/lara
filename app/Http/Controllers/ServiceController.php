@@ -38,7 +38,7 @@ class ServiceController extends Controller
     public function adminIndex()
     {
         $services = Service::with('tools', 'categories')
-            ->select('id', 'name', 'created_at')
+            ->select('id', 'name', 'slug', 'created_at')
             ->get()
             ->sortDesc()
             ->values()
@@ -79,7 +79,7 @@ class ServiceController extends Controller
         // upload logo
         if ($request->hasFile('logo')) $this->handleLogoUpload($request->file('logo'), $service);
 
-        return Redirect::route('services.edit', ['service' => $service->id]);
+        return Redirect::route('services.edit', ['service' => $service->slug]);
     }
 
     /**

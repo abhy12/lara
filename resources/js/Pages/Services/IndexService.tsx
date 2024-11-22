@@ -63,7 +63,7 @@ export default function Index({ services }: Props) {
                <div className="basis-3/4 pb-10 md:pb-0">
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-8 gap-y-14 lg:gap-x-40 lg:gap-y-32 text-center">
                      {Array.isArray(filterServices) && filterServices.map(service =>
-                        <div className="w-full " key={service.id}>
+                        <div className="w-full" key={service.id}>
                            <div className="relative mb-5 md:mb-10">
                               <div
                                  className="bg-white aspect-square flex justify-center items-center
@@ -74,7 +74,7 @@ export default function Index({ services }: Props) {
                                     alt="Image"
                                  />
                               </div>
-                              <Link href={route('services.show', { id: service.id })}
+                              <Link href={route('services.show', { service: service.slug })}
                                  className="w-full max-w-12 md:max-w-14 aspect-square p-4 rounded-full
                               flex justify-center items-center absolute right-0 bottom-0 text-white
                               transition bg-primary border border-primary hover:bg-white hover:text-primary"

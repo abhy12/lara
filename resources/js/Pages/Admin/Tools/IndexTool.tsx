@@ -35,14 +35,14 @@ const removeDefaultColSettings = {
 export default function Index({ tools }: Props) {
    const rows: GridRowsProp | undefined = tools?.map(tool=> {
       return {
-         id: tool.id,
+         id: tool.slug,
          name: tool.name,
          created_at: tool.created_at ? dayjs(tool.created_at || '').format('DD/MM/YY') : '',
       }
    });
 
    const serviceEditHandler = useCallback((id: GridRowId) => {
-      router.get(route('tools.edit', { id: id }));
+      router.get(route('tools.edit', { tool: id }));
    }, []);
 
    const columns: GridColDef[] = [
@@ -66,7 +66,7 @@ export default function Index({ tools }: Props) {
                   icon={<DeleteIcon/>}
                   label='Delete'
                   title='Delete'
-                  onClick={() => router.delete(route('tools.destroy', {id}))}
+                  onClick={() => router.delete(route('tools.destroy', {tool: id}))}
                />
             ];
          }
@@ -90,7 +90,6 @@ export default function Index({ tools }: Props) {
                rows={rows}
                columns={columns}
                disableColumnFilter={true}
-               // hideFooter={true}
             />
          </div>
       </Dashboard>

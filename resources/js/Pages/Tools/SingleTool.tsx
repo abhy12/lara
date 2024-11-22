@@ -21,7 +21,7 @@ export default function Single({ tool }: Props) {
                   &nbsp;/&nbsp;
                   <Link href={route('tools.index')}>Tools</Link>
                   &nbsp;/&nbsp;
-                  <Link href={route('tools.show', { id: tool.id })} className="text-[#762E5E]">{tool.name}</Link>
+                  <Link href={route('tools.show', { tool: tool.slug })} className="text-[#762E5E]">{tool.name}</Link>
                </p>
                <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-24">
                   <div className="basis-1/4">
@@ -33,7 +33,7 @@ export default function Single({ tool }: Props) {
                      <h1 className="font-semibold text-[2.625rem] lg:text-3xl 2xl:text-[2.313rem] mb-2">{tool.name}</h1>
                      <ul
                         className="font-medium text-[1.375rem] lg:text-sm 2xl:text-[1.375rem] mb-4"
-                     >{tool.services?.map(service => <li key={service.id}><Link href={route('services.show', { id: service.id })}>{service.name}</Link></li>)}
+                     >{tool.services?.map(service => <li key={service.id}><Link href={route('services.show', { service: service.slug })}>{service.name}</Link></li>)}
                      </ul>
                      <p className="text-lg leading-relaxed hidden lg:block">
                         {tool.service_provider}

@@ -148,7 +148,7 @@ export default function Index({ tools, categories }: Props) {
                                  />
                               </div>
                               <Link
-                                 href={route('tools.show', { id: tool.id })}
+                                 href={route('tools.show', { tool: tool.slug })}
                                  className="w-full max-w-10 md:max-w-14 aspect-square p-4 rounded-full
                                  flex justify-center items-center absolute right-0 bottom-0 transition text-white
                                  bg-tertiary border border-tertiary hover:bg-white hover:text-tertiary"

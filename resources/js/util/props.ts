@@ -26,6 +26,7 @@ export interface ToolsProps {
    services?: ServiceProps[]
    categories?: Category[]
    service_provider?: string
+   slug: string
 }
 
 export interface FormProps {
@@ -58,4 +59,5 @@ export interface ServiceProps {
    created_at?: string
    updated_at?: string
    logo?: string
+   slug: string
 }
