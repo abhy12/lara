@@ -16,9 +16,20 @@ interface Props {
 export default function Index({ tools, categories }: Props) {
    const [filterCatgory, setFilterCategory] = useState<ToolsProps | null>(null);
    const [isActiveAccordion, setIsActiveAccordion] = useState<number | boolean>(false);
+   const [maxShow, setMaxShow] = useState(9);
    const handleAccordionChange = useCallback((id: number) => (_: SyntheticEvent, newExpanded: boolean) => {
       setIsActiveAccordion(newExpanded ? id : false);
    }, []);
+
+   const allTools = tools.filter(tool => {
+      if (filterCatgory === null) return true
+
+      if (!Array.isArray(tool.categories)) return false
+
+      for (let i = 0; i < tool.categories.length; i++) {
+         if (tool.categories[i].id == filterCatgory.id) return true;
+      }
+   }).filter((_, i) => ( i < maxShow && i < 250 ) );
 
    return (
       <Layout>
@@ -46,7 +57,7 @@ export default function Index({ tools, categories }: Props) {
                   <div className="bg-white lg:max-w-80 p-5 shadow rounded-[15px] text-lg font-medium">
                      <button
                         className="text-left text-secondary bg-white w-full border-b-2 border-tertiary mb-5"
-                        onClick={() => setFilterCategory(null)}
+                        onClick={() => { setFilterCategory(null); setMaxShow(9) }}
                      >All Tools</button>
 
                      <Accordion
@@ -110,8 +121,10 @@ export default function Index({ tools, categories }: Props) {
                                                          className='block font-normal text-left text-sm
                                                     text-[#7A7A7A] hover:text-primary'
                                                          onClick={() => {
+                                                            //@ts-ignore
                                                             setFilterCategory(sub)
                                                             setIsActiveAccordion(false);
+                                                            setMaxShow(9);
                                                          }}
                                                          key={sub.id}
                                                       >{sub.name}</button>
@@ -127,15 +140,7 @@ export default function Index({ tools, categories }: Props) {
                </div>
                <div className="basis-3/4">
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-8 gap-y-14 lg:gap-x-40 lg:gap-y-32">
-                     {Array.isArray(tools) && tools.filter(tool => {
-                        if (filterCatgory === null) return true
-
-                        if (!Array.isArray(tool.categories)) return false
-
-                        for (let i = 0; i < tool.categories.length; i++) {
-                           if (tool.categories[i].id == filterCatgory.id) return true;
-                        }
-                     }).map(tool =>
+                     {allTools.map(tool =>
                         <div className="text-center" key={tool.id}>
                            <div className="relative mb-5 md:mb-10">
                               <div
@@ -165,6 +170,11 @@ export default function Index({ tools, categories }: Props) {
                         </div>
                      )}
                   </div>
+               <button
+                  className='bg-primary text-lg text-center w-64 p-2 md:px-6 rounded-lg shadow-md
+                           transition hover:bg-dark hover:text-primary block mx-auto max-w-max mt-8 md:mt-12'
+                  onClick={() => setMaxShow( state => state + 9)}
+               >Load More</button>
                </div>
             </Container>
          </section>
