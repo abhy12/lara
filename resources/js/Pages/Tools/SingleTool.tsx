@@ -31,13 +31,10 @@ export default function Single({ tool }: Props) {
                   </div>
                   <div className="basis-2/4">
                      <h1 className="font-semibold text-[2.625rem] lg:text-3xl 2xl:text-[2.313rem] mb-2">{tool.name}</h1>
-                     <ul
-                        className="font-medium text-[1.375rem] lg:text-sm 2xl:text-[1.375rem] mb-4"
-                     >{tool.services?.map(service => <li key={service.id}><Link href={route('services.show', { service: service.slug })}>{service.name}</Link></li>)}
-                     </ul>
-                     <p className="text-lg leading-relaxed hidden lg:block">
-                        {tool.service_provider}
-                     </p>
+                     <p
+                        className="text-lg leading-relaxed hidden lg:block"
+                        dangerouslySetInnerHTML={{__html: tool.service_provider || ''}}
+                     />
                   </div>
                   <div className="basis-1/4 flex lg:justify-end items-end">
                      <a
@@ -57,44 +54,65 @@ export default function Single({ tool }: Props) {
                   <img src="/assets/img/tool-03.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
                   <hr className="border-secondary mt-5 mb-3" />
                   <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">Cost Structure</h2>
-                  <p className="text-[#4A4A4A] text-[0.931rem] lg:text-[0.869rem] 2xl:text-base">{tool.cost_structure}</p>
+                  <p
+                     className="text-[#4A4A4A] text-[0.931rem] lg:text-[0.869rem] 2xl:text-base"
+                     dangerouslySetInnerHTML={{__html: tool.cost_structure || ''}}
+                  />
                </div>
                <div className="basis-1/5">
                   <img src="/assets/img/tool-04.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
                   <hr className="border-secondary mt-5 mb-3" />
                   <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">Fee Amount</h2>
-                  <p className="text-[#4A4A4A] text-[0.931rem] lg:text-[0.869rem] 2xl:text-base">{tool.fee_amount}</p>
+                  <p
+                     className="text-[#4A4A4A] text-[0.931rem] lg:text-[0.869rem] 2xl:text-base"
+                     dangerouslySetInnerHTML={{__html: tool.fee_amount || ''}}
+                  />
                </div>
                <div className="basis-1/5">
                   <img src="/assets/img/tool-06.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
                   <hr className="border-secondary mt-5 mb-3" />
                   <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">Fee Credit</h2>
-                  <p className="text-[#4A4A4A] text-[0.931rem] lg:text-[0.869rem] 2xl:text-base">{tool.free_credit || 'N.A'}</p>
+                  <p
+                     className="text-[#4A4A4A] text-[0.931rem] lg:text-[0.869rem] 2xl:text-base"
+                     dangerouslySetInnerHTML={{__html: tool.free_credit || 'N.A'}}
+                  />
                </div>
                <div className="basis-1/5">
                   <img src="/assets/img/tool-07.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
                   <hr className="border-secondary mt-5 mb-3" />
                   <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">Support Structure</h2>
-                  <p className="text-[#4A4A4A] text-[0.931rem] lg:text-[0.869rem] 2xl:text-base">{tool.support_structure}</p>
+                  <p
+                     className="text-[#4A4A4A] text-[0.931rem] lg:text-[0.869rem] 2xl:text-base"
+                     dangerouslySetInnerHTML={{ __html: tool.support_structure || ''}}
+                  />
                </div>
                <div className="basis-1/5">
                   <img src="/assets/img/tool-08.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
                   <hr className="border-secondary mt-5 mb-3" />
                   <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">SDG Domain</h2>
-                  <p className="text-[#4A4A4A] text-[0.931rem] lg:text-[0.869rem] 2xl:text-base">{tool.sgb_domain}</p>
+                  <p
+                     className="text-[#4A4A4A] text-[0.931rem] lg:text-[0.869rem] 2xl:text-base"
+                     dangerouslySetInnerHTML={{__html: tool.sgb_domain || ''}}
+                  />
                </div>
                <div className="basis-1/5">
                   <img src="/assets/img/tool-09.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
                   <hr className="border-secondary mt-5 mb-3" />
                   <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">NGO References</h2>
-                  <p className="text-[#4A4A4A] text-[0.869rem] 2xl:text-base">{tool.ngo_ref}</p>
+                  <p
+                     className="text-[#4A4A4A] text-[0.869rem] 2xl:text-base"
+                     dangerouslySetInnerHTML={{__html: tool.ngo_ref || ''}}
+                  />
                </div>
                <div className="basis-1/5">
                   <img src="/assets/img/tool-05.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
                   <hr className="border-secondary mt-5 mb-3" />
                   <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">Additional Comments
                   </h2>
-                  <p className="text-[#4A4A4A] text-[0.931rem] lg:text-[0.869rem] 2xl:text-base">{tool.additional_comments || 'N.A'}</p>
+                  <p
+                     className="text-[#4A4A4A] text-[0.931rem] lg:text-[0.869rem] 2xl:text-base"
+                     dangerouslySetInnerHTML={{__html: tool.additional_comments || ''}}
+                  />
                </div>
             </Container>
          </section>

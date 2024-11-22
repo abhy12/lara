@@ -10,6 +10,7 @@ import {
    DataGrid,
    GridColDef,
    GridActionsCellItem,
+   GridToolbar,
 } from '@mui/x-data-grid';
 
 dayjs.extend(relativeTime);
@@ -73,10 +74,25 @@ export default function Index({ forms }: Props) {
 
          <div className='w-full'>
             <DataGrid
+               sx={{
+                  '& .MuiDataGrid-toolbarContainer > button': {
+                     display: 'none',
+                  },
+                  '& .MuiDataGrid-toolbarContainer >:nth-child(2)': {
+                     display: 'none',
+                  }
+               }}
                rows={rows}
                columns={columns}
                disableColumnFilter={true}
-               hideFooter={true}
+               disableColumnSelector
+               disableDensitySelector
+               slots={{ toolbar: GridToolbar}}
+               slotProps={{
+                  toolbar: {
+                     showQuickFilter: true,
+                  }
+               }}
             />
          </div>
       </Dashboard>

@@ -164,9 +164,10 @@ export default function Index({ tools, categories }: Props) {
                               </Link>
                            </div>
                            <h2 className="text-tertiary font-semibold text-xl md:text-2xl">{tool.name}</h2>
-                           {tool?.service_provider &&
-                              <p className="text-secondary font-medium md:text-[1.375rem] leading-[1.455em]">{tool.service_provider}</p>
-                           }
+                           <p
+                              className="text-secondary font-medium md:text-[1.375rem] leading-[1.455em]"
+                              dangerouslySetInnerHTML={{__html: tool.service_provider || ''}}
+                           />
                         </div>
                      )}
                   </div>
