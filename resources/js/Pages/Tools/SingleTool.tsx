@@ -14,7 +14,7 @@ export default function Single({ tool }: Props) {
    return (
       <Layout>
          <Head title={tool.name} />
-         <section className="text-white pt-10 lg:pt-16 pb-16 bg-[url('/assets/img/tool-01.svg')] bg-cover bg-bottom">
+         <section className="text-white pt-10 lg:pt-16 pb-10 bg-[url('/assets/img/tool-01.svg')] bg-cover bg-bottom">
             <Container>
                <p className="text-[#909090] font-semibold text-lg mb-10 lg:mb-16">
                   <Link href="/">Home</Link>
@@ -71,7 +71,7 @@ export default function Single({ tool }: Props) {
                <div className="basis-1/5">
                   <img src="/assets/img/tool-06.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
                   <hr className="border-secondary mt-5 mb-3" />
-                  <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">Fee Credit</h2>
+                  <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">Free Credit</h2>
                   <p
                      className="text-[#4A4A4A] text-[0.931rem] lg:text-[0.869rem] 2xl:text-base"
                      dangerouslySetInnerHTML={{__html: tool.free_credit || 'N.A'}}
