@@ -29,7 +29,7 @@ export default function Index({ tools, categories }: Props) {
       for (let i = 0; i < tool.categories.length; i++) {
          if (tool.categories[i].id == filterCatgory.id) return true;
       }
-   }).filter((_, i) => ( i < maxShow && i < 250 ) );
+   }).filter((_, i) => (i < maxShow && i < 250));
 
    return (
       <Layout>
@@ -164,18 +164,14 @@ export default function Index({ tools, categories }: Props) {
                               </Link>
                            </div>
                            <h2 className="text-tertiary font-semibold text-xl md:text-2xl">{tool.name}</h2>
-                           <p
-                              className="text-secondary font-medium md:text-[1.375rem] leading-[1.455em]"
-                              dangerouslySetInnerHTML={{__html: tool.service_provider || ''}}
-                           />
                         </div>
                      )}
                   </div>
-               <button
-                  className='bg-primary text-lg text-center w-64 p-2 md:px-6 rounded-lg shadow-md
+                  <button
+                     className='bg-primary text-lg text-center w-64 p-2 md:px-6 rounded-lg shadow-md
                            transition hover:bg-dark hover:text-primary block mx-auto max-w-max mt-8 md:mt-12'
-                  onClick={() => setMaxShow( state => state + 9)}
-               >Load More</button>
+                     onClick={() => setMaxShow(state => state + 9)}
+                  >Load More</button>
                </div>
             </Container>
          </section>
