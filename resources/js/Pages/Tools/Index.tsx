@@ -54,7 +54,7 @@ export default function Index({ tools, categories }: Props) {
             <Container className='flex flex-col lg:flex-row gap-16 relative'>
 
                <div className="basis-1/4">
-                  <div className="bg-white lg:max-w-80 p-5 shadow rounded-[15px] text-lg font-medium">
+                  <div className="bg-white lg:max-w-80 p-5 shadow-[0_3px_3px_0px_#00000040] rounded-[15px] text-lg font-medium border border-secondary">
                      <button
                         className="text-left text-secondary bg-white w-full border-b-2 border-tertiary mb-5"
                         onClick={() => { setFilterCategory(null); setMaxShow(9) }}
@@ -118,12 +118,11 @@ export default function Index({ tools, categories }: Props) {
                                                    .sort((a, b) => (a.name > b.name) ? 1 : 0)
                                                    .map(sub =>
                                                       <button
-                                                         className='block font-normal text-left text-sm
-                                                    text-[#7A7A7A] hover:text-primary'
+                                                         className={`block font-normal text-left text-sm
+                                                    text-[#7A7A7A] hover:text-primary ${filterCatgory?.id === sub.id && 'text-primary'}`}
                                                          onClick={() => {
                                                             //@ts-ignore
                                                             setFilterCategory(sub)
-                                                            setIsActiveAccordion(false);
                                                             setMaxShow(9);
                                                          }}
                                                          key={sub.id}
