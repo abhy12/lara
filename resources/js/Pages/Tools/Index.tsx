@@ -54,7 +54,7 @@ export default function Index({ tools, categories }: Props) {
             <Container className='flex flex-col lg:flex-row gap-16 relative'>
 
                <div className="basis-1/4">
-                  <div className="bg-white lg:max-w-80 p-5 shadow-[0_3px_3px_0px_#00000040] rounded-[15px] text-lg font-medium border border-secondary">
+                  <div className="bg-white lg:max-w-80 p-5 shadow-[3px_3px_3px_0px_grey] rounded-[15px] text-lg font-medium border border-secondary">
                      <button
                         className="text-left text-secondary bg-white w-full border-b-2 border-tertiary mb-5"
                         onClick={() => { setFilterCategory(null); setMaxShow(9) }}
