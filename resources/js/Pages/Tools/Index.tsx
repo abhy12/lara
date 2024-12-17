@@ -1,12 +1,13 @@
 import { Head, Link } from '@inertiajs/react';
 import Layout from '@/Layouts/Layout';
-import type { ToolsProps } from '@/util/props';
+import type { ToolsProps, Category } from '@/util/props';
 import { route } from 'ziggy-js';
-import type { Category } from '@/util/props';
-import { useState, useCallback, SyntheticEvent } from 'react';
-import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
-import { ArrowDropDown } from '@mui/icons-material';
+import { useState } from 'react';
 import Container from '@/Layouts/Container';
+import ToolSidebar from '@/Components/Tools/ToolSidebar';
+import { getStoredFilterCategoryValue } from "@/util/utils";
+
+const maxItemPerPage = 9;
 
 interface Props {
    tools: ToolsProps[]
@@ -14,12 +15,8 @@ interface Props {
 }
 
 export default function Index({ tools, categories }: Props) {
-   const [filterCatgory, setFilterCategory] = useState<ToolsProps | null>(null);
-   const [isActiveAccordion, setIsActiveAccordion] = useState<number | boolean>(false);
-   const [maxShow, setMaxShow] = useState(9);
-   const handleAccordionChange = useCallback((id: number) => (_: SyntheticEvent, newExpanded: boolean) => {
-      setIsActiveAccordion(newExpanded ? id : false);
-   }, []);
+   const [filterCatgory, setFilterCategory] = useState<Category | null>(getStoredFilterCategoryValue());
+   const [maxShow, setMaxShow] = useState(maxItemPerPage);
 
    const allTools = tools.filter(tool => {
       if (filterCatgory === null) return true
@@ -52,90 +49,13 @@ export default function Index({ tools, categories }: Props) {
 
          <section className="py-10 md:pt-14 md:pb-28">
             <Container className='flex flex-col lg:flex-row gap-16 relative'>
-
                <div className="basis-1/4">
-                  <div className="bg-white lg:max-w-80 p-5 shadow-[3px_3px_3px_0px_grey] rounded-[15px] text-lg font-medium border border-secondary">
-                     <button
-                        className="text-left text-secondary bg-white w-full border-b-2 border-tertiary mb-5"
-                        onClick={() => { setFilterCategory(null); setMaxShow(9) }}
-                     >All Tools</button>
-
-                     <Accordion
-                        className="!my-0 !shadow-none"
-                        onChange={handleAccordionChange(-1)}
-                        expanded={isActiveAccordion !== false}
-                        sx={{
-                           '& .MuiAccordionDetails-root': {
-                              padding: 0,
-                              paddingTop: 1,
-                           },
-                           '& .MuiButtonBase-root': {
-                              borderBottom: '2px solid #402B4A',
-                              minHeight: 'unset!important',
-                           },
-                           '& .MuiAccordionSummary-content': {
-                              margin: '5px 0!important',
-                           }
-                        }}
-                     >
-                        <AccordionSummary
-                           className="!px-0"
-                           expandIcon={<ArrowDropDown className="text-secondary" fontSize="large" />}
-                        >
-                           <h2 className="font-medium text-secondary">Category</h2>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                           {Array.isArray(categories) &&
-                              categories
-                                 .map(cat =>
-                                    <Accordion
-                                       className="!my-0 !shadow-none"
-                                       key={cat.id}
-                                       onChange={handleAccordionChange(cat.id)}
-                                       expanded={cat.id === isActiveAccordion}
-                                       sx={{
-                                          '&::before': {
-                                             content: 'unset',
-                                          },
-                                          '& .MuiAccordionDetails-root': {
-                                             padding: '0 0 5px 0',
-                                          },
-                                          '& .MuiButtonBase-root': {
-                                             border: 'unset!important',
-                                          },
-                                       }}
-                                    >
-                                       <AccordionSummary
-                                          className="!px-0"
-                                          expandIcon={<ArrowDropDown className="text-secondary" fontSize="large" />}
-                                       >
-                                          <h2 className="text-secondary font-normal">{cat.name}</h2>
-                                       </AccordionSummary>
-                                       <AccordionDetails>
-                                          {Array.isArray(cat.subcategory) &&
-                                             <div className='flex flex-col gap-2'>
-                                                {cat.subcategory
-                                                   .sort((a, b) => (a.name > b.name) ? 1 : 0)
-                                                   .map(sub =>
-                                                      <button
-                                                         className={`block font-normal text-left text-sm
-                                                    text-[#7A7A7A] hover:text-primary ${filterCatgory?.id === sub.id && 'text-primary'}`}
-                                                         onClick={() => {
-                                                            //@ts-ignore
-                                                            setFilterCategory(sub)
-                                                            setMaxShow(9);
-                                                         }}
-                                                         key={sub.id}
-                                                      >{sub.name}</button>
-                                                   )}
-                                             </div>
-                                          }
-                                       </AccordionDetails>
-                                    </Accordion>
-                                 )}
-                        </AccordionDetails>
-                     </Accordion>
-                  </div>
+                  <ToolSidebar
+                     categories={categories}
+                     onButtonClickCallback={() => { setFilterCategory(null); setMaxShow(maxItemPerPage) }}
+                     onCategoryClick={(cat) => { setFilterCategory(cat) }}
+                     filterCategory={filterCatgory}
+                  />
                </div>
                <div className="basis-3/4">
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-8 gap-y-14 lg:gap-x-40 lg:gap-y-32">
@@ -169,7 +89,7 @@ export default function Index({ tools, categories }: Props) {
                   <button
                      className='bg-primary text-lg text-center w-64 p-2 md:px-6 rounded-lg shadow-md
                            transition hover:bg-dark hover:text-primary block mx-auto max-w-max mt-8 md:mt-12'
-                     onClick={() => setMaxShow(state => state + 9)}
+                     onClick={() => setMaxShow(state => state + maxItemPerPage)}
                   >Load More</button>
                </div>
             </Container>
