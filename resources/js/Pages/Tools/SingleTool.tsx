@@ -53,11 +53,11 @@ export default function Single({ tool, categories }: Props) {
          </section>
 
          <section className="pt-16 lg:pt-24 pb-10 lg:pb-40">
-            <Container className="grid md:grid-cols-[25%_1fr] gap-6 lg:gap-20 2xl:gap-24 gap-y-16">
+            <Container className="grid md:grid-cols-[25%_1fr] gap-x-6 lg:gap-x-20 2xl:gap-x-24">
                <div>
                   <ToolSidebar categories={categories} />
                </div>
-               <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-20 2xl:gap-24 gap-y-16">
+               <div className="grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-[repeat(3,_max-content)] gap-6 lg:gap-20 2xl:gap-24 gap-y-16">
                   <div>
                      <img src="/assets/img/tool-03.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
                      <hr className="border-secondary mt-5 mb-3" />
