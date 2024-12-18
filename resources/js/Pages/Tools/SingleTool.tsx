@@ -4,6 +4,7 @@ import { Head, Link } from "@inertiajs/react";
 import { route } from 'ziggy-js';
 import Container from "@/Layouts/Container";
 import ToolSidebar from "@/Components/Tools/ToolSidebar";
+import { useEffect, useCallback, useState } from "react";
 
 interface Props {
    tool?: ToolsProps
@@ -11,7 +12,18 @@ interface Props {
 }
 
 export default function Single({ tool, categories }: Props) {
+   const [filterCategoryDefined, setFilterCategoryDefined] = useState<Category | undefined>();
    if (!tool) return <></>
+
+   const setFilterCategoryIfNotDefined = useCallback(() => {
+      if (!tool.categories || tool.categories.length <= 0) return
+      const category = tool.categories[0];
+      setFilterCategoryDefined(category);
+   }, []);
+
+   useEffect(() => {
+      setFilterCategoryIfNotDefined();
+   }, []);
 
    return (
       <Layout>
@@ -55,7 +67,10 @@ export default function Single({ tool, categories }: Props) {
          <section className="pt-16 lg:pt-24 pb-10 lg:pb-40">
             <Container className="grid md:grid-cols-[25%_1fr] gap-x-6 lg:gap-x-20 2xl:gap-x-24">
                <div>
-                  <ToolSidebar categories={categories} />
+                  <ToolSidebar
+                     categories={categories}
+                     expandAndSetFilter={filterCategoryDefined}
+                  />
                </div>
                <div className="grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-[repeat(3,_max-content)] gap-6 lg:gap-20 2xl:gap-24 gap-y-16">
                   <div>

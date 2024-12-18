@@ -1,20 +1,29 @@
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import { ArrowDropDown } from '@mui/icons-material';
 import type { Category } from '@/util/props';
-import { useState, useCallback, SyntheticEvent } from 'react';
-import { getStoredFilterCategoryValue, storeCategoryFilterValue } from "@/util/utils";
+import { useState, useCallback, SyntheticEvent, useEffect } from 'react';
 
-interface Props {
+export interface Props {
    categories?: Category[]
-   filterCategory?: Category | null
+   activeFilterCategory: Category | null
    onCategoryClick?: (cat: Category) => any
+   expandParentFilterAccordion?: boolean | number
 }
 
-export default function ToolCategoryFilter({ categories, onCategoryClick, filterCategory = getStoredFilterCategoryValue() }: Props) {
-   const [isActiveAccordion, setIsActiveAccordion] = useState<number | boolean>(false);
+export default function ToolCategoryFilter({
+   categories,
+   onCategoryClick,
+   activeFilterCategory = null,
+   expandParentFilterAccordion = false
+}: Props) {
+   const [isActiveAccordion, setIsActiveAccordion] = useState<number | boolean>(expandParentFilterAccordion);
    const handleAccordionChange = useCallback((id: number) => (_: SyntheticEvent, newExpanded: boolean) => {
       setIsActiveAccordion(newExpanded ? id : false);
    }, []);
+
+   useEffect(() => {
+      setIsActiveAccordion(expandParentFilterAccordion);
+   }, [expandParentFilterAccordion]);
 
    return (
       <Accordion
@@ -76,10 +85,9 @@ export default function ToolCategoryFilter({ categories, onCategoryClick, filter
                                     .map(sub =>
                                        <button
                                           className={`block font-normal text-left text-sm
-                                                    text-[#7A7A7A] hover:text-primary ${filterCategory?.id === sub.id && 'text-primary'}`}
+                                                    text-[#7A7A7A] hover:text-primary ${activeFilterCategory?.id === sub.id && 'text-primary'}`}
                                           onClick={() => {
                                              if (onCategoryClick) onCategoryClick(sub);
-                                             storeCategoryFilterValue(sub);
                                           }}
                                           key={sub.id}
                                        >{sub.name}</button>

@@ -52,9 +52,8 @@ export default function Index({ tools, categories }: Props) {
                <div className="basis-1/4">
                   <ToolSidebar
                      categories={categories}
-                     onButtonClickCallback={() => { setFilterCategory(null); setMaxShow(maxItemPerPage) }}
-                     onCategoryClick={(cat) => { setFilterCategory(cat) }}
-                     filterCategory={filterCatgory}
+                     onResetClick={() => { setFilterCategory(null); setMaxShow(maxItemPerPage) }}
+                     onCategoryClick={setFilterCategory}
                   />
                </div>
                <div className="basis-3/4">
