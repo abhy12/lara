@@ -51,8 +51,8 @@ export default function Single({ tool }: Props) {
             </Container>
          </section>
 
-         <section className="pt-16 lg:pt-24 pb-10 lg:pb-40">
-            <Container className="grid grid-cols-2 lg:grid-cols-4 lg:grid-rows-[repeat(4,_max-content)] gap-6 lg:gap-20 2xl:gap-24 gap-y-16">
+         <section className="pt-16 lg:pt-24 pb-10 lg:pb-20">
+            <Container className="grid grid-cols-2 lg:grid-cols-4  gap-6 lg:gap-20 2xl:gap-24 gap-y-16">
                <div>
                   <img src="/assets/img/tool-03.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
                   <hr className="border-secondary mt-5 mb-3" />
@@ -118,7 +118,9 @@ export default function Single({ tool }: Props) {
                   />
                </div>
                <div>
-                  <img src="/assets/img/tool-05.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
+                  <div className="w-9 lg:w-16 aspect-square flex items-end">
+                     <img src="/assets/img/categories.svg" alt="Image" className="w-full lg:w-14 aspect-square" />
+                  </div>
                   <hr className="border-secondary mt-5 mb-3" />
                   <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">
                      Categories
