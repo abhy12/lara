@@ -123,7 +123,7 @@ export default function Single({ tool }: Props) {
                   </div>
                   <hr className="border-secondary mt-5 mb-3" />
                   <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">
-                     Categories
+                     Used For
                   </h2>
                   {tool.categories?.map(cat =>
                      <p
