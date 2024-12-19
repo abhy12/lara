@@ -13,7 +13,7 @@ interface Props {
 
 export default function ToolSidebar({
    categories,
-   initFilterCategory = getStoredFilterCategoryValue(),
+   initFilterCategory = null,
    onResetClick,
    onCategoryClick,
    expandAndSetFilter
@@ -32,6 +32,7 @@ export default function ToolSidebar({
             className="text-left text-secondary bg-white w-full border-b-2 border-tertiary mb-5"
             onClick={() => {
                clearCategoryFilter();
+               setActiveFilterCategory(null);
                if (onResetClick) onResetClick()
             }}
          >All Tools</button>

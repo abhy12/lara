@@ -5,7 +5,6 @@ import { route } from 'ziggy-js';
 import { useState } from 'react';
 import Container from '@/Layouts/Container';
 import ToolSidebar from '@/Components/Tools/ToolSidebar';
-import { getStoredFilterCategoryValue } from "@/util/utils";
 
 const maxItemPerPage = 9;
 
@@ -15,7 +14,7 @@ interface Props {
 }
 
 export default function Index({ tools, categories }: Props) {
-   const [filterCatgory, setFilterCategory] = useState<Category | null>(getStoredFilterCategoryValue());
+   const [filterCatgory, setFilterCategory] = useState<Category | null>(null);
    const [maxShow, setMaxShow] = useState(maxItemPerPage);
 
    const allTools = tools.filter(tool => {

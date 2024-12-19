@@ -75,7 +75,6 @@ class ToolController extends Controller
     {
         return Inertia::render('Tools/SingleTool', [
             'tool' => $tool->load('services', 'categories'),
-            'categories' => Category::where('parent_id', null)->orderBy('name')->with('subcategory')->get(),
         ]);
     }
 

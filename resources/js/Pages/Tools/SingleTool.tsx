@@ -3,27 +3,14 @@ import Layout from "@/Layouts/Layout";
 import { Head, Link } from "@inertiajs/react";
 import { route } from 'ziggy-js';
 import Container from "@/Layouts/Container";
-import ToolSidebar from "@/Components/Tools/ToolSidebar";
-import { useEffect, useCallback, useState } from "react";
 
 interface Props {
    tool?: ToolsProps
    categories?: Category[]
 }
 
-export default function Single({ tool, categories }: Props) {
-   const [filterCategoryDefined, setFilterCategoryDefined] = useState<Category | undefined>();
+export default function Single({ tool }: Props) {
    if (!tool) return <></>
-
-   const setFilterCategoryIfNotDefined = useCallback(() => {
-      if (!tool.categories || tool.categories.length <= 0) return
-      const category = tool.categories[0];
-      setFilterCategoryDefined(category);
-   }, []);
-
-   useEffect(() => {
-      setFilterCategoryIfNotDefined();
-   }, []);
 
    return (
       <Layout>
@@ -65,78 +52,83 @@ export default function Single({ tool, categories }: Props) {
          </section>
 
          <section className="pt-16 lg:pt-24 pb-10 lg:pb-40">
-            <Container className="grid md:grid-cols-[25%_1fr] gap-x-6 lg:gap-x-20 2xl:gap-x-24">
+            <Container className="grid grid-cols-2 lg:grid-cols-4 lg:grid-rows-[repeat(4,_max-content)] gap-6 lg:gap-20 2xl:gap-24 gap-y-16">
                <div>
-                  <ToolSidebar
-                     categories={categories}
-                     expandAndSetFilter={filterCategoryDefined}
+                  <img src="/assets/img/tool-03.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
+                  <hr className="border-secondary mt-5 mb-3" />
+                  <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">Cost Structure</h2>
+                  <p
+                     className="text-[#4A4A4A] text-[0.931rem] lg:text-[0.869rem] 2xl:text-base"
+                     dangerouslySetInnerHTML={{ __html: tool.cost_structure || '' }}
                   />
                </div>
-               <div className="grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-[repeat(3,_max-content)] gap-6 lg:gap-20 2xl:gap-24 gap-y-16">
-                  <div>
-                     <img src="/assets/img/tool-03.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
-                     <hr className="border-secondary mt-5 mb-3" />
-                     <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">Cost Structure</h2>
+               <div>
+                  <img src="/assets/img/tool-04.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
+                  <hr className="border-secondary mt-5 mb-3" />
+                  <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">Fee Amount</h2>
+                  <p
+                     className="text-[#4A4A4A] text-[0.931rem] lg:text-[0.869rem] 2xl:text-base"
+                     dangerouslySetInnerHTML={{ __html: tool.fee_amount || '' }}
+                  />
+               </div>
+               <div>
+                  <img src="/assets/img/tool-06.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
+                  <hr className="border-secondary mt-5 mb-3" />
+                  <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">Free Credit</h2>
+                  <p
+                     className="text-[#4A4A4A] text-[0.931rem] lg:text-[0.869rem] 2xl:text-base"
+                     dangerouslySetInnerHTML={{ __html: tool.free_credit || 'N.A' }}
+                  />
+               </div>
+               <div>
+                  <img src="/assets/img/tool-07.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
+                  <hr className="border-secondary mt-5 mb-3" />
+                  <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">Support Structure</h2>
+                  <p
+                     className="text-[#4A4A4A] text-[0.931rem] lg:text-[0.869rem] 2xl:text-base"
+                     dangerouslySetInnerHTML={{ __html: tool.support_structure || '' }}
+                  />
+               </div>
+               <div>
+                  <img src="/assets/img/tool-08.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
+                  <hr className="border-secondary mt-5 mb-3" />
+                  <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">SDG Domain</h2>
+                  <p
+                     className="text-[#4A4A4A] text-[0.931rem] lg:text-[0.869rem] 2xl:text-base"
+                     dangerouslySetInnerHTML={{ __html: tool.sgb_domain || '' }}
+                  />
+               </div>
+               <div>
+                  <img src="/assets/img/tool-09.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
+                  <hr className="border-secondary mt-5 mb-3" />
+                  <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">NGO References</h2>
+                  <p
+                     className="text-[#4A4A4A] text-[0.869rem] 2xl:text-base"
+                     dangerouslySetInnerHTML={{ __html: tool.ngo_ref || '' }}
+                  />
+               </div>
+               <div>
+                  <img src="/assets/img/tool-05.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
+                  <hr className="border-secondary mt-5 mb-3" />
+                  <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">Additional Comments
+                  </h2>
+                  <p
+                     className="text-[#4A4A4A] text-[0.931rem] lg:text-[0.869rem] 2xl:text-base"
+                     dangerouslySetInnerHTML={{ __html: tool.additional_comments || '' }}
+                  />
+               </div>
+               <div>
+                  <img src="/assets/img/tool-05.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
+                  <hr className="border-secondary mt-5 mb-3" />
+                  <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">
+                     Categories
+                  </h2>
+                  {tool.categories?.map(cat =>
                      <p
+                        key={cat.id}
                         className="text-[#4A4A4A] text-[0.931rem] lg:text-[0.869rem] 2xl:text-base"
-                        dangerouslySetInnerHTML={{ __html: tool.cost_structure || '' }}
-                     />
-                  </div>
-                  <div>
-                     <img src="/assets/img/tool-04.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
-                     <hr className="border-secondary mt-5 mb-3" />
-                     <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">Fee Amount</h2>
-                     <p
-                        className="text-[#4A4A4A] text-[0.931rem] lg:text-[0.869rem] 2xl:text-base"
-                        dangerouslySetInnerHTML={{ __html: tool.fee_amount || '' }}
-                     />
-                  </div>
-                  <div>
-                     <img src="/assets/img/tool-06.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
-                     <hr className="border-secondary mt-5 mb-3" />
-                     <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">Free Credit</h2>
-                     <p
-                        className="text-[#4A4A4A] text-[0.931rem] lg:text-[0.869rem] 2xl:text-base"
-                        dangerouslySetInnerHTML={{ __html: tool.free_credit || 'N.A' }}
-                     />
-                  </div>
-                  <div>
-                     <img src="/assets/img/tool-07.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
-                     <hr className="border-secondary mt-5 mb-3" />
-                     <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">Support Structure</h2>
-                     <p
-                        className="text-[#4A4A4A] text-[0.931rem] lg:text-[0.869rem] 2xl:text-base"
-                        dangerouslySetInnerHTML={{ __html: tool.support_structure || '' }}
-                     />
-                  </div>
-                  <div>
-                     <img src="/assets/img/tool-08.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
-                     <hr className="border-secondary mt-5 mb-3" />
-                     <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">SDG Domain</h2>
-                     <p
-                        className="text-[#4A4A4A] text-[0.931rem] lg:text-[0.869rem] 2xl:text-base"
-                        dangerouslySetInnerHTML={{ __html: tool.sgb_domain || '' }}
-                     />
-                  </div>
-                  <div>
-                     <img src="/assets/img/tool-09.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
-                     <hr className="border-secondary mt-5 mb-3" />
-                     <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">NGO References</h2>
-                     <p
-                        className="text-[#4A4A4A] text-[0.869rem] 2xl:text-base"
-                        dangerouslySetInnerHTML={{ __html: tool.ngo_ref || '' }}
-                     />
-                  </div>
-                  <div>
-                     <img src="/assets/img/tool-05.svg" alt="Image" className="w-9 lg:w-16 aspect-square" />
-                     <hr className="border-secondary mt-5 mb-3" />
-                     <h2 className="text-[#494949] font-semibold text-[0.919rem] lg:text-lg 2xl:text-[1.309rem]">Additional Comments
-                     </h2>
-                     <p
-                        className="text-[#4A4A4A] text-[0.931rem] lg:text-[0.869rem] 2xl:text-base"
-                        dangerouslySetInnerHTML={{ __html: tool.additional_comments || '' }}
-                     />
-                  </div>
+                     >{cat.name}</p>
+                  )}
                </div>
             </Container>
          </section>
