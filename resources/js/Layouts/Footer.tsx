@@ -2,6 +2,8 @@ import PopupModal from "@/Components/PopupModal";
 import { useState, useCallback, useRef, useEffect } from "react";
 import PopupForm from "@/Components/PopupForm";
 import Container from "./Container";
+import { route } from 'ziggy-js';
+import { useForm } from "@inertiajs/react";
 
 const cookieName = "popupFormSubmitted";
 const cookieValue = "1";
@@ -25,8 +27,8 @@ const extractUserNameFromCookie = (cookieName: string) => {
 
 export default function Footer() {
    const [isPopupModalActive, setIsPopupModalActive] = useState(extractUserNameFromCookie(cookieName) !== '1');
-   const footerRef = useRef<null| HTMLElement>(null);
-
+   const footerRef = useRef<null | HTMLElement>(null);
+   const { post } = useForm();
    const handleCloseModal = useCallback(() => {
       setIsPopupModalActive(false);
    }, []);
@@ -37,8 +39,16 @@ export default function Footer() {
       document.cookie = cookieName + '=' + cookieValue + '; expires=' + daysToExpire;
    }, []);
 
+   const onFormSubmit = useCallback((data: any) => {
+      post(route('forms.store', data), {
+         onSuccess: () => {
+            afterFormSuccess();
+         },
+      });
+   }, []);
+
    useEffect(() => {
-      if( !footerRef.current ) return
+      if (!footerRef.current) return
       document.documentElement.style.setProperty("--footer-height", footerRef.current.getBoundingClientRect().height + "px");
    }, [footerRef]);
 
@@ -70,8 +80,8 @@ export default function Footer() {
          >
             <PopupForm
                submitButtonText="Get Started"
-               afterSuccess={afterFormSuccess}
                footerText="The information provided here is created as a community resource and is not intended as professional advice or a recommendation by ILSS or Koita Foundation. While we strive to ensure the accuracy of the content, we do not take responsibility for any errors or omissions. Users should use their own discretion before making any decisions based on this information. ILSS or Koita Foundation assume no liability for any actions taken based on the information provided."
+               onSubmit={onFormSubmit}
             />
          </PopupModal>
       </>

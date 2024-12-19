@@ -44,8 +44,10 @@ Route::resource( 'services', ServiceController::class )
 Route::resource( 'tools', ToolController::class )
 ->only(['index', 'show']);
 
-Route::resource('forms', FormController::class )
-->only('store');
+Route::controller(FormController::class)->group(function() {
+    Route::post('forms/mail', 'mail')->name('forms.mail');
+    Route::post('forms/store', 'store')->name('forms.store');
+});
 
 Route::get('faqs', function() {
     return Inertia::render( 'Faqs' );

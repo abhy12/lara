@@ -6,10 +6,12 @@ import PopupForm from "@/Components/PopupForm";
 import { Popper, ClickAwayListener } from '@mui/material';
 import { Menu } from '@mui/icons-material';
 import Container from '@/Layouts/Container';
+import { useForm } from "@inertiajs/react";
 
 export default function Header() {
-   const headerRef = useRef<null| HTMLElement>(null);
+   const headerRef = useRef<null | HTMLElement>(null);
    const [isHelpModalActive, setIsHelpModalActive] = useState(false);
+   const { post } = useForm();
    const handleCloseModal = useCallback(() => {
       setIsHelpModalActive(false);
    }, []);
@@ -20,11 +22,16 @@ export default function Header() {
       setAnchorEl(anchorEl ? null : event.currentTarget);
    }
 
+   const onFormSubmit = useCallback((data: any) => {
+      handleCloseModal();
+      post(route('forms.mail', data));
+   }, []);
+
    const openMenu = Boolean(anchorEl);
    const menuId = openMenu ? 'simple-popper' : undefined;
 
    useEffect(() => {
-      if( !headerRef.current ) return
+      if (!headerRef.current) return
       document.documentElement.style.setProperty("--header-height", headerRef.current.getBoundingClientRect().height + "px");
    }, [headerRef]);
 
@@ -73,10 +80,10 @@ export default function Header() {
             onClose={handleCloseModal}
          >
             <PopupForm
-               afterSuccess={handleCloseModal}
                footerText="The information provided here is created as a community resource and is not intended as professional advice or a recommendation by ILSS or Koita Foundation. While we strive to ensure the accuracy of the content, we do not take responsibility for any errors or omissions. Users should use their own discretion before making any decisions based on this information. ILSS or Koita Foundation assume no liability for any actions taken based on the information provided."
                submitButtonText='Send'
                showMessageField={true}
+               onSubmit={onFormSubmit}
             />
          </PopupModal>
       </>

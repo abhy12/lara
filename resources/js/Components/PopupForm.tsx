@@ -1,19 +1,18 @@
 import { TextField, Button } from "@mui/material";
 import { useCallback, useState, SyntheticEvent, ChangeEvent } from "react";
 import { useForm } from "@inertiajs/react";
-import { route } from 'ziggy-js';
 import { FormControlLabel, Checkbox } from "@mui/material";
 
 interface Props {
-   afterSuccess?: CallableFunction
    submitButtonText?: string
    showMessageField?: boolean
    footerText?: string
+   onSubmit?: (data: any) => any
 }
 
-export default function PopupForm({ afterSuccess, submitButtonText = 'Submit', showMessageField = false, footerText }: Props) {
+export default function PopupForm({ submitButtonText = 'Submit', showMessageField = false, footerText, onSubmit }: Props) {
    const [isCheckboxTicked, setIsCheckboxTicked] = useState(false);
-   const { data, setData, post, errors } = useForm({
+   const { data, setData, errors } = useForm({
       name: '',
       organization: '',
       email: '',
@@ -23,12 +22,8 @@ export default function PopupForm({ afterSuccess, submitButtonText = 'Submit', s
    const formSubmitHandler = useCallback((e: SyntheticEvent) => {
       e.preventDefault();
 
-      post(route('forms.store', data), {
-         onSuccess: () => {
-            if (typeof afterSuccess === 'function') afterSuccess();
-         },
-      });
-   }, [post, data]);
+      if (typeof onSubmit === 'function') onSubmit(data);
+   }, [data]);
 
    const inputChangeHandler = useCallback((e: ChangeEvent<HTMLInputElement>) => {
       const target = e.currentTarget;
@@ -96,9 +91,9 @@ export default function PopupForm({ afterSuccess, submitButtonText = 'Submit', s
                <FormControlLabel
                   required
                   control={
-                  <Checkbox
-                     onChange={e => setIsCheckboxTicked( e.currentTarget.checked )}
-                  />
+                     <Checkbox
+                        onChange={e => setIsCheckboxTicked(e.currentTarget.checked)}
+                     />
                   }
                   label="I hereby consent to receiving communication from the ILSS team."
                />
