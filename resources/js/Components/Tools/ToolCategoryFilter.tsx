@@ -29,7 +29,6 @@ export default function ToolCategoryFilter({
       <Accordion
          className="!my-0 !shadow-none"
          onChange={handleAccordionChange(-1)}
-         expanded={isActiveAccordion !== false}
          sx={{
             '& .MuiAccordionDetails-root': {
                padding: 0,

@@ -25,7 +25,8 @@ export default function Index({ tools, categories }: Props) {
       for (let i = 0; i < tool.categories.length; i++) {
          if (tool.categories[i].id == filterCatgory.id) return true;
       }
-   }).filter((_, i) => (i < maxShow && i < 250));
+   });
+   const maxTools = allTools.filter((_, i) => i < maxShow);
 
    return (
       <Layout>
@@ -57,7 +58,7 @@ export default function Index({ tools, categories }: Props) {
                </div>
                <div className="basis-3/4">
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-8 gap-y-14 lg:gap-x-40 lg:gap-y-32">
-                     {allTools.map(tool =>
+                     {maxTools.map(tool =>
                         <div className="text-center" key={tool.id}>
                            <div className="relative mb-5 md:mb-10">
                               <div
@@ -69,8 +70,9 @@ export default function Index({ tools, categories }: Props) {
                                     alt="Image"
                                  />
                               </div>
-                              <Link
+                              <a
                                  href={route('tools.show', { tool: tool.slug })}
+                                 target='_blank'
                                  className="w-full max-w-10 md:max-w-14 aspect-square p-4 rounded-full
                                  flex justify-center items-center absolute right-0 bottom-0 transition text-white
                                  bg-tertiary border border-tertiary hover:bg-white hover:text-tertiary"
@@ -78,17 +80,19 @@ export default function Index({ tools, categories }: Props) {
                                  <svg viewBox="0 0 23 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M22.2931 6.99029C22.586 6.6974 22.586 6.22253 22.2931 5.92963L17.5201 1.15666C17.2272 0.863768 16.7523 0.863768 16.4594 1.15666C16.1665 1.44955 16.1665 1.92443 16.4594 2.21732L20.7021 6.45996L16.4594 10.7026C16.1665 10.9955 16.1665 11.4704 16.4594 11.7633C16.7523 12.0562 17.2272 12.0562 17.5201 11.7633L22.2931 6.99029ZM0.476562 7.20996L21.7627 7.20996L21.7627 5.70996L0.476563 5.70996L0.476562 7.20996Z" fill="currentColor" />
                                  </svg>
-                              </Link>
+                              </a>
                            </div>
                            <h2 className="text-tertiary font-semibold text-xl md:text-2xl">{tool.name}</h2>
                         </div>
                      )}
                   </div>
-                  <button
-                     className='bg-primary text-lg text-center w-64 p-2 md:px-6 rounded-lg shadow-md
+                  {(allTools.length > maxShow) &&
+                     <button
+                        className='bg-primary text-lg text-center w-64 p-2 md:px-6 rounded-lg shadow-md
                            transition hover:bg-dark hover:text-primary block mx-auto max-w-max mt-8 md:mt-12'
-                     onClick={() => setMaxShow(state => state + maxItemPerPage)}
-                  >Load More</button>
+                        onClick={() => setMaxShow(state => state + maxItemPerPage)}
+                     >Load More</button>
+                  }
                </div>
             </Container>
          </section>
