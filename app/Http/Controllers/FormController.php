@@ -15,8 +15,20 @@ class FormController extends Controller
      */
     public function index()
     {
+        if (isset($_GET['filter'])) {
+            $filter = $_GET['filter'];
+
+            if ($filter === 'login') {
+                $forms = Form::where('filter', null)->orderBy('name')->get();
+            } else if ($filter === 'help') {
+                $forms = Form::where('filter', 'help')->orderBy('name')->get();
+            }
+        } else {
+            $forms = Form::all();
+        }
+
         return Inertia::render('Admin/Forms/IndexForms', [
-            'forms' => Form::all(),
+            'forms' => $forms,
         ]);
     }
 
@@ -54,6 +66,10 @@ class FormController extends Controller
             'organization' => 'required|max:255',
             'message' => 'max:550',
         ]);
+
+        $form = Form::create($validate);
+        $form->filter = 'help';
+        $form->save();
 
         Mail::to(env('MAIL_ADMIN_ADDRESS'))->send(new Contact($validate));
     }

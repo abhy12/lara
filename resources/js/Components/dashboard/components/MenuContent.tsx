@@ -15,9 +15,10 @@ interface List {
 }
 const mainListItems: List[] = [
    { name: 'Services', icon: <HomeRepairService />, link: 'admin.services.index' },
-   { name: 'Tools', icon: <Handyman/>, link: 'admin.tools.index' },
-   { name: 'Form Data', icon: <TextSnippet />, link: 'forms.index' },
-   { name: 'Categories', icon: <ListAlt/>, link: 'category.index' },
+   { name: 'Tools', icon: <Handyman />, link: route('admin.tools.index') },
+   { name: 'Categories', icon: <ListAlt />, link: route('category.index') },
+   { name: 'Login Form', icon: <TextSnippet />, link: route('forms.index', { filter: 'login' }) },
+   { name: 'Help Form', icon: <TextSnippet />, link: route('forms.index', { filter: 'help' }) },
 ];
 
 export default function MenuContent() {
@@ -26,7 +27,7 @@ export default function MenuContent() {
          <List className='text-lg !gap-2' dense>
             {mainListItems.map((item, index) => (
                <ListItem key={index} disablePadding sx={{ display: 'block' }}>
-                  <Link href={route(item.link)}>
+                  <Link href={item.link}>
                      <ListItemButton selected={route().current() === item.link}>
                         <ListItemIcon>{item.icon}</ListItemIcon>
                         <span>{item.name}</span>
