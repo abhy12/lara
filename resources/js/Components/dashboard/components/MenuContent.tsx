@@ -14,7 +14,7 @@ interface List {
    link: string
 }
 const mainListItems: List[] = [
-   { name: 'Services', icon: <HomeRepairService />, link: 'admin.services.index' },
+   { name: 'Services', icon: <HomeRepairService />, link: route('admin.services.index') },
    { name: 'Tools', icon: <Handyman />, link: route('admin.tools.index') },
    { name: 'Categories', icon: <ListAlt />, link: route('category.index') },
    { name: 'Login Form', icon: <TextSnippet />, link: route('forms.index', { filter: 'login' }) },
