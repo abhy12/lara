@@ -1,10 +1,12 @@
+import { useCallback } from 'react';
 import type { FormProps } from '@/util/props';
 import { Head, router } from '@inertiajs/react';
 import { route } from 'ziggy-js';
 import Dashboard from '@/Components/dashboard/Dashboard';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import { Visibility, Delete } from '@mui/icons-material';
+import { Button } from '@mui/material';
+import { Visibility, Delete, GetApp } from '@mui/icons-material';
 import {
    GridRowsProp,
    DataGrid,
@@ -12,6 +14,8 @@ import {
    GridActionsCellItem,
    GridToolbar,
 } from '@mui/x-data-grid';
+import ExcelJS from 'exceljs';
+import { saveAs } from 'file-saver';
 
 dayjs.extend(relativeTime);
 
@@ -29,7 +33,7 @@ const removeDefaultColSettings = {
 }
 
 export default function Index({ forms }: Props) {
-   const rows: GridRowsProp | undefined = forms?.map( form => {
+   const rows: GridRowsProp | undefined = forms?.map(form => {
       return {
          id: form.id,
          name: form.name,
@@ -53,24 +57,71 @@ export default function Index({ forms }: Props) {
                <GridActionsCellItem
                   icon={<Visibility />}
                   label='View'
-                  onClick={() => router.get(route('forms.show', {id}))}
+                  onClick={() => router.get(route('forms.show', { id }))}
                   title='View'
                />,
                <GridActionsCellItem
                   icon={<Delete />}
                   label='Delete'
                   title='Delete'
-                  onClick={() => router.delete(route('forms.destroy', {id}))}
+                  onClick={() => router.delete(route('forms.destroy', { id }))}
                />
             ];
          }
       },
    ];
 
+   const exportJsonToExcel = useCallback(async (data?: FormProps[]) => {
+      if (!data) return
+
+      const fileName = 'Form Data';
+      // Create a new workbook
+      const workbook = new ExcelJS.Workbook();
+      const worksheet = workbook.addWorksheet("Sheet1");
+
+      // Add column headers
+      worksheet.columns = [
+         { header: "ID", key: "id" },
+         { header: "Name", key: "name" },
+         { header: "Organization", key: "organization" },
+         { header: "Email", key: "email" },
+         { header: "Message", key: "message" },
+      ];
+
+      // Add rows to the worksheet
+      data.forEach(row => {
+         worksheet.addRow({
+            id: row.id,
+            name: row.name,
+            organization: row.organization,
+            email: row.email,
+            message: row.message,
+         });
+      });
+
+      // Export the workbook to Excel file
+      const buffer = await workbook.xlsx.writeBuffer();
+      const blob = new Blob([buffer],
+         {
+            type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+         });
+      saveAs(blob, `${fileName}.xlsx`);
+   }, []);
+
    return (
       <Dashboard>
          <Head title='Services' />
          <h1 className='mb-4 md:mb-6 text-xl md:text-2xl'>Form Data</h1>
+         <div className='mb-3'>
+            <Button
+               variant='outlined'
+               color="primary"
+               startIcon={<GetApp />}
+               onClick={() => exportJsonToExcel(forms)}
+            >
+               Export
+            </Button>
+         </div>
 
          <div className='w-full'>
             <DataGrid
@@ -87,7 +138,7 @@ export default function Index({ forms }: Props) {
                disableColumnFilter={true}
                disableColumnSelector
                disableDensitySelector
-               slots={{ toolbar: GridToolbar}}
+               slots={{ toolbar: GridToolbar }}
                slotProps={{
                   toolbar: {
                      showQuickFilter: true,
