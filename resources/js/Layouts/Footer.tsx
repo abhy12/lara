@@ -1,6 +1,4 @@
-import PopupModal from "@/Components/PopupModal";
 import { useState, useCallback, useRef, useEffect } from "react";
-import PopupForm from "@/Components/PopupForm";
 import Container from "./Container";
 import { route } from 'ziggy-js';
 import { useForm } from "@inertiajs/react";
@@ -73,17 +71,6 @@ export default function Footer() {
                <p>The information provided here is created as a community resource and is not intended as professional advice or a recommendation by ILSS or Koita Foundation. While we strive to ensure the accuracy of the content, we do not take responsibility for any errors or omissions. Users should use their own discretion before making any decisions based on this information. ILSS or Koita Foundation assume no liability for any actions taken based on the information provided.</p>
             </Container>
          </footer>
-         <PopupModal
-            isActive={isPopupModalActive}
-            onClose={handleCloseModal}
-            closeOnDefault={false}
-         >
-            <PopupForm
-               submitButtonText="Get Started"
-               footerText="The information provided here is created as a community resource and is not intended as professional advice or a recommendation by ILSS or Koita Foundation. While we strive to ensure the accuracy of the content, we do not take responsibility for any errors or omissions. Users should use their own discretion before making any decisions based on this information. ILSS or Koita Foundation assume no liability for any actions taken based on the information provided."
-               onSubmit={onFormSubmit}
-            />
-         </PopupModal>
       </>
    );
 }
